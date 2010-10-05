@@ -1,0 +1,17 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="clr-namespace:SoapBox.Core"
+    x:Class="SoapBox.Core.AbstractStatusBarLabelView">
+    
+    <DataTemplate DataType="{x:Type local:AbstractStatusBarLabel}">
+        <DataTemplate.Resources>
+            <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter"/>
+        </DataTemplate.Resources>
+        <Label ToolTip="{Binding Path=(local:AbstractStatusBarLabel.ToolTip)}" 
+               Visibility="{Binding Path=(local:IControl.Visible), 
+                        Converter={StaticResource BooleanToVisibilityConverter}}">
+            <TextBlock Text="{Binding Path=(local:AbstractStatusBarLabel.Text)}"/>
+        </Label>
+    </DataTemplate>
+
+</ResourceDictionary>

@@ -1,0 +1,84 @@
+﻿<UserControl x:Class="SoapBox.Snap.Application.InstructionGroupHeader"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:SoapBox.Snap.Application"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    <UserControl.Resources>
+        <Color x:Key="PageEditorListViewItemHeaderColor">LightBlue</Color>
+        <SolidColorBrush x:Key="PageEditorListViewItemHeaderColorBrush"
+                             Color="{StaticResource PageEditorListViewItemHeaderColor}"/>
+        <LinearGradientBrush
+                x:Key="PageEditorListViewItemHeaderBrush"
+                StartPoint="0.5,0" EndPoint="0.5,1.0">
+            <GradientStop Color="White" Offset="0.0" />
+            <GradientStop Color="{StaticResource PageEditorListViewItemHeaderColor}" Offset="0.5" />
+            <GradientStop Color="White" Offset="1.0" />
+        </LinearGradientBrush>
+    </UserControl.Resources>
+    <DockPanel
+        LastChildFill="True">
+        <Line
+            Name="TopLine"
+            DockPanel.Dock="Top" Visibility="Hidden"
+            Stroke="Green"
+            StrokeThickness="2" Margin="3" SnapsToDevicePixels="True"
+            X1="0" Y1="0"
+            X2="{Binding ElementName=Header, Path=ActualWidth}" Y2="0"/>
+        <Line
+            Name="BottomLine"
+            DockPanel.Dock="Bottom" Visibility="Hidden"
+            Stroke="Green"
+            StrokeThickness="2" Margin="3" SnapsToDevicePixels="True"
+            X1="0" Y1="0"
+            X2="{Binding ElementName=Header, Path=ActualWidth}" Y2="0"/>
+        <Border 
+            Name="Header"
+            VerticalAlignment="Stretch"
+            CornerRadius="5"
+            BorderThickness="1"
+            PreviewMouseLeftButtonDown="Header_PreviewMouseLeftButtonDown"
+            PreviewMouseMove="Header_PreviewMouseMove"
+            Margin="3">
+            <Border.Style>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="BorderBrush" Value="Transparent"/>
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="BorderBrush" Value="SlateBlue"/>
+                            <Setter Property="Cursor" Value="Hand"/>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </Border.Style>
+            <Grid VerticalAlignment="Stretch">
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <TextBlock 
+                    Name="HeaderTextBlock"
+                    FontSize="18" 
+                    Text="{x:Static local:Resources.Strings.Workbench_Documents_Editor_GroupHeaderText}"
+                    VerticalAlignment="Stretch"
+                    Padding="10,0,10,0"
+                    DragOver="Header_DragOver"
+                    DragLeave="Header_DragLeave"
+                    Drop="Header_Drop"
+                    AllowDrop="True"/>
+                <TextBlock 
+                    Grid.Row="1"
+                    Name="HeaderTextBlock2"
+                    FontSize="18" 
+                    VerticalAlignment="Stretch"
+                    HorizontalAlignment="Stretch"
+                    DragOver="Header_DragOver"
+                    DragLeave="Header_DragLeave"
+                    Drop="Header_Drop"
+                    AllowDrop="True"/>
+            </Grid>
+        </Border>
+    </DockPanel>
+</UserControl>

@@ -1,0 +1,103 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <Title>
+        Add SoapBox Node
+      </Title>
+      <Author>Scott Whitlock</Author>
+      <Description>The snippet creates a new node in an empty class file</Description>
+      <Shortcut>sbn</Shortcut>
+    </Header>
+    <Snippet>
+      <Declarations>
+        <Literal>
+          <ID>Namespace</ID>
+          <ToolTip>Namespace where the node lives</ToolTip>
+          <Default>Namespace</Default>
+        </Literal>
+        <Literal>
+          <ID>NodeName</ID>
+          <ToolTip>Name of the node</ToolTip>
+          <Default>NodeName</Default>
+        </Literal>
+      </Declarations>
+      <Code Language="CSharp">
+        <![CDATA[
+using System;
+using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.Linq;
+using System.Text;
+using SoapBox.Utilities;
+
+namespace $Namespace$
+{
+    /// <summary>
+    /// 
+    /// </summary>
+    public sealed class $NodeName$ : NodeBase 
+    {
+
+        #region " FIELDS "
+
+        #endregion
+
+        #region " CONSTRUCTORS "
+        private $NodeName$(ReadOnlyDictionary<FieldIdentifier, FieldBase> Fields,
+            ReadOnlyCollection<NodeBase> Children)
+            : base(Fields, Children)
+        {
+        }
+
+        protected override NodeBase CopyWithNewChildren(ReadOnlyCollection<NodeBase> NewChildren)
+        {
+            return new $NodeName$(Fields, NewChildren);
+        }
+        #endregion
+
+        #region " BUILDER(S) "
+
+        private static NodeBase Resurrect(
+            ReadOnlyDictionary<FieldIdentifier, FieldBase> Fields,
+            ReadOnlyCollection<NodeBase> Children)
+        {
+            Dictionary<FieldIdentifier, FieldBase> mutableFields =
+                new Dictionary<FieldIdentifier, FieldBase>();
+            //Add Fields here: mutableFields.Add(new FieldIdentifier(m_CodeName),
+            //        new FieldSolutionName("A123"));
+
+            ReadOnlyDictionary<FieldIdentifier, FieldBase> defaultFields =
+                new ReadOnlyDictionary<FieldIdentifier, FieldBase>(mutableFields);
+            return new $NodeName$(
+                SetFieldDefaults(Fields, defaultFields), Children);
+        }
+
+        public static $NodeName$ BuildWith()
+        {
+            //build fields
+            Dictionary<FieldIdentifier, FieldBase> mutableFields =
+                new Dictionary<FieldIdentifier, FieldBase>();
+            //Add Fields here: mutableFields.Add(new FieldIdentifier(m_CodeName), Code);
+
+            //build children
+            KeyedNodeCollection<NodeBase> mutableChildren =
+                new KeyedNodeCollection<NodeBase>();
+            //Add Children here: mutableChildren.Add(SomeChild);
+
+            //build node
+            $NodeName$ Builder = new $NodeName$(
+                new ReadOnlyDictionary<FieldIdentifier, FieldBase>(mutableFields),
+                new ReadOnlyCollection<NodeBase>(mutableChildren));
+
+            return Builder;
+        }
+        #endregion
+    }
+}
+        ]]>
+      </Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>
+

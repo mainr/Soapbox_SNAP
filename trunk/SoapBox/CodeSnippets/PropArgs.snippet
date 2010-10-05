@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <Title>
+        Insert INotifyPropertyChanged Property Args Creator
+      </Title>
+      <Author>Scott Whitlock</Author>
+      <Description>The snippet creates a line that generates a static cache of the NotifyPropertyChanged arguments</Description>
+      <Shortcut>propargs</Shortcut>
+    </Header>
+    <Snippet>
+      <Declarations>
+        <Literal>
+          <ID>Prop</ID>
+          <ToolTip>Property Name</ToolTip>
+          <Default>Name</Default>
+        </Literal>
+        <Literal>
+          <ID>Class</ID>
+          <ToolTip>Class Name</ToolTip>
+          <Default>Class</Default>
+        </Literal>
+      </Declarations>
+      <Code Language="CSharp">
+        <![CDATA[        static readonly PropertyChangedEventArgs m_$Prop$Args = 
+            NotifyPropertyChangedHelper.CreateArgs<$Class$>(o => o.$Prop$);
+]]>
+      </Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>
+

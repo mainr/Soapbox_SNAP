@@ -1,0 +1,21 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="clr-namespace:SoapBox.Core"
+    x:Class="SoapBox.Core.AbstractTreeViewItemView">
+
+    <DataTemplate DataType="{x:Type local:AbstractTreeViewItem}">
+        <DataTemplate.Resources>
+            <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter"/>
+        </DataTemplate.Resources>
+        <StackPanel 
+            ToolTip="{Binding Path=(local:IControl.ToolTip)}"
+            Visibility="{Binding Path=(local:IControl.Visible), 
+                        Converter={StaticResource BooleanToVisibilityConverter}}"
+            Margin="{Binding Path=(local:IControl.Margin)}">
+            <ItemsControl
+                ItemsSource="{Binding Path=(local:AbstractTreeViewItem.Icons)}"/>
+            <TextBlock Text="{Binding Path=(local:AbstractTreeViewItem.Text)}"/>
+        </StackPanel>
+    </DataTemplate>
+
+</ResourceDictionary>

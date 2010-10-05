@@ -1,0 +1,33 @@
+﻿<ResourceDictionary 
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="clr-namespace:SoapBox.Snap.LD"
+    xmlns:core="clr-namespace:SoapBox.Core;assembly=SoapBox.Core.Contracts"
+    xmlns:contracts="clr-namespace:SoapBox.Snap;assembly=SoapBox.Snap.Contracts"
+    xmlns:util="clr-namespace:SoapBox.Utilities;assembly=SoapBox.Utilities"
+    x:Class="SoapBox.Snap.LD.InstructionLDCoilView">
+
+    <DataTemplate DataType="{x:Type local:InstructionLDCoil}">
+        <core:ContextMenuWrapper>
+            <DockPanel>
+                <ContentPresenter
+                    DockPanel.Dock="Top"
+                    Content="{Binding Path=CoilDescriptionEditor.VmEditableTextBlock}"/>
+                <ContentPresenter
+                    DockPanel.Dock="Top"
+                    Content="{Binding Path=CoilNameEditor.VmEditableTextBlock}"/>
+                <Ellipse
+                    Stroke="Black"
+                    StrokeThickness="1.5" 
+                    Fill="White" 
+                    contracts:SignalValueBehavior.NodeItem="{Binding}"
+                    contracts:SignalValueBehavior.TrueColor="Green"
+                    contracts:SignalValueBehavior.FalseColor="White"
+                    contracts:SignalValueBehavior.ControlFillColorBySignal="{Binding Path=CoilSignal}"
+                    Width="{x:Static local:InstructionLDCoil.COIL_DIAMETER}"
+                    Height="{x:Static local:InstructionLDCoil.COIL_DIAMETER}"/>
+            </DockPanel>
+        </core:ContextMenuWrapper>
+    </DataTemplate>
+
+</ResourceDictionary>

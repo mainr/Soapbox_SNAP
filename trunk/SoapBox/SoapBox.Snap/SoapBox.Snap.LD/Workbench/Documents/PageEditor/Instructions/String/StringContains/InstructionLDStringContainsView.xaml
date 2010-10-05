@@ -1,0 +1,61 @@
+﻿<ResourceDictionary 
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="clr-namespace:SoapBox.Snap.LD"
+    xmlns:core="clr-namespace:SoapBox.Core;assembly=SoapBox.Core.Contracts"
+    xmlns:contracts="clr-namespace:SoapBox.Snap;assembly=SoapBox.Snap.Contracts"
+    xmlns:util="clr-namespace:SoapBox.Utilities;assembly=SoapBox.Utilities"
+    x:Class="SoapBox.Snap.LD.InstructionLDStringContainsView">
+
+    <DataTemplate DataType="{x:Type local:InstructionLDStringContains}">
+        <core:ContextMenuWrapper>
+            <DockPanel>
+                <ContentPresenter
+                    DockPanel.Dock="Top"
+                    Content="{Binding Path=StringContainsDescriptionEditor.VmEditableTextBlock}"/>
+                <ContentPresenter
+                    DockPanel.Dock="Top"
+                    Content="{Binding Path=StringContainsNameEditor.VmEditableTextBlock}"/>
+                <Border
+                    BorderBrush="Black"
+                    BorderThickness="1.5"
+                    Background="White"
+                    Width="{x:Static local:InstructionLDStringContains.MAX_WIDTH}"
+                    >
+                    <StackPanel Margin="3,0,3,0">
+                        <Canvas
+                            Height="17"
+                            HorizontalAlignment="Stretch">
+                            <TextBlock Text="{x:Static local:Resources.Strings.LD_Snap_StringContains_InstructionName}"/>
+                            <Ellipse
+                                Canvas.Top="2"
+                                Canvas.Right="0"
+                                Width="15" Height="15"
+                                Stroke="Black"
+                                StrokeThickness="1.5"
+                                Fill="White" 
+                                contracts:SignalValueBehavior.NodeItem="{Binding}"
+                                contracts:SignalValueBehavior.TrueColor="Green"
+                                contracts:SignalValueBehavior.FalseColor="White"
+                                contracts:SignalValueBehavior.ControlFillColorBySignal="{Binding Path=CoilSignal}"
+                                />
+                        </Canvas>
+                        <TextBlock Text="{x:Static local:Resources.Strings.LD_Snap_StringContains_StringToSearchLabel}"/>
+                        <ContentPresenter
+                            DockPanel.Dock="Top"
+                            Content="{Binding Path=StringToSearchSignalChooser.VmSignalChooserTextBlock}"/>
+                        <TextBlock Text="{x:Static local:Resources.Strings.LD_Snap_StringContains_StringToFindLabel}"/>
+                        <ContentPresenter
+                            DockPanel.Dock="Top"
+                            Content="{Binding Path=StringToFindSignalChooser.VmSignalChooserTextBlock}"/>
+                        <TextBlock Text="{x:Static local:Resources.Strings.LD_Snap_StringContains_CaseSensitiveLabel}"/>
+                        <ContentPresenter
+                            DockPanel.Dock="Top"
+                            Content="{Binding Path=CaseSensitiveSignalChooser.VmSignalChooserTextBlock}"/>
+                    </StackPanel>
+                </Border>
+            </DockPanel>
+        </core:ContextMenuWrapper>
+    </DataTemplate>
+
+</ResourceDictionary>

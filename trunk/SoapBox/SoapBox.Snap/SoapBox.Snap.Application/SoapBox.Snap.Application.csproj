@@ -1,0 +1,475 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.21022</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{36590FCC-97D6-43CD-8F1C-50245EA15EB3}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SoapBox.Snap.Application</RootNamespace>
+    <AssemblyName>SoapBox.Snap.Application</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation />
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\..\bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\..\..\bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>..\..\..\bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>..\..\..\bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="PresentationCore">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="PresentationFramework">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="UIAutomationProvider">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App\Startup\Dummy.xaml.cs">
+      <DependentUpon>Dummy.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="App\Startup\OpenSolutionFromArgumentOrStartPage.cs" />
+    <Compile Include="App\Startup\SetApplicationTitle.cs" />
+    <Compile Include="Options\ApplicationOptions.cs" />
+    <Compile Include="Options\ApplicationOptionsPad.cs" />
+    <Compile Include="Options\ApplicationOptionsPadView.xaml.cs">
+      <DependentUpon>ApplicationOptionsPadView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="Protocol\FieldLayout.cs" />
+    <Compile Include="Protocol\FieldSolutionName.cs" />
+    <Compile Include="Protocol\NodeSolution.cs" />
+    <Compile Include="Resources\Images.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Images.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\Strings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Strings.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Services\CommunicationService\CommunicationService.cs" />
+    <Compile Include="Services\RuntimeService\GetConstantDialog\GetConstantDialog.cs" />
+    <Compile Include="Services\RuntimeService\GetConstantDialog\GetConstantDialogView.xaml.cs">
+      <DependentUpon>GetConstantDialogView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Services\RuntimeService\SignalChooserDialog\SignalChooserDialog.cs" />
+    <Compile Include="Services\RuntimeService\SignalChooserDialog\SignalChooserDialogView.xaml.cs">
+      <DependentUpon>SignalChooserDialogView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Services\RuntimeService\RuntimeService.cs" />
+    <Compile Include="Workbench\Documents\PageEditor\ContextMenu\Append.cs" />
+    <Compile Include="Workbench\Documents\PageEditor\ContextMenu\AppendSeparator.cs" />
+    <Compile Include="Workbench\Documents\PageEditor\ContextMenu\Redo.cs" />
+    <Compile Include="Workbench\Documents\PageEditor\ContextMenu\Undo.cs" />
+    <Compile Include="Workbench\Documents\PageEditor\ContextMenu\MoveSeparator.cs" />
+    <Compile Include="Workbench\Documents\PageEditor\ContextMenu\DeleteSeparator.cs" />
+    <Compile Include="Workbench\Documents\PageEditor\ContextMenu\MoveDown.cs" />
+    <Compile Include="Workbench\Documents\PageEditor\ContextMenu\MoveUp.cs" />
+    <Compile Include="Workbench\Documents\PageEditor\ContextMenu\InsertAfter.cs" />
+    <Compile Include="Workbench\Documents\PageEditor\ContextMenu\InsertBefore.cs" />
+    <Compile Include="Workbench\Documents\PageEditor\ContextMenu\Delete.cs" />
+    <Compile Include="Workbench\Documents\PageEditor\InstructionGroupDummy.cs" />
+    <Compile Include="Workbench\Documents\PageEditor\InstructionGroupDummyView.xaml.cs">
+      <DependentUpon>InstructionGroupDummyView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Workbench\Documents\PageEditor\InstructionGroupHeader.xaml.cs">
+      <DependentUpon>InstructionGroupHeader.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Workbench\Documents\PageEditor\PageEditor.cs" />
+    <Compile Include="Workbench\Documents\PageEditor\PageEditorView.xaml.cs">
+      <DependentUpon>PageEditorView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Workbench\Documents\RuntimeApplicationProperties\RuntimeApplicationProperties.cs" />
+    <Compile Include="Workbench\Documents\RuntimeApplicationProperties\RuntimeApplicationPropertiesView.xaml.cs">
+      <DependentUpon>RuntimeApplicationPropertiesView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Workbench\Documents\StartPage\GettingStartedCommands\ViewTutorial.cs" />
+    <Compile Include="Workbench\Documents\StartPage\GettingStartedCommands\LoadNewSolution.cs" />
+    <Compile Include="Workbench\Documents\StartPage\GettingStartedCommands\LoadExample.cs" />
+    <Compile Include="Workbench\Documents\StartPage\StartPageView.xaml.cs">
+      <DependentUpon>StartPageView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Workbench\Documents\StartPage\StartPage.cs" />
+    <Compile Include="Workbench\MainMenu\AboutBoxView.xaml.cs">
+      <DependentUpon>AboutBoxView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Workbench\MainMenu\FileMenu.cs" />
+    <Compile Include="Workbench\MainMenu\HelpMenu.cs" />
+    <Compile Include="Workbench\MainMenu\ViewMenu.cs" />
+    <Compile Include="Workbench\Pads\InstructionPad\InstructionPad.cs" />
+    <Compile Include="Workbench\Pads\InstructionPad\InstructionPadView.xaml.cs">
+      <DependentUpon>InstructionPadView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Workbench\Pads\InstructionPad\InstructionSpriteConverter.cs" />
+    <Compile Include="Workbench\Pads\SolutionPad\AbstractSolutionItem.cs" />
+    <Compile Include="Workbench\Pads\SolutionPad\AbstractSolutionItemView.xaml.cs">
+      <DependentUpon>AbstractSolutionItemView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Workbench\Pads\SolutionPad\AnalogInput\AnalogInputItem.cs" />
+    <Compile Include="Workbench\Pads\SolutionPad\AnalogInput\ContextMenu\Force.cs" />
+    <Compile Include="Workbench\Pads\SolutionPad\AnalogInput\ContextMenu\RemoveForce.cs" />
+    <Compile Include="Workbench\Pads\SolutionPad\AnalogOutput\AnalogOutputItem.cs" />
+    <Compile Include="Workbench\Pads\SolutionPad\AnalogOutput\ContextMenu\Force.cs" />
+    <Compile Include="Workbench\Pads\SolutionPad\AnalogOutput\ContextMenu\RemoveForce.cs" />
+    <Compile Include="Workbench\Pads\SolutionPad\DeviceConfiguration\ContextMenu\ReadDeviceConfiguration.cs" />
+    <Compile Include="Workbench\Pads\SolutionPad\DeviceConfiguration\DeviceConfigurationItem.cs" />
+    <Compile Include="Workbench\Pads\SolutionPad\Device\DeviceItem.cs" />
+    <Compile Include="Workbench\Pads\SolutionPad\DiscreteInput\ContextMenu\ForceOff.cs" />
+    <Compile Include="Workbench\Pads\SolutionPad\DiscreteInput\ContextMenu\ForceOn.cs" />
+    <Compile Include="Workbench\Pads\SolutionPad\DiscreteInput\ContextMenu\RemoveForce.cs" />
+    <Compile Include="Workbench\Pads\SolutionPad\DiscreteInput\DiscreteInputItem.cs" />
+    <Compile Include="Workbench\Pads\SolutionPad\DiscreteOutput\ContextMenu\ForceOff.cs" />
+    <Compile Include="Workbench\Pads\SolutionPad\DiscreteOutput\ContextMenu\ForceOn.cs" />
+    <Compile Include="Workbench\Pads\SolutionPad\DiscreteOutput\ContextMenu\RemoveForce.cs" />
+    <Compile Include="Workbench\Pads\SolutionPad\DiscreteOutput\DiscreteOutputItem.cs" />
+    <Compile Include="Workbench\Pads\SolutionPad\Driver\DriverItem.cs" />
+    <Compile Include="Workbench\Pads\SolutionPad\PageCollection\ContextMenu\Add.cs" />
+    <Compile Include="Workbench\Pads\SolutionPad\PageCollection\ContextMenu\Delete.cs" />
+    <Compile Include="Workbench\Pads\SolutionPad\PageCollection\ContextMenu\MoveDown.cs" />
+    <Compile Include="Workbench\Pads\SolutionPad\PageCollection\ContextMenu\MoveUp.cs" />
+    <Compile Include="Workbench\Pads\SolutionPad\PageCollection\PageCollectionItem.cs" />
+    <Compile Include="Workbench\Pads\SolutionPad\Page\ContextMenu\MoveDown.cs" />
+    <Compile Include="Workbench\Pads\SolutionPad\Page\ContextMenu\MoveUp.cs" />
+    <Compile Include="Workbench\Pads\SolutionPad\Page\ContextMenu\Delete.cs" />
+    <Compile Include="Workbench\Pads\SolutionPad\Page\PageItem.cs" />
+    <Compile Include="Workbench\Pads\SolutionPad\RootSolutionItem\ContextMenu\Add.cs" />
+    <Compile Include="Workbench\Pads\SolutionPad\RootSolutionItem\ContextMenu\Properties.cs" />
+    <Compile Include="Workbench\Pads\SolutionPad\RootSolutionItem\RootSolutionItem.cs" />
+    <Compile Include="Workbench\Pads\SolutionPad\RuntimeApplication\ContextMenu\Connect.cs" />
+    <Compile Include="Workbench\Pads\SolutionPad\RuntimeApplication\ContextMenu\Stop.cs" />
+    <Compile Include="Workbench\Pads\SolutionPad\RuntimeApplication\ContextMenu\Start.cs" />
+    <Compile Include="Workbench\Pads\SolutionPad\RuntimeApplication\ContextMenu\Delete.cs" />
+    <Compile Include="Workbench\Pads\SolutionPad\RuntimeApplication\ContextMenu\Disconnect.cs" />
+    <Compile Include="Workbench\Pads\SolutionPad\RuntimeApplication\ContextMenu\Properties.cs" />
+    <Compile Include="Workbench\Pads\SolutionPad\RuntimeApplication\RuntimeApplicationItem.cs" />
+    <Compile Include="Workbench\Pads\SolutionPad\RuntimeApplication\UploadDownloadDialog\UploadDownloadDialog.cs" />
+    <Compile Include="Workbench\Pads\SolutionPad\RuntimeApplication\UploadDownloadDialog\UploadDownloadDialogView.xaml.cs">
+      <DependentUpon>UploadDownloadDialogView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Workbench\Pads\SolutionPad\SignalIn\SignalInItem.cs" />
+    <Compile Include="Workbench\Pads\SolutionPad\SolutionPad.cs" />
+    <Compile Include="Workbench\Pads\SolutionPad\SolutionPadView.xaml.cs">
+      <DependentUpon>SolutionPadView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Workbench\Pads\SolutionPad\StringInput\ContextMenu\Force.cs" />
+    <Compile Include="Workbench\Pads\SolutionPad\StringInput\ContextMenu\RemoveForce.cs" />
+    <Compile Include="Workbench\Pads\SolutionPad\StringInput\StringInputItem.cs" />
+    <Compile Include="Workbench\Pads\SolutionPad\StringOutput\ContextMenu\Force.cs" />
+    <Compile Include="Workbench\Pads\SolutionPad\StringOutput\ContextMenu\RemoveForce.cs" />
+    <Compile Include="Workbench\Pads\SolutionPad\StringOutput\StringOutputItem.cs" />
+    <Compile Include="Workbench\ToolBars\SolutionToolBar.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\SoapBox.Core\SoapBox.Core.Contracts\SoapBox.Core.Contracts.csproj">
+      <Project>{FDF772E9-FEF6-487A-B5C7-B64267449CC0}</Project>
+      <Name>SoapBox.Core.Contracts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\SoapBox.Protocol\SoapBox.Protocol.Automation\SoapBox.Protocol.Automation.csproj">
+      <Project>{02F6E901-BCDB-49A2-84E0-49D272DC6004}</Project>
+      <Name>SoapBox.Protocol.Automation</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\SoapBox.Protocol\SoapBox.Protocol.Base\SoapBox.Protocol.Base.csproj">
+      <Project>{74C35527-CAAA-4829-A07C-C8B360A37172}</Project>
+      <Name>SoapBox.Protocol.Base</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\SoapBox.Utilities\SoapBox.Utilities.csproj">
+      <Project>{28CCC32E-9FEC-40B5-B7A9-299449635464}</Project>
+      <Name>SoapBox.Utilities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SoapBox.Snap.Contracts\SoapBox.Snap.Contracts.csproj">
+      <Project>{EA1DF330-F94C-4753-8822-2B82FCCBAA45}</Project>
+      <Name>SoapBox.Snap.Contracts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SoapBox.Snap.MarkdownUtility\SoapBox.Snap.MarkdownUtility.csproj">
+      <Project>{B66B4B03-2569-4800-BABB-E55435171452}</Project>
+      <Name>SoapBox.Snap.MarkdownUtility</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SoapBox.Snap.Runtime\SoapBox.Snap.Runtime.csproj">
+      <Project>{A984A1CC-3631-4F4F-A0A1-9696F48622DF}</Project>
+      <Name>SoapBox.Snap.Runtime</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="App\Startup\Dummy.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Options\ApplicationOptionsPadView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Services\RuntimeService\GetConstantDialog\GetConstantDialogView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Services\RuntimeService\SignalChooserDialog\SignalChooserDialogView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Workbench\Documents\PageEditor\InstructionGroupDummyView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Workbench\Documents\PageEditor\InstructionGroupHeader.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Workbench\Documents\PageEditor\PageEditorView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Workbench\Documents\RuntimeApplicationProperties\RuntimeApplicationPropertiesView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Workbench\Documents\StartPage\StartPageView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Workbench\MainMenu\AboutBoxView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Workbench\Pads\InstructionPad\InstructionPadView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Workbench\Pads\SolutionPad\AbstractSolutionItemView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Workbench\Pads\SolutionPad\RuntimeApplication\UploadDownloadDialog\UploadDownloadDialogView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Workbench\Pads\SolutionPad\SolutionPadView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\Images.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Images.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Strings.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Strings.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Workbench\MainMenu\information.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="Empty.snp">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Example.snp">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Resources\link_add.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Logo.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Workbench\MainMenu\WolfCubLogo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\link_go.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\wrench.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\link_delete.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\link_break.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lightning.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lightbulb_off.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lightbulb.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\page_white.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\page_white_add.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cross1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\folder_add.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cross.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cancel.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\accept.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\page_white_edit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\help.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cross12.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\wand.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lightning_delete.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cross11.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\arrow_up.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\arrow_down.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\arrow_undo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\arrow_redo.png" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\arrow_rotate_clockwise.png" />
+    <None Include="Resources\cancel1.png" />
+    <None Include="Resources\arrow_up1.png" />
+    <None Include="Resources\arrow_down1.png" />
+    <None Include="Resources\arrow_down11.png" />
+    <None Include="Resources\arrow_up11.png" />
+    <Content Include="Services\SolutionService\README.txt" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

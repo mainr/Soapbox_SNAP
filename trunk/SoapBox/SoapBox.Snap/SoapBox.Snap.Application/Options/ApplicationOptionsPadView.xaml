@@ -1,0 +1,14 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="clr-namespace:SoapBox.Snap.Application"
+    x:Class="SoapBox.Snap.Application.ApplicationOptionsPadView">
+
+    <DataTemplate DataType="{x:Type local:ApplicationOptionsPad}">
+        <CheckBox
+            IsChecked="{Binding AutoOpenStartPageEdit}">
+            <TextBlock
+                Text="{x:Static local:Resources.Strings.Options_ApplicationOptions_General_AutoOpenStartPage}"/>
+        </CheckBox>
+    </DataTemplate>
+
+</ResourceDictionary>

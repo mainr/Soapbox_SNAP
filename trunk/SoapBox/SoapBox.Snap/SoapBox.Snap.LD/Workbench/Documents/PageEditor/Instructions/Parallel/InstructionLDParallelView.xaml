@@ -1,0 +1,35 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="clr-namespace:SoapBox.Snap.LD"
+    xmlns:core="clr-namespace:SoapBox.Core;assembly=SoapBox.Core.Contracts"
+    xmlns:snap="clr-namespace:SoapBox.Snap;assembly=SoapBox.Snap.Contracts"
+    x:Class="SoapBox.Snap.LD.InstructionLDParallelView">
+
+    <DataTemplate DataType="{x:Type local:InstructionLDParallel}">
+        <core:ContextMenuWrapper>
+            <ItemsControl
+                ItemsSource="{Binding Items}" 
+                BorderBrush="Transparent"
+                HorizontalContentAlignment="Stretch"
+                HorizontalAlignment="Stretch"
+                BorderThickness="0"
+                Margin="0" Padding="0"
+                ClipToBounds="False">
+
+                <ItemsControl.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <local:LDParallelPanel
+                            Background="White"/>
+                    </ItemsPanelTemplate>
+                </ItemsControl.ItemsPanel>
+                <ItemsControl.ItemContainerStyle>
+                    <Style>
+                        <Setter Property="ItemsPresenter.HorizontalAlignment" Value="Stretch"/>
+                        <Setter Property="ItemsPresenter.Margin" Value="0"/>
+                    </Style>
+                </ItemsControl.ItemContainerStyle>
+            </ItemsControl>
+        </core:ContextMenuWrapper>
+    </DataTemplate>
+
+</ResourceDictionary>

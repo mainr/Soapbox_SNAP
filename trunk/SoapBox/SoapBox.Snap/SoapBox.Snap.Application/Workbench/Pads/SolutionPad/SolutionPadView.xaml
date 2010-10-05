@@ -1,0 +1,23 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="clr-namespace:SoapBox.Snap.Application"
+    xmlns:contracts="clr-namespace:SoapBox.Snap;assembly=SoapBox.Snap.Contracts"
+    x:Class="SoapBox.Snap.Application.SolutionPadView">
+
+    <DataTemplate DataType="{x:Type local:SolutionPad}">
+        <!-- Tree -->
+        <TreeView Name="tvSolutionPad"
+                  ItemsSource="{Binding Path=(local:SolutionPad.Items)}">
+            <TreeView.ItemContainerStyle>
+                <Style>
+                    <Setter Property="TreeViewItem.Header" Value="{Binding}"/>
+                    <Setter Property="TreeViewItem.ToolTip" Value="{Binding ToolTip}"/>
+                    <Setter Property="TreeViewItem.ItemsSource" Value="{Binding Path=(contracts:INodeWrapper.Items)}"/>
+                    <Setter Property="TreeViewItem.IsExpanded" Value="{Binding Path=(contracts:ISolutionItem.IsExpanded)}"/>
+                    <Setter Property="TreeViewItem.IsSelected" Value="{Binding Path=(contracts:INodeWrapper.IsSelected)}"/>
+                </Style>
+            </TreeView.ItemContainerStyle>
+        </TreeView>
+    </DataTemplate>
+
+</ResourceDictionary>

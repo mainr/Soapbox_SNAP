@@ -1,0 +1,29 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="clr-namespace:SoapBox.Core"
+    x:Class="SoapBox.Core.AbstractStatusBarSeparatorView">
+
+    <!-- For some strange reason, this ResourceKey exists but is defined as a horizontal line -->
+    <Style x:Key="{x:Static StatusBar.SeparatorStyleKey}" TargetType="Separator">
+        <Setter Property="Height" Value="15"/>
+        <Setter Property="Margin" Value="4,4,4,4"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Separator">
+                    <Rectangle Height="15" Width="1" Fill="Black" />
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    
+    <DataTemplate DataType="{x:Type local:AbstractStatusBarSeparator}">
+        <DataTemplate.Resources>
+            <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter"/>
+        </DataTemplate.Resources>
+        <Separator Style="{DynamicResource {x:Static StatusBar.SeparatorStyleKey}}"
+                ToolTip="{Binding Path=(local:AbstractStatusBarSeparator.ToolTip)}"
+                Visibility="{Binding Path=(local:IControl.Visible), 
+                        Converter={StaticResource BooleanToVisibilityConverter}}"/>
+    </DataTemplate>
+
+</ResourceDictionary>

@@ -1,0 +1,13 @@
+﻿<ResourceDictionary 
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="clr-namespace:SoapBox.Snap.LD"
+    xmlns:contracts="clr-namespace:SoapBox.Snap;assembly=SoapBox.Snap.Contracts"
+    x:Class="SoapBox.Snap.LD.AbstractSignalChooserTextBlockView">
+
+    <DataTemplate DataType="{x:Type local:AbstractSignalChooserTextBlock}">
+        <ContentControl
+            Content="{Binding Path=VmSignalChooserTextBlock}"/>
+    </DataTemplate>
+
+</ResourceDictionary>

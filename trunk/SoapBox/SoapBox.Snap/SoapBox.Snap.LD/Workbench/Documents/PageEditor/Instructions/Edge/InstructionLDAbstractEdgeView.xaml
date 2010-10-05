@@ -1,0 +1,33 @@
+﻿<ResourceDictionary 
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="clr-namespace:SoapBox.Snap.LD"
+    xmlns:core="clr-namespace:SoapBox.Core;assembly=SoapBox.Core.Contracts"
+    xmlns:contracts="clr-namespace:SoapBox.Snap;assembly=SoapBox.Snap.Contracts"
+    xmlns:util="clr-namespace:SoapBox.Utilities;assembly=SoapBox.Utilities"
+    x:Class="SoapBox.Snap.LD.InstructionLDAbstractEdgeView">
+
+    <DataTemplate DataType="{x:Type local:InstructionLDAbstractEdge}">
+        <core:ContextMenuWrapper>
+            <DockPanel>
+                <ContentPresenter
+                    DockPanel.Dock="Top"
+                    Content="{Binding Path=AbstractEdgeDescriptionEditor.VmEditableTextBlock}"/>
+                <ContentPresenter
+                    DockPanel.Dock="Top"
+                    Content="{Binding Path=AbstractEdgeNameEditor.VmEditableTextBlock}"/>
+                <Border
+                    BorderBrush="Black"
+                    BorderThickness="1.5"
+                    Background="White"
+                    Width="{x:Static local:InstructionLDAbstractEdge.MAX_WIDTH}"
+                    Height="21">
+                    <StackPanel Margin="3,0,3,0">
+                        <TextBlock Text="{Binding InstructionName}"/>
+                    </StackPanel>
+                </Border>
+            </DockPanel>
+        </core:ContextMenuWrapper>
+    </DataTemplate>
+
+</ResourceDictionary>

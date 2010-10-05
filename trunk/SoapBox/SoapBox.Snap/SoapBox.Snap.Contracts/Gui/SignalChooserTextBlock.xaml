@@ -1,0 +1,48 @@
+﻿<UserControl x:Class="SoapBox.Snap.SignalChooserTextBlock"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:util="clr-namespace:SoapBox.Utilities;assembly=SoapBox.Utilities"
+             mc:Ignorable="d" 
+             x:Name="bindingRoot"
+             d:DesignHeight="300" d:DesignWidth="300">
+    <UserControl.Resources>
+        <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter"/>
+        <util:ReverseBooleanToVisibilityConverter x:Key="ReverseBooleanToVisibilityConverter"/>
+    </UserControl.Resources>
+    <Grid 
+        MouseDown="TextBlock_MouseDown"
+        Background="#f2f2ff">
+        <TextBlock
+            x:Name="textBlock"
+            Text="{Binding ElementName=bindingRoot,Path=Text}"
+            HorizontalAlignment="Stretch" 
+            TextWrapping="NoWrap"
+            TextAlignment="{Binding ElementName=bindingRoot,Path=TextAlignment}"
+            Visibility="{Binding ElementName=bindingRoot,Path=Editing, 
+                    Converter={StaticResource ReverseBooleanToVisibilityConverter}}"/>
+        <StackPanel 
+            Orientation="Horizontal" 
+            HorizontalAlignment="Center" 
+            LostKeyboardFocus="TextBox_LostKeyboardFocus"
+            Visibility="{Binding ElementName=bindingRoot,Path=Editing, 
+               Converter={StaticResource BooleanToVisibilityConverter}}">
+            <TextBox
+                x:Name="textBox"
+                Text="{Binding ElementName=bindingRoot,Path=EditedText, UpdateSourceTrigger=PropertyChanged}"
+                Height="{Binding ElementName=textBlock, Path=ActualHeight}"
+                BorderThickness="0" Margin="0" Padding="-4,0,0,0"
+                TextWrapping="NoWrap"
+                Background="Transparent"
+                TextAlignment="{Binding ElementName=bindingRoot,Path=TextAlignment}"
+                KeyDown="TextBox_KeyDown"
+                KeyUp="TextBox_KeyUp"/>
+            <Button
+                x:Name="btnSignalChooserDialog"
+                VerticalAlignment="Top"
+                Height="20">...</Button>
+        </StackPanel>
+    </Grid>
+
+</UserControl>

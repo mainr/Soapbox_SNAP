@@ -1,0 +1,33 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="clr-namespace:SoapBox.Snap.LD"
+    xmlns:contracts="clr-namespace:SoapBox.Snap;assembly=SoapBox.Snap.Contracts"
+    x:Class="SoapBox.Snap.LD.InstructionGroupLDView">
+
+    <DataTemplate DataType="{x:Type local:InstructionGroupLD}">
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Line DockPanel.Dock="Left" Grid.Column="0"
+                  X1="0" Y1="0" X2="0" Y2="1" Stretch="Fill" 
+                  Margin="10,0,0,0"
+                  SnapsToDevicePixels="True"
+                  Stroke="Black" StrokeThickness="1.5"/>
+            <ContentControl 
+                Grid.Column="1"
+                BorderThickness="0"
+                HorizontalAlignment="Left"            
+                SnapsToDevicePixels="True"
+                Content="{Binding Rung}"/>
+            <Line DockPanel.Dock="Right" Grid.Column="2"
+                  X1="0" Y1="0" X2="0" Y2="1" Stretch="Fill" 
+                  Margin="0,0,10,0"
+                  SnapsToDevicePixels="True"
+                  Stroke="Black" StrokeThickness="2"/>
+        </Grid>
+    </DataTemplate>
+
+</ResourceDictionary>

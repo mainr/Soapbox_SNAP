@@ -1,0 +1,11 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="clr-namespace:SoapBox.Core.Layout"
+    x:Class="SoapBox.Core.Layout.LayoutManagerView">
+
+    <DataTemplate DataType="{x:Type local:LayoutManager}">
+        <ContentControl Content="{Binding Path=DockManager}">
+        </ContentControl>
+    </DataTemplate>
+
+</ResourceDictionary>

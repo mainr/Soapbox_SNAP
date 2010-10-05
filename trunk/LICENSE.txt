@@ -1,0 +1,280 @@
+SoapBox Snap is Copyright (C) 2010 SoapBox Automation Inc.
+Contact: SoapBox Automation Licencing (license@soapboxautomation.com)
+
+====================
+SOAPBOX SNAP LICENSE
+====================
+
+SoapBox Snap is free software: you can redistribute it and/or modify it 
+under the terms of the GNU General Public License as published by the 
+Free Software Foundation, either version 3 of the License, or 
+(at your option) any later version.
+
+EXCEPTION: This distribution of SoapBox Snap may be linked against the Phidgets Driver Library according to the terms of the section below entitled "Phidgets Driver Exception."
+
+SoapBox Snap is distributed in the hope that it will be useful, but
+WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General
+Public License for more details.
+
+You should have received a copy of the GNU General Public License along
+with SoapBox Snap. If not, see <http://www.gnu.org/licenses/>.
+
+                   _Phidgets Driver Exception_
+
+0. Definitions
+
+"SoapBox Snap" means SoapBox Snap software licensed under version 3 or 
+any later version of the GNU General Public License (collectively, "GPL"), 
+or a work based on such software and licensed under the GPL.
+
+"Phidgets Driver" means the Phidgets Driver Library software distributed by  
+Phidgets Inc. and licensed under the SS-LPL License.
+
+"SS-LPL" means the Shared Source Limited Permissive License, which you can 
+find here: <http://www.phidgets.com/documentation/Licenses/Phidgets_EULA.pdf>.
+
+1. Exception
+
+You have permission to copy, modify, propagate, and distribute a work
+formed by combining the Phidgets Driver with SoapBox Snap, or a work 
+derivative of such a combination, even if such copying, modification, 
+propagation, or distribution would otherwise violate the terms of the GPL. 
+You must comply with the GPL in all respects for all of the code used 
+other than the Phidgets Driver.
+
+You may include this Phidgets Driver Exception and its 
+grant of permissions when you distribute SoapBox Snap.  Inclusion of this 
+notice with such a distribution constitutes a grant of such permission.  
+If you do not wish to grant these permissions, remove this section entitled 
+"Phidgets Driver Exception" from your distribution.
+
+============================================================================
+
+SoapBox Core is distributed under this license:
+
+SoapBox Core is Copyright (C) 2009 SoapBox Automation Inc.
+Contact: SoapBox Automation Licencing (license@soapboxautomation.com)
+
+====================
+SOAPBOX CORE LICENSE
+====================
+
+Commercial Usage
+Licensees holding valid SoapBox Automation Commercial licenses may use  
+SoapBox Core in accordance with the SoapBox Automation Commercial License
+Agreement provided with the Software or, alternatively, in accordance 
+with the terms contained in a written agreement between you and
+SoapBox Automation Inc.
+
+GNU Lesser General Public License Usage
+SoapBox Core is free software: you can redistribute it and/or modify it 
+under the terms of the GNU Lesser General Public License as published by the 
+Free Software Foundation, either version 3 of the License, or 
+(at your option) any later version.
+
+SoapBox Core is distributed in the hope that it will be useful, but
+WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU Lesser 
+General Public License for more details.
+
+You should have received a copy of the GNU Lesser General Public License 
+along with SoapBox Core. If not, see <http://www.gnu.org/licenses/>.
+
+============================================================================
+
+AvalonDock is distributed under this license:
+
+Copyright (c) 2009, Juergen Schildmann
+Copyright (c) 2007-2009, Adolfo Marinucci
+All rights reserved.
+
+Redistribution and use in source and binary forms, with or without modification, 
+are permitted provided that the following conditions are met:
+
+* Redistributions of source code must retain the above copyright notice, 
+  this list of conditions and the following disclaimer.
+* Redistributions in binary form must reproduce the above copyright notice, 
+  this list of conditions and the following disclaimer in the documentation 
+  and/or other materials provided with the distribution.
+* Neither the name of Adolfo Marinucci nor the names of its contributors may 
+  be used to endorse or promote products derived from this software without 
+  specific prior written permission.
+
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" 
+AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED 
+WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. 
+IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, 
+INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, 
+PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) 
+HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, 
+OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, 
+EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+============================================================================
+
+NLog is distributed under this license:
+
+Copyright (c) 2004-2006 Jaroslaw Kowalski <jaak@jkowalski.net>
+
+All rights reserved.
+
+Redistribution and use in source and binary forms, with or without 
+modification, are permitted provided that the following conditions 
+are met:
+
+* Redistributions of source code must retain the above copyright notice, 
+  this list of conditions and the following disclaimer. 
+
+* Redistributions in binary form must reproduce the above copyright notice,
+  this list of conditions and the following disclaimer in the documentation
+  and/or other materials provided with the distribution. 
+
+* Neither the name of Jaroslaw Kowalski nor the names of its 
+  contributors may be used to endorse or promote products derived from this
+  software without specific prior written permission. 
+
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE 
+IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE 
+ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE 
+LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR 
+CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
+SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS 
+INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN 
+CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) 
+ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF 
+THE POSSIBILITY OF SUCH DAMAGE.
+
+============================================================================
+
+Physics2DDotNet is distributed under this license:
+
+The MIT License
+
+Copyright (c) 2005-2007 Jonathan Mark Porter. http://physics2d.googlepages.com/
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of
+this software and associated documentation files (the "Software"), to deal in 
+the Software without restriction, including without limitation the rights to 
+use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies 
+of the Software, and to permit persons to whom the Software is furnished to do 
+so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all 
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR 
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, 
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE 
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER 
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, 
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE 
+SOFTWARE.
+
+============================================================================
+
+SoapBox Utilities is distributed under this license:
+
+SoapBox Utilities is Copyright (C) 2010 SoapBox Automation Inc.
+Contact: SoapBox Automation Licencing (license@soapboxautomation.com)
+
+=========================
+SOAPBOX UTILITIES LICENSE
+=========================
+
+("MIT License")
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+THE SOFTWARE.
+
+============================================================================
+
+MarkdownSharp is distributed under the MIT license.
+Read more here: <http://code.google.com/p/markdownsharp/>.
+
+============================================================================
+
+TweetSharp, and it's dependencies, are distributed under the MIT license.
+Read more here:
+ - TweetSharp: <http://tweetsharp.codeplex.com/>
+ - Hammock: <http://hammock.codeplex.com/>
+ - Json.NET: <http://json.codeplex.com/>
+
+============================================================================
+
+The Phidgets Driver is distributed under this license:
+
+Shared Source Limited Permissive License (SS-LPL)
+
+This license governs use of the accompanying software. If you use the 
+software, you accept this license. If you do not accept the license, do not 
+use the software.
+
+1. Definitions
+The terms “reproduce,” “reproduction” and “distribution” have the same 
+meaning here as under U.S. copyright law.
+“You” means the licensee of the software.
+“Licensed patents” means any Licensor patent claims which read directly 
+on the software as distributed by the Licensor under this license.
+
+2. Grant of Rights
+(A) Copyright Grant- Subject to the terms of this license, including the 
+license conditions and limitations in section 3, the Licensor grants you a 
+non-exclusive, worldwide, royalty-free copyright license to reproduce the 
+software, prepare derivative works of the software and distribute the
+software or any derivative works that you create.
+(B) Patent Grant- Subject to the terms of this license, including the 
+license conditions and limitations in section 3, the Licensor grants you 
+a non-exclusive, worldwide, royalty-free patent license under licensed 
+patents to make, have made, use, practice, sell, and offer for sale, and/or
+otherwise dispose of the software or derivative works of the software.
+
+3. Conditions and Limitations
+(A) No Trademark License- This license does not grant you any rights to 
+use Licensor’s name, logo, or trademarks.
+(B) If you begin patent litigation against the Licensor over patents that 
+you think may apply to the software (including a cross-claim or 
+counterclaim in a lawsuit), your license to the software ends automatically.
+(C) If you distribute copies of the software or derivative works, you must 
+retain all copyright, patent, trademark, and attribution notices that are 
+present in the software.
+(D) If you distribute the software or derivative works in source code form 
+you may do so only under this license (i.e., you must include a complete 
+copy of this license with your distribution), and if you distribute the 
+software or derivative works in compiled or object code form you may
+only do so under a license that complies with this license.
+(E) The software is licensed “as-is.” You bear the risk of using it. The 
+Licensor gives no express warranties, guarantees or conditions. You may have 
+additional consumer rights under your local laws which this license cannot 
+change. To the extent permitted under your local laws, the Licensor excludes 
+the implied warranties of merchantability, fitness for a particular purpose 
+and non-infringement.
+(F) Platform Limitation- The licenses granted in sections 2(A) & 2(B) extend 
+only to the software or derivative works that you create that run on a 
+Microsoft Windows operating system product.
+
+The C API section of Phidget21 is covered by the GNU Lesser General Public 
+License: <http://www.phidgets.com/documentation/Licenses/GNULGPL-GPLv3.pdf>. 
+
+===========================================================================
+
+The images in SoapBox Core are from the Silk Icons collection:
+http://www.famfamfam.com/lab/icons/silk/
+
+...which are licensed under a Creative Commons Attribution 2.5 License.

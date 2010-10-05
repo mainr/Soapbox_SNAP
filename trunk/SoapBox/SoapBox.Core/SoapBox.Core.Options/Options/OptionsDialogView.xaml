@@ -1,0 +1,54 @@
+﻿<Window x:Class="SoapBox.Core.Options.OptionsDialogView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="clr-namespace:SoapBox.Core.Options"
+    xmlns:contracts="clr-namespace:SoapBox.Core;assembly=SoapBox.Core.Contracts"
+    Title="{x:Static local:Resources.Strings.OptionsDialog_Title}" 
+    Height="520" Width="730" 
+    WindowStyle="SingleBorderWindow" 
+    WindowStartupLocation="CenterOwner"
+    ResizeMode="CanResize">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+
+        <!-- Tree -->
+        <TreeView Margin="12,12,12,0" Name="tvMenu"
+              ItemsSource="{Binding Path=(contracts:IOptionsItem.Items)}">
+            <TreeView.ItemContainerStyle>
+                <Style>
+                    <Setter Property="TreeViewItem.Header" Value="{Binding Path=(contracts:IOptionsItem.Header)}"/>
+                    <Setter Property="TreeViewItem.ItemsSource" Value="{Binding Path=(contracts:IOptionsItem.Items)}"/>
+                    <Setter Property="TreeViewItem.Margin" Value="0,2,16,2"/>
+                    <Style.Triggers>
+                        <Trigger Property="TreeViewItem.IsMouseOver" Value="True" >
+                            <Setter Property="TreeViewItem.Background" Value="WhiteSmoke" />
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </TreeView.ItemContainerStyle>
+        </TreeView>
+
+        <StackPanel Grid.Row="1" Grid.Column="1" Margin="4" Orientation="Horizontal" FlowDirection="RightToLeft">
+            <!-- Ok and Cancel -->
+            <Button IsCancel="True" Width="120" Height="30" Margin="0,0,8,0"
+            Command="{Binding CancelButton}" Click="Cancel_Click">
+                <TextBlock Text="{x:Static local:Resources.Strings.OptionsDialog_Cancel}" />
+            </Button>
+            <Button IsDefault="True" Width="120" Height="30" Margin="0,0,8,0"
+            Command="{Binding OKButton}" Click="OK_Click">
+                <TextBlock Text="{x:Static local:Resources.Strings.OptionsDialog_OK}" />
+            </Button>
+        </StackPanel>
+
+        <!-- Content -->
+        <ContentControl Margin="0,12,12,0" Grid.Row="0" Grid.Column="1" Name="mainContent" Content="{Binding ElementName=tvMenu, Path=SelectedItem.Pad}" />
+    </Grid>
+</Window>

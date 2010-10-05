@@ -1,0 +1,23 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="clr-namespace:SoapBox.Snap.Application"
+    xmlns:contracts="clr-namespace:SoapBox.Snap;assembly=SoapBox.Snap.Contracts"
+    x:Class="SoapBox.Snap.Application.InstructionPadView">
+
+    <DataTemplate DataType="{x:Type local:InstructionPad}">
+        <DataTemplate.Resources>
+            <DataTemplate x:Key="instructionPadItemDataTemplate">
+                <DataTemplate.Resources>
+                    <local:InstructionSpriteConverter x:Key="spriteConverter"/>
+                </DataTemplate.Resources>
+                <ContentControl 
+                        PreviewMouseLeftButtonDown="ContentControl_PreviewMouseLeftButtonDown"
+                        PreviewMouseMove="ContentControl_PreviewMouseMove"
+                        Content="{Binding Path=Metadata,Converter={StaticResource spriteConverter}}"/>
+            </DataTemplate>
+        </DataTemplate.Resources>
+        <ListView ItemsSource="{Binding Instructions}" ItemTemplate="{StaticResource instructionPadItemDataTemplate}">
+        </ListView>
+    </DataTemplate>
+
+</ResourceDictionary>

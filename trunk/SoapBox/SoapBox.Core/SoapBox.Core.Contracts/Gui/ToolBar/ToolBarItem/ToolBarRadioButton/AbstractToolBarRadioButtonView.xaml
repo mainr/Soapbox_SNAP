@@ -1,0 +1,24 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="clr-namespace:SoapBox.Core"
+    x:Class="SoapBox.Core.AbstractToolBarRadioButtonView">
+
+    <DataTemplate DataType="{x:Type local:AbstractToolBarRadioButton}">
+        <DataTemplate.Resources>
+            <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter"/>
+        </DataTemplate.Resources>
+        <RadioButton Style="{DynamicResource {x:Static ToolBar.RadioButtonStyleKey}}" 
+                ToolTip="{Binding Path=(local:AbstractToolBarButton.ToolTip)}"
+                Command="{Binding}"
+                IsChecked="{Binding Path=(local:AbstractToolBarRadioButton.IsChecked)}"
+                GroupName="{Binding Path=(local:AbstractToolBarRadioButton.GroupName)}"
+                Visibility="{Binding Path=(local:IControl.Visible), 
+                    Converter={StaticResource BooleanToVisibilityConverter}}">
+            <StackPanel Orientation="Horizontal">
+                <Image Source="{Binding Path=(local:AbstractToolBarRadioButton.Icon)}"/>
+                <TextBlock Text="{Binding Path=(local:AbstractToolBarRadioButton.Text)}"/>
+            </StackPanel>
+        </RadioButton>
+    </DataTemplate>
+
+</ResourceDictionary>

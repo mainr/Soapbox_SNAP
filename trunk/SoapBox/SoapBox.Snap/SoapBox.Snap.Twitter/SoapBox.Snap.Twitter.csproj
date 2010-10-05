@@ -1,0 +1,169 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{DAA8B359-7920-4BD1-8EDF-A41ADD71E136}</ProjectGuid>
+    <OutputType>library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SoapBox.Snap.Twitter</RootNamespace>
+    <AssemblyName>SoapBox.Snap.Twitter</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\..\bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\..\..\bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Hammock.ClientProfile">
+      <HintPath>..\..\..\References\TweetSharp.ClientProfile\Hammock.ClientProfile.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\..\..\References\TweetSharp.ClientProfile\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="TweetSharp.ClientProfile">
+      <HintPath>..\..\..\References\TweetSharp.ClientProfile\TweetSharp.ClientProfile.dll</HintPath>
+    </Reference>
+    <Reference Include="TweetSharp.Twitter.ClientProfile">
+      <HintPath>..\..\..\References\TweetSharp.ClientProfile\TweetSharp.Twitter.ClientProfile.dll</HintPath>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CompositionPoints.cs" />
+    <Compile Include="Device\AbstractTwitterDevice.cs" />
+    <Compile Include="Device\ContextMenu\AuthenticateDialog.cs" />
+    <Compile Include="Device\ContextMenu\ClearCredentials.cs" />
+    <Compile Include="Device\ContextMenu\AuthenticateDialogView.xaml.cs">
+      <DependentUpon>AuthenticateDialogView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Device\UserStatusMonitor\UserStatusMonitor.cs" />
+    <Compile Include="Device\ContextMenu\Authenticate.cs" />
+    <Compile Include="Driver\ContextMenu\Add.cs" />
+    <Compile Include="Driver\SnapDriver.cs" />
+    <Compile Include="ExtensionPoints.cs" />
+    <Compile Include="Extensions.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="Resources\Images.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Images.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\Strings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Strings.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Rot13.cs" />
+    <Compile Include="Runtime\RuntimeDriver.cs" />
+    <Compile Include="TwitterConsumer.cs" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Images.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Images.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Strings.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Strings.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\SoapBox.Core\SoapBox.Core.Contracts\SoapBox.Core.Contracts.csproj">
+      <Project>{FDF772E9-FEF6-487A-B5C7-B64267449CC0}</Project>
+      <Name>SoapBox.Core.Contracts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\SoapBox.Protocol\SoapBox.Protocol.Automation\SoapBox.Protocol.Automation.csproj">
+      <Project>{02F6E901-BCDB-49A2-84E0-49D272DC6004}</Project>
+      <Name>SoapBox.Protocol.Automation</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\SoapBox.Protocol\SoapBox.Protocol.Base\SoapBox.Protocol.Base.csproj">
+      <Project>{74C35527-CAAA-4829-A07C-C8B360A37172}</Project>
+      <Name>SoapBox.Protocol.Base</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\SoapBox.Utilities\SoapBox.Utilities.csproj">
+      <Project>{28CCC32E-9FEC-40B5-B7A9-299449635464}</Project>
+      <Name>SoapBox.Utilities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SoapBox.Snap.Contracts\SoapBox.Snap.Contracts.csproj">
+      <Project>{EA1DF330-F94C-4753-8822-2B82FCCBAA45}</Project>
+      <Name>SoapBox.Snap.Contracts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SoapBox.Snap.Runtime.Contracts\SoapBox.Snap.Runtime.Contracts.csproj">
+      <Project>{F650E89E-4AB4-4491-A5A0-23F7550B123D}</Project>
+      <Name>SoapBox.Snap.Runtime.Contracts</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lock_go.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lock_break.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="Device\ContextMenu\AuthenticateDialogView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

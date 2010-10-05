@@ -1,0 +1,333 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="InstructionGroup_Header" xml:space="preserve">
+    <value>Ladder Logic</value>
+  </data>
+  <data name="Instruction_Delete" xml:space="preserve">
+    <value>Delete</value>
+  </data>
+  <data name="Instruction_Delete_ToolTip" xml:space="preserve">
+    <value>Delete this one instruction</value>
+  </data>
+  <data name="Instruction_Parallel_AppendBranch" xml:space="preserve">
+    <value>Append Branch</value>
+  </data>
+  <data name="Instruction_Parallel_AppendBranch_ToolTip" xml:space="preserve">
+    <value>Adds a new branch to the bottom</value>
+  </data>
+  <data name="Instruction_Parallel_RemoveEmptyBranches" xml:space="preserve">
+    <value>Remove Empty Branches</value>
+  </data>
+  <data name="Instruction_Parallel_RemoveEmptyBranches_ToolTip" xml:space="preserve">
+    <value>Removes branches that have no instructions</value>
+  </data>
+  <data name="LD_Snap_CntDN_InstructionName" xml:space="preserve">
+    <value>Count Down</value>
+  </data>
+  <data name="LD_Snap_CntUP_InstructionName" xml:space="preserve">
+    <value>Count Up</value>
+  </data>
+  <data name="LD_Snap_Coil_DefaultCoilName" xml:space="preserve">
+    <value>New Coil</value>
+  </data>
+  <data name="LD_Snap_Coil_InstructionName" xml:space="preserve">
+    <value>Coil</value>
+  </data>
+  <data name="LD_Snap_Ctr_CountLabel" xml:space="preserve">
+    <value>Count:</value>
+  </data>
+  <data name="LD_Snap_Ctr_CountName" xml:space="preserve">
+    <value>Count</value>
+  </data>
+  <data name="LD_Snap_Ctr_DefaultName" xml:space="preserve">
+    <value>New Counter</value>
+  </data>
+  <data name="LD_Snap_Ctr_OneshotStateName" xml:space="preserve">
+    <value>Rung In</value>
+  </data>
+  <data name="LD_Snap_Ctr_ResetLabel" xml:space="preserve">
+    <value>Reset:</value>
+  </data>
+  <data name="LD_Snap_Ctr_SetpointLabel" xml:space="preserve">
+    <value>Setpoint:</value>
+  </data>
+  <data name="LD_Snap_FallingEdge_InstructionName" xml:space="preserve">
+    <value>Falling Edge</value>
+  </data>
+  <data name="LD_Snap_RisingEdge_DefaultName" xml:space="preserve">
+    <value>Rising Edge</value>
+  </data>
+  <data name="LD_Snap_RisingEdge_InstructionName" xml:space="preserve">
+    <value>Rising Edge</value>
+  </data>
+  <data name="LD_Snap_SetReset_DefaultName" xml:space="preserve">
+    <value>New Set-Reset</value>
+  </data>
+  <data name="LD_Snap_SetReset_InstructionName" xml:space="preserve">
+    <value>Set/Reset</value>
+  </data>
+  <data name="LD_Snap_SetReset_ResetLabel" xml:space="preserve">
+    <value>Reset:</value>
+  </data>
+  <data name="LD_Snap_StringContains_CaseSensitiveLabel" xml:space="preserve">
+    <value>Case Sensitive:</value>
+  </data>
+  <data name="LD_Snap_StringContains_DefaultName" xml:space="preserve">
+    <value>New Find Text</value>
+  </data>
+  <data name="LD_Snap_StringContains_InstructionName" xml:space="preserve">
+    <value>Find Text</value>
+  </data>
+  <data name="LD_Snap_StringContains_StringToFindLabel" xml:space="preserve">
+    <value>Text to Find:</value>
+  </data>
+  <data name="LD_Snap_StringContains_StringToSearchLabel" xml:space="preserve">
+    <value>Text to Search:</value>
+  </data>
+  <data name="LD_Snap_TmrOFF_InstructionName" xml:space="preserve">
+    <value>Delay Off Timer</value>
+  </data>
+  <data name="LD_Snap_TmrON_InstructionName" xml:space="preserve">
+    <value>Delay On Timer</value>
+  </data>
+  <data name="LD_Snap_Tmr_DefaultName" xml:space="preserve">
+    <value>New Timer</value>
+  </data>
+  <data name="LD_Snap_Tmr_ElapsedLabel" xml:space="preserve">
+    <value>Elapsed (ms):</value>
+  </data>
+  <data name="LD_Snap_Tmr_ElapsedName" xml:space="preserve">
+    <value>Elapsed</value>
+  </data>
+  <data name="LD_Snap_Tmr_SetpointLabel" xml:space="preserve">
+    <value>Setpoint (ms):</value>
+  </data>
+  <data name="ToolTipCntDN" xml:space="preserve">
+    <value>Count Down Counter</value>
+  </data>
+  <data name="ToolTipCntUP" xml:space="preserve">
+    <value>Count Up Counter</value>
+  </data>
+  <data name="ToolTipCoil" xml:space="preserve">
+    <value>Coil</value>
+  </data>
+  <data name="ToolTipContactNC" xml:space="preserve">
+    <value>Normally Closed Contact</value>
+  </data>
+  <data name="ToolTipContactNO" xml:space="preserve">
+    <value>Normally Open Contact</value>
+  </data>
+  <data name="ToolTipFallingEdge" xml:space="preserve">
+    <value>Falling Edge Detection</value>
+  </data>
+  <data name="ToolTipParallel" xml:space="preserve">
+    <value>Parallel Branch(es)</value>
+  </data>
+  <data name="ToolTipRisingEdge" xml:space="preserve">
+    <value>Rising Edge Detection</value>
+  </data>
+  <data name="ToolTipSetReset" xml:space="preserve">
+    <value>Set/Reset Coil</value>
+  </data>
+  <data name="ToolTipStringContains" xml:space="preserve">
+    <value>Find Text: Detects one piece of text inside of another</value>
+  </data>
+  <data name="ToolTipTmrOFF" xml:space="preserve">
+    <value>Delay-off Timer</value>
+  </data>
+  <data name="ToolTipTmrON" xml:space="preserve">
+    <value>Delay-on Timer</value>
+  </data>
+  <data name="Undo_Action_EditCoilDescription" xml:space="preserve">
+    <value>Edited coil description</value>
+  </data>
+  <data name="Undo_Action_EditCoilName" xml:space="preserve">
+    <value>Edited coil name</value>
+  </data>
+  <data name="Undo_Action_EditContactSignal" xml:space="preserve">
+    <value>Edited contact signal</value>
+  </data>
+  <data name="Undo_Action_EditCtrDescription" xml:space="preserve">
+    <value>Edited counter description</value>
+  </data>
+  <data name="Undo_Action_EditCtrName" xml:space="preserve">
+    <value>Edited counter name</value>
+  </data>
+  <data name="Undo_Action_EditCtrSetpointSignal" xml:space="preserve">
+    <value>Edited counter setpoint</value>
+  </data>
+  <data name="Undo_Action_EditEdgeDescription" xml:space="preserve">
+    <value>Edited edge detect description</value>
+  </data>
+  <data name="Undo_Action_EditEdgeName" xml:space="preserve">
+    <value>Edited edge detect name</value>
+  </data>
+  <data name="Undo_Action_EditFallingEdgeDescription" xml:space="preserve">
+    <value>Edited falling edge description</value>
+  </data>
+  <data name="Undo_Action_EditFallingEdgeName" xml:space="preserve">
+    <value>Edited falling edge name</value>
+  </data>
+  <data name="Undo_Action_EditResetSignal" xml:space="preserve">
+    <value>Edited counter reset signal</value>
+  </data>
+  <data name="Undo_Action_EditSetResetDescription" xml:space="preserve">
+    <value>Edited set/reset description</value>
+  </data>
+  <data name="Undo_Action_EditSetResetName" xml:space="preserve">
+    <value>Edited set/reset name</value>
+  </data>
+  <data name="Undo_Action_EditSetResetSignal" xml:space="preserve">
+    <value>Edited set/reset input signal</value>
+  </data>
+  <data name="Undo_Action_EditStringContainsDescription" xml:space="preserve">
+    <value>Edited find text description</value>
+  </data>
+  <data name="Undo_Action_EditStringContainsName" xml:space="preserve">
+    <value>Edited find text name</value>
+  </data>
+  <data name="Undo_Action_EditStringContainsSignal" xml:space="preserve">
+    <value>Edited find text input signal</value>
+  </data>
+  <data name="Undo_Action_EditTmrDescription" xml:space="preserve">
+    <value>Edited timer description</value>
+  </data>
+  <data name="Undo_Action_EditTmrName" xml:space="preserve">
+    <value>Edited timer name</value>
+  </data>
+  <data name="Undo_Action_EditTmrSetpointSignal" xml:space="preserve">
+    <value>Edited timer setpoint</value>
+  </data>
+  <data name="Undo_Action_Instruction_Parallel_AppendBranch" xml:space="preserve">
+    <value>Append branch</value>
+  </data>
+  <data name="Undo_Action_Instruction_Parallel_RemoveEmptyBranches" xml:space="preserve">
+    <value>Removing empty branches</value>
+  </data>
+  <data name="Undo_Action_Instruction_Series_DeleteSelected" xml:space="preserve">
+    <value>Delete selected instructions</value>
+  </data>
+  <data name="Undo_Action_Instruction_Series_Insert" xml:space="preserve">
+    <value>Insert instructions</value>
+  </data>
+  <data name="Undo_Action_Instruction_Series_Move" xml:space="preserve">
+    <value>Move instructions</value>
+  </data>
+</root>
