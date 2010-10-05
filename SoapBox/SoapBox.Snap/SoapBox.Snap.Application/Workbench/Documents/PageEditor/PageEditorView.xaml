@@ -1,0 +1,90 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="clr-namespace:SoapBox.Snap.Application"
+    xmlns:core="clr-namespace:SoapBox.Core;assembly=SoapBox.Core.Contracts"
+    xmlns:contracts="clr-namespace:SoapBox.Snap;assembly=SoapBox.Snap.Contracts"
+    xmlns:util="clr-namespace:SoapBox.Utilities;assembly=SoapBox.Utilities"
+    xmlns:markdown="clr-namespace:SoapBox.Snap.MarkdownUtility;assembly=SoapBox.Snap.MarkdownUtility"
+    x:Class="SoapBox.Snap.Application.PageEditorView">
+
+    <DataTemplate DataType="{x:Type local:PageEditor}">
+        <DataTemplate.Resources>
+            <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter"/>
+            <util:ReverseBooleanToVisibilityConverter x:Key="ReverseBooleanToVisibilityConverter"/>
+            <Style x:Key="PageEditorListViewItem" TargetType="{x:Type ListViewItem}">
+                <Setter Property="SnapsToDevicePixels" Value="true"/>
+                <Setter Property="OverridesDefaultStyle" Value="true"/>
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="ListBoxItem">
+                            <DockPanel  LastChildFill="True"
+                                        SnapsToDevicePixels="True">
+                                
+                                <local:InstructionGroupHeader
+                                    DockPanel.Dock="Left"
+                                    IsSelected="{Binding IsSelected}"/>
+                                <ContentPresenter 
+                                    HorizontalAlignment="Left"
+                                    Margin="3"/>
+                            </DockPanel>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+        </DataTemplate.Resources>
+        <DockPanel 
+            Name="PageEditorRoot" 
+            > <!-- IF YOU CHANGE THIS NAME, CHANGE AbstractEditorItem.PAGE_EDITOR_ROOT_NAME TOO -->
+            <DockPanel.CommandBindings>
+                <CommandBinding
+                    Command="ApplicationCommands.Undo"
+                    Executed="DockPanel_Undo"/>
+                <CommandBinding
+                    Command="ApplicationCommands.Redo"
+                    Executed="DockPanel_Redo"/>
+            </DockPanel.CommandBindings>
+            <DockPanel ScrollViewer.CanContentScroll="False" DataContext="{Binding EditorRoot}">
+                <Expander 
+                    Name="expComment"
+                    DockPanel.Dock="Top"
+                    IsExpanded="False">
+                    <Expander.Header>
+                        <StackPanel Orientation="Horizontal" Cursor="Hand">
+                            <TextBlock Text="{x:Static local:Resources.Strings.PageEditor_CommentExpanderHeader}" 
+                                       VerticalAlignment="Center"/>
+                        </StackPanel>
+                    </Expander.Header>
+                    <DockPanel
+                        LastChildFill="True">
+                        <ToolBarTray DockPanel.Dock="Top">
+                            <ToolBar ItemsSource="{Binding CommentButtons}"/>
+                        </ToolBarTray>
+                        <WebBrowser
+                            x:Name="wbComment" Height="200"
+                            Visibility="{Binding Path=CommentBeingEdited,
+                                    Converter={StaticResource ReverseBooleanToVisibilityConverter}}"
+                            markdown:MarkdownBinding.MarkdownSource="{Binding Comment}">
+                        </WebBrowser>
+                        <TextBox Text="{Binding Path=CommentEdit,UpdateSourceTrigger=PropertyChanged}"
+                                 FontFamily="Courier New" Height="200"
+                                 Visibility="{Binding Path=CommentBeingEdited,
+                                    Converter={StaticResource BooleanToVisibilityConverter}}"
+                                 AcceptsReturn="True"
+                                 AcceptsTab="True"/>
+                    </DockPanel>
+                </Expander>
+                <core:ContextMenuWrapper>
+                    <ListView 
+                        SelectionMode="Extended" 
+                        Grid.IsSharedSizeScope="True"
+                        SelectionChanged="pageEditor_SelectionChanged"
+                        ItemsSource="{Binding Items}"
+                        HorizontalContentAlignment="Stretch"
+                        ItemContainerStyle="{DynamicResource PageEditorListViewItem}">
+                    </ListView>
+                </core:ContextMenuWrapper>
+            </DockPanel>
+        </DockPanel>
+    </DataTemplate>
+
+</ResourceDictionary>

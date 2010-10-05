@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <Title>
+        Add SoapBox Child
+      </Title>
+      <Author>Scott Whitlock</Author>
+      <Description>The snippet creates a new SingleChild in a class</Description>
+      <Shortcut>sbc</Shortcut>
+    </Header>
+    <Snippet>
+      <Declarations>
+        <Literal>
+          <ID>ChildName</ID>
+          <ToolTip>Name of the child</ToolTip>
+          <Default>ChildName</Default>
+        </Literal>
+        <Literal>
+          <ID>ChildType</ID>
+          <ToolTip>Type of the child</ToolTip>
+          <Default>ChildType</Default>
+        </Literal>
+        <Literal>
+          <ID>ReturnType</ID>
+          <ToolTip>Should be the name of the class you're putting this in</ToolTip>
+          <Default>Node???</Default>
+        </Literal>
+      </Declarations>
+      <Code Language="CSharp">
+        <![CDATA[
+        #region " $ChildName$ ($ChildType$) "
+        private readonly SingleChild<$ChildType$, $ReturnType$> m_$ChildName$ = null;
+        public $ChildType$ $ChildName$
+        {
+            get
+            {
+                return m_$ChildName$.Item;
+            }
+        }
+        public $ReturnType$ Set$ChildName$($ChildType$ New$ChildName$)
+        {
+            if (New$ChildName$ == null)
+            {
+                throw new ArgumentNullException(m_$ChildName$Name);
+            }
+            return m_$ChildName$.Set(New$ChildName$);
+        }
+        static readonly string m_$ChildName$Name =
+            NotifyPropertyChangedHelper.GetPropertyName<$ReturnType$>(o => o.$ChildName$);
+        #endregion
+        ]]>
+      </Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>
+

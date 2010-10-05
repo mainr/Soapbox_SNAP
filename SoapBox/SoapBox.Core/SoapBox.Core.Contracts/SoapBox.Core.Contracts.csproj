@@ -1,0 +1,342 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.21022</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{FDF772E9-FEF6-487A-B5C7-B64267449CC0}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SoapBox.Core</RootNamespace>
+    <AssemblyName>SoapBox.Core.Contracts</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation />
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\..\bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\..\..\bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>..\..\..\bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisIgnoreBuiltInRuleSets>false</CodeAnalysisIgnoreBuiltInRuleSets>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>..\..\..\bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisIgnoreBuiltInRuleSets>true</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisIgnoreBuiltInRules>false</CodeAnalysisIgnoreBuiltInRules>
+    <CodeAnalysisFailOnMissingRules>false</CodeAnalysisFailOnMissingRules>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="PresentationCore">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="PresentationFramework">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App\Startup\IExecutableCommand.cs" />
+    <Compile Include="CompositionPoints.cs" />
+    <Compile Include="Conditions\AbstractCondition.cs" />
+    <Compile Include="Conditions\AlwaysFalseCondition.cs" />
+    <Compile Include="Conditions\AlwaysTrueCondition.cs" />
+    <Compile Include="Conditions\ConcreteCondition.cs" />
+    <Compile Include="Conditions\ICondition.cs" />
+    <Compile Include="ExtensionPoints.cs" />
+    <Compile Include="Extensions.cs" />
+    <Compile Include="Gui\Controls\AbstractButton.cs" />
+    <Compile Include="Gui\Controls\AbstractCommandControl.cs" />
+    <Compile Include="Gui\Controls\AbstractControl.cs" />
+    <Compile Include="Gui\Controls\AbstractLabel.cs" />
+    <Compile Include="Gui\Controls\AbstractRadioButton.cs" />
+    <Compile Include="Gui\Controls\AbstractSeparator.cs" />
+    <Compile Include="Gui\Controls\AbstractButtonView.xaml.cs">
+      <DependentUpon>AbstractButtonView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gui\Controls\AbstractToggleButton.cs" />
+    <Compile Include="Gui\Controls\AbstractProgressBar.cs" />
+    <Compile Include="Gui\MenuItem\ConcreteMenuItemSeparator.cs" />
+    <Compile Include="Gui\MenuItem\IContextMenu.cs" />
+    <Compile Include="Gui\MenuItem\ContextMenuWrapper.cs" />
+    <Compile Include="Gui\MenuItem\ContextMenuWrapperView.xaml.cs">
+      <DependentUpon>ContextMenuWrapperView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gui\Options\IOptionsDialog.cs" />
+    <Compile Include="Gui\TreeView\AbstractTreeView.cs" />
+    <Compile Include="Gui\TreeView\AbstractTreeViewItem.cs" />
+    <Compile Include="Gui\TreeView\AbstractTreeViewItemView.xaml.cs">
+      <DependentUpon>AbstractTreeViewItemView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gui\TreeView\AbstractTreeViewView.xaml.cs">
+      <DependentUpon>AbstractTreeViewView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gui\Controls\IButton.cs" />
+    <Compile Include="Gui\Controls\ICommandControl.cs" />
+    <Compile Include="Gui\Controls\IControl.cs" />
+    <Compile Include="Gui\Controls\ILabel.cs" />
+    <Compile Include="Gui\Controls\IProgressBar.cs" />
+    <Compile Include="Gui\Controls\IRadioButton.cs" />
+    <Compile Include="Gui\Controls\IToggleButton.cs" />
+    <Compile Include="Gui\TreeView\ITreeViewItem.cs" />
+    <Compile Include="Gui\Layout\AbstractLayoutItem.cs" />
+    <Compile Include="Gui\Layout\AbstractDocument.cs" />
+    <Compile Include="Gui\Layout\AbstractPad.cs" />
+    <Compile Include="Gui\Layout\IDocument.cs" />
+    <Compile Include="Gui\Layout\IDocumentMeta.cs" />
+    <Compile Include="Gui\Layout\ILayoutItem.cs" />
+    <Compile Include="Gui\Layout\ILayoutItemMeta.cs" />
+    <Compile Include="Gui\Layout\ILayoutManager.cs" />
+    <Compile Include="Gui\Layout\IPad.cs" />
+    <Compile Include="Gui\Layout\IPadMeta.cs" />
+    <Compile Include="Gui\MenuItem\ContextMenuView.xaml.cs">
+      <DependentUpon>ContextMenuView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gui\MenuItem\MenuItemVisibleCondition.cs" />
+    <Compile Include="Gui\Options\AbstractOptionsItem.cs" />
+    <Compile Include="Gui\Options\AbstractOptionsPad.cs" />
+    <Compile Include="Gui\Options\IOptionsItem.cs" />
+    <Compile Include="Gui\Options\IOptionsPad.cs" />
+    <Compile Include="Gui\StatusBar\IStatusBarItem.cs" />
+    <Compile Include="Gui\StatusBar\StatusBarButton\AbstractStatusBarButton.cs" />
+    <Compile Include="Gui\StatusBar\StatusBarButton\AbstractStatusBarButtonView.xaml.cs">
+      <DependentUpon>AbstractStatusBarButtonView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gui\StatusBar\StatusBarLabel\AbstractStatusBarLabel.cs" />
+    <Compile Include="Gui\StatusBar\StatusBarLabel\AbstractStatusBarLabelView.xaml.cs">
+      <DependentUpon>AbstractStatusBarLabelView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gui\StatusBar\StatusBarProgressBar\AbstractStatusBarProgressBarView.xaml.cs">
+      <DependentUpon>AbstractStatusBarProgressBarView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gui\StatusBar\StatusBarProgressBar\AbstractStatusBarProgressBar.cs" />
+    <Compile Include="Gui\StatusBar\StatusBarRadioButton\AbstractStatusBarRadioButton.cs" />
+    <Compile Include="Gui\StatusBar\StatusBarRadioButton\AbstractStatusBarRadioButtonView.xaml.cs">
+      <DependentUpon>AbstractStatusBarRadioButtonView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gui\StatusBar\StatusBarSeparator\AbstractStatusBarSeparator.cs" />
+    <Compile Include="Gui\StatusBar\StatusBarSeparator\AbstractStatusBarSeparatorView.xaml.cs">
+      <DependentUpon>AbstractStatusBarSeparatorView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gui\StatusBar\StatusBarToggleButton\AbstractStatusBarToggleButton.cs" />
+    <Compile Include="Gui\StatusBar\StatusBarToggleButton\AbstractStatusBarToggleButtonView.xaml.cs">
+      <DependentUpon>AbstractStatusBarToggleButtonView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gui\ToolBar\ToolBarItem\ToolBarButton\AbstractToolBarButtonView.xaml.cs">
+      <DependentUpon>AbstractToolBarButtonView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gui\ToolBar\ToolBarItem\ToolBarButton\AbstractToolBarButton.cs" />
+    <Compile Include="Gui\ToolBar\ToolBarItem\ToolBarLabel\AbstractToolBarLabel.cs" />
+    <Compile Include="Gui\ToolBar\ToolBarItem\ToolBarLabel\AbstractToolBarLabelView.xaml.cs">
+      <DependentUpon>AbstractToolBarLabelView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gui\ToolBar\ToolBarItem\ToolBarRadioButton\AbstractToolBarRadioButton.cs" />
+    <Compile Include="Gui\ToolBar\ToolBarItem\ToolBarRadioButton\AbstractToolBarRadioButtonView.xaml.cs">
+      <DependentUpon>AbstractToolBarRadioButtonView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gui\ToolBar\ToolBarItem\ToolBarToggleButton\AbstractToolBarToggleButton.cs" />
+    <Compile Include="Gui\ToolBar\ToolBarItem\ToolBarSeparator\AbstractToolBarSeparator.cs" />
+    <Compile Include="Gui\ToolBar\ToolBarItem\ToolBarSeparator\AbstractToolBarSeparatorView.xaml.cs">
+      <DependentUpon>AbstractToolBarSeparatorView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gui\ToolBar\ToolBarItem\ToolBarToggleButton\AbstractToolBarToggleButtonView.xaml.cs">
+      <DependentUpon>AbstractToolBarToggleButtonView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gui\ViewModel\AbstractViewModel.cs" />
+    <Compile Include="Gui\ViewModel\IViewModel.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services.cs" />
+    <Compile Include="Services\ArgumentsService\IArgumentsService.cs" />
+    <Compile Include="Services\ExtensionService\IExtensionService.cs" />
+    <Compile Include="Services\FileDialogService\IFileDialogService.cs" />
+    <Compile Include="Services\LoggingService\ILoggingService.cs" />
+    <Compile Include="Services\ExtensionService\AbstractExtension.cs" />
+    <Compile Include="Services\ExtensionService\IExtension.cs" />
+    <Compile Include="Gui\MenuItem\AbstractMenuItem.cs" />
+    <Compile Include="Gui\MenuItem\IMenuItem.cs" />
+    <Compile Include="Services\ExtensionService\ExtensionService.cs" />
+    <Compile Include="Gui\ToolBar\AbstractToolBar.cs" />
+    <Compile Include="Gui\ToolBar\ToolBarItem\IToolBarItem.cs" />
+    <Compile Include="Gui\ToolBar\IToolBar.cs" />
+    <Compile Include="Services\MessagingService\IMessagingService.cs" />
+    <Compile Include="Utilities\AppEnvironment.cs" />
+    <Compile Include="Utilities\UIHelper.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="Gui\Controls\AbstractButtonView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gui\MenuItem\ContextMenuWrapperView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gui\TreeView\AbstractTreeViewItemView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gui\TreeView\AbstractTreeViewView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gui\MenuItem\ContextMenuView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gui\StatusBar\StatusBarButton\AbstractStatusBarButtonView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gui\StatusBar\StatusBarLabel\AbstractStatusBarLabelView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gui\StatusBar\StatusBarProgressBar\AbstractStatusBarProgressBarView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gui\StatusBar\StatusBarRadioButton\AbstractStatusBarRadioButtonView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gui\StatusBar\StatusBarSeparator\AbstractStatusBarSeparatorView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gui\StatusBar\StatusBarToggleButton\AbstractStatusBarToggleButtonView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gui\ToolBar\ToolBarItem\ToolBarButton\AbstractToolBarButtonView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gui\ToolBar\ToolBarItem\ToolBarLabel\AbstractToolBarLabelView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gui\ToolBar\ToolBarItem\ToolBarRadioButton\AbstractToolBarRadioButtonView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gui\ToolBar\ToolBarItem\ToolBarSeparator\AbstractToolBarSeparatorView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gui\ToolBar\ToolBarItem\ToolBarToggleButton\AbstractToolBarToggleButtonView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\SoapBox.Utilities\SoapBox.Utilities.csproj">
+      <Project>{28CCC32E-9FEC-40B5-B7A9-299449635464}</Project>
+      <Name>SoapBox.Utilities</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

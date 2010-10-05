@@ -1,0 +1,53 @@
+﻿<ResourceDictionary 
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="clr-namespace:SoapBox.Snap.LD"
+    xmlns:core="clr-namespace:SoapBox.Core;assembly=SoapBox.Core.Contracts"
+    xmlns:contracts="clr-namespace:SoapBox.Snap;assembly=SoapBox.Snap.Contracts"
+    xmlns:util="clr-namespace:SoapBox.Utilities;assembly=SoapBox.Utilities"
+    x:Class="SoapBox.Snap.LD.InstructionLDSetResetView">
+
+    <DataTemplate DataType="{x:Type local:InstructionLDSetReset}">
+        <core:ContextMenuWrapper>
+            <DockPanel>
+                <ContentPresenter
+                    DockPanel.Dock="Top"
+                    Content="{Binding Path=SetResetDescriptionEditor.VmEditableTextBlock}"/>
+                <ContentPresenter
+                    DockPanel.Dock="Top"
+                    Content="{Binding Path=SetResetNameEditor.VmEditableTextBlock}"/>
+                <Border
+                    BorderBrush="Black"
+                    BorderThickness="1.5"
+                    Background="White"
+                    Width="{x:Static local:InstructionLDSetReset.MAX_WIDTH}"
+                    Height="53">
+                    <StackPanel Margin="3,0,3,0">
+                        <Canvas
+                            Height="17"
+                            HorizontalAlignment="Stretch">
+                            <TextBlock Text="{x:Static local:Resources.Strings.LD_Snap_SetReset_InstructionName}"/>
+                            <Ellipse
+                                Canvas.Top="2"
+                                Canvas.Right="0"
+                                Width="15" Height="15"
+                                Stroke="Black"
+                                StrokeThickness="1.5"
+                                Fill="White" 
+                                contracts:SignalValueBehavior.NodeItem="{Binding}"
+                                contracts:SignalValueBehavior.TrueColor="Green"
+                                contracts:SignalValueBehavior.FalseColor="White"
+                                contracts:SignalValueBehavior.ControlFillColorBySignal="{Binding Path=CoilSignal}"
+                                />
+                        </Canvas>
+                        <TextBlock Text="{x:Static local:Resources.Strings.LD_Snap_SetReset_ResetLabel}"/>
+                        <ContentPresenter
+                            DockPanel.Dock="Top"
+                            Content="{Binding Path=ResetSignalChooser.VmSignalChooserTextBlock}"/>
+                    </StackPanel>
+                </Border>
+            </DockPanel>
+        </core:ContextMenuWrapper>
+    </DataTemplate>
+
+</ResourceDictionary>

@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <Title>
+        Insert ViewModel Property
+      </Title>
+      <Author>Scott Whitlock</Author>
+      <Description>The snippet creates a property that fires the PropertyChanged event</Description>
+      <Shortcut>vmprop</Shortcut>
+    </Header>
+    <Snippet>
+      <Declarations>
+        <Literal>
+          <ID>Type</ID>
+          <ToolTip>Property Type</ToolTip>
+          <Default>PropertyType</Default>
+        </Literal>
+        <Literal>
+          <ID>Name</ID>
+          <ToolTip>Property Name</ToolTip>
+          <Default>PropertyName</Default>
+        </Literal>
+        <Literal>
+          <ID>Class</ID>
+          <ToolTip>Class Name</ToolTip>
+          <Default>Class</Default>
+        </Literal>
+      </Declarations>
+      <Code Language="CSharp">
+        <![CDATA[#region " $Name$ "
+        public $Type$ $Name$
+        {
+            get
+            {
+                return m_$Name$;
+            }
+            set
+            {
+                if (value == null)
+                {
+                    throw new ArgumentNullException(m_$Name$Name);
+                }
+                if (m_$Name$ != value)
+                {
+                    m_$Name$ = value;
+                    NotifyPropertyChanged(m_$Name$Args);
+                }
+            }
+        }
+        private $Type$ m_$Name$ = null;
+        private static readonly PropertyChangedEventArgs m_$Name$Args = 
+            NotifyPropertyChangedHelper.CreateArgs<$Class$>(o => o.$Name$);
+        private static string m_$Name$Name =
+            NotifyPropertyChangedHelper.GetPropertyName<$Class$>(o => o.$Name$);
+        #endregion
+]]>
+      </Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>
+

@@ -1,0 +1,720 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Application_Title" xml:space="preserve">
+    <value>SoapBox Snap</value>
+  </data>
+  <data name="Copyright" xml:space="preserve">
+    <value>Copyright 2009 by SoapBox Automation Inc.  All rights reserved.</value>
+  </data>
+  <data name="Copyright_License_Preamble" xml:space="preserve">
+    <value>Released under the terms of the </value>
+  </data>
+  <data name="Instruction_Pad_Title" xml:space="preserve">
+    <value>Instructions</value>
+  </data>
+  <data name="PageEditor_CommentButtons_Cancel" xml:space="preserve">
+    <value> Cancel Edit</value>
+  </data>
+  <data name="PageEditor_CommentButtons_Commit" xml:space="preserve">
+    <value> Apply Edit</value>
+  </data>
+  <data name="PageEditor_CommentButtons_Edit" xml:space="preserve">
+    <value> Edit Comment</value>
+  </data>
+  <data name="PageEditor_CommentButtons_Markdown" xml:space="preserve">
+    <value> Syntax Help</value>
+  </data>
+  <data name="PageEditor_CommentButtons_Markdown_ToolTip" xml:space="preserve">
+    <value>Opens a web page with information about the Markdown syntax used here to write rich HTML comments</value>
+  </data>
+  <data name="PageEditor_CommentExpanderHeader" xml:space="preserve">
+    <value>Expand/Collapse Page Comment</value>
+  </data>
+  <data name="PageEditor_GroupCommand_Append" xml:space="preserve">
+    <value>Insert at Bottom</value>
+  </data>
+  <data name="PageEditor_GroupCommand_Delete" xml:space="preserve">
+    <value>_Delete</value>
+  </data>
+  <data name="PageEditor_GroupCommand_Delete_ToolTip" xml:space="preserve">
+    <value>Delete this instruction group</value>
+  </data>
+  <data name="PageEditor_GroupCommand_InsertAfter" xml:space="preserve">
+    <value>Insert After Selected Group (Rung)</value>
+  </data>
+  <data name="PageEditor_GroupCommand_InsertBefore" xml:space="preserve">
+    <value>Insert Before Selected Group (Rung)</value>
+  </data>
+  <data name="PageEditor_GroupCommand_MoveDown" xml:space="preserve">
+    <value>Move Selected Group Down</value>
+  </data>
+  <data name="PageEditor_GroupCommand_MoveDown_ToolTip" xml:space="preserve">
+    <value>Moves the selected group (e.g. rung) below the next group on the page</value>
+  </data>
+  <data name="PageEditor_GroupCommand_MoveUp" xml:space="preserve">
+    <value>Move Selected Group Up</value>
+  </data>
+  <data name="PageEditor_GroupCommand_MoveUp_ToolTip" xml:space="preserve">
+    <value>Moves the selected group (e.g. rung) above the previous group on the page</value>
+  </data>
+  <data name="PageEditor_GroupCommand_NoneSelected" xml:space="preserve">
+    <value>Please select a single instruction group (e.g. rung) before using this command</value>
+  </data>
+  <data name="PageEditor_GroupCommand_NoneSelected_Title" xml:space="preserve">
+    <value>No group selected</value>
+  </data>
+  <data name="PageEditor_GroupCommand_Redo" xml:space="preserve">
+    <value>Redo</value>
+  </data>
+  <data name="PageEditor_GroupCommand_Redo_ToolTip" xml:space="preserve">
+    <value>Redo last action</value>
+  </data>
+  <data name="PageEditor_GroupCommand_Undo" xml:space="preserve">
+    <value>Undo</value>
+  </data>
+  <data name="PageEditor_GroupCommand_Undo_ToolTip" xml:space="preserve">
+    <value>Undo last action</value>
+  </data>
+  <data name="PageEditor_UndoDescription_DeleteSelectedGroups" xml:space="preserve">
+    <value>Delete selected instruction groups</value>
+  </data>
+  <data name="PageEditor_UndoDescription_EditComment" xml:space="preserve">
+    <value>Edited Page Comment</value>
+  </data>
+  <data name="PageEditor_UndoDescription_InsertGroup" xml:space="preserve">
+    <value>Inserted instruction group</value>
+  </data>
+  <data name="PageEditor_UndoDescription_MoveGroupDown" xml:space="preserve">
+    <value>Move instruction group down</value>
+  </data>
+  <data name="PageEditor_UndoDescription_MoveGroups" xml:space="preserve">
+    <value>Move selected instruction groups</value>
+  </data>
+  <data name="PageEditor_UndoDescription_MoveGroupUp" xml:space="preserve">
+    <value>Move instruction group up</value>
+  </data>
+  <data name="RuntimeApplication_ApplyButton_Text" xml:space="preserve">
+    <value>Apply</value>
+  </data>
+  <data name="RuntimeApplication_CancelButton_Text" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="RuntimeApplication_Code" xml:space="preserve">
+    <value>Runtime Name:</value>
+  </data>
+  <data name="RuntimeApplication_Code_Default" xml:space="preserve">
+    <value>Runtime</value>
+  </data>
+  <data name="RuntimeApplication_Code_Tooltip" xml:space="preserve">
+    <value>The Runtime Name can only contain letters, numbers, and underscores only, and it must start with a letter.</value>
+  </data>
+  <data name="RuntimeApplication_ExecuteOnStartup" xml:space="preserve">
+    <value>Execute on startup</value>
+  </data>
+  <data name="RuntimeApplication_NewTitle" xml:space="preserve">
+    <value>New Runtime Application</value>
+  </data>
+  <data name="RuntimeApplication_OkButton_Text" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="RuntimeApplication_Type" xml:space="preserve">
+    <value>Type:</value>
+  </data>
+  <data name="RuntimeApplication_Type_Tooltip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Solution" xml:space="preserve">
+    <value>Solution</value>
+  </data>
+  <data name="Solution_Command_Tooltip_Close" xml:space="preserve">
+    <value>Close current solution</value>
+  </data>
+  <data name="Solution_Command_Tooltip_New" xml:space="preserve">
+    <value>Create a new solution (blank, or from a template)</value>
+  </data>
+  <data name="Solution_Command_Tooltip_Open" xml:space="preserve">
+    <value>Open a solution from disk</value>
+  </data>
+  <data name="Solution_Command_Tooltip_Save" xml:space="preserve">
+    <value>Save changes to this solution</value>
+  </data>
+  <data name="Solution_Command_Tooltip_SaveAs" xml:space="preserve">
+    <value>Save this solution to a new file</value>
+  </data>
+  <data name="Solution_Confirm_DoYouWantToSave" xml:space="preserve">
+    <value>There are unsaved changes to the existing solution.  Do you want to Save?</value>
+  </data>
+  <data name="Solution_Confirm_DoYouWantToSave_Title" xml:space="preserve">
+    <value>Save Changes?</value>
+  </data>
+  <data name="Solution_Extension_Description" xml:space="preserve">
+    <value>Snap Solutions</value>
+  </data>
+  <data name="Solution_OpenFileDialog_Title" xml:space="preserve">
+    <value>Open Solution...</value>
+  </data>
+  <data name="Solution_Open_DirectoryNotFoundException" xml:space="preserve">
+    <value>The specified directory was not found.</value>
+  </data>
+  <data name="Solution_Open_DirectoryNotFoundException_Title" xml:space="preserve">
+    <value>Directory not Found</value>
+  </data>
+  <data name="Solution_Open_FileNotFoundException" xml:space="preserve">
+    <value>The file could not be found.</value>
+  </data>
+  <data name="Solution_Open_FileNotFoundException_Title" xml:space="preserve">
+    <value>File not Found</value>
+  </data>
+  <data name="Solution_Open_InvalidDataException" xml:space="preserve">
+    <value>The file format of the solution file was not a valid SoapBox Snap solution.</value>
+  </data>
+  <data name="Solution_Open_InvalidDataException_Title" xml:space="preserve">
+    <value>Invalid Data</value>
+  </data>
+  <data name="Solution_Open_PathTooLongException" xml:space="preserve">
+    <value>The file path is too long.</value>
+  </data>
+  <data name="Solution_Open_PathTooLongException_Title" xml:space="preserve">
+    <value>Path too Long</value>
+  </data>
+  <data name="Solution_Open_UnauthorizedAccessException" xml:space="preserve">
+    <value>You do not have sufficient privileges to access this file.</value>
+  </data>
+  <data name="Solution_Open_UnauthorizedAccessException_Title" xml:space="preserve">
+    <value>Unauthorized Access</value>
+  </data>
+  <data name="Solution_Pad_DeviceConfigurationItem_Header" xml:space="preserve">
+    <value>Device Configuration</value>
+  </data>
+  <data name="Solution_Pad_DeviceConfigurationItem_NotConnected_Message" xml:space="preserve">
+    <value>Please connect to the runtime before trying to read the configuration</value>
+  </data>
+  <data name="Solution_Pad_DeviceConfigurationItem_NotConnected_Title" xml:space="preserve">
+    <value>Not Connected</value>
+  </data>
+  <data name="Solution_Pad_DeviceConfigurationItem_ReadDeviceConfiguration" xml:space="preserve">
+    <value>Read Device Configuration</value>
+  </data>
+  <data name="Solution_Pad_DeviceConfigurationItem_ReadDeviceConfiguration_ToolTip" xml:space="preserve">
+    <value>Read the I/O configuration from the runtime</value>
+  </data>
+  <data name="Solution_Pad_DiscreteInputItem_ForceOff" xml:space="preserve">
+    <value>Force Off</value>
+  </data>
+  <data name="Solution_Pad_DiscreteInputItem_ForceOff_ToolTip" xml:space="preserve">
+    <value>Forces the input to the off state, regardless of the actual hardware input</value>
+  </data>
+  <data name="Solution_Pad_DiscreteInputItem_ForceOn" xml:space="preserve">
+    <value>Force On</value>
+  </data>
+  <data name="Solution_Pad_DiscreteInputItem_ForceOn_ToolTip" xml:space="preserve">
+    <value>Forces the input to the on state, regardless of the actual hardware input</value>
+  </data>
+  <data name="Solution_Pad_DiscreteInputItem_RemoveForce" xml:space="preserve">
+    <value>Remove Force</value>
+  </data>
+  <data name="Solution_Pad_DiscreteInputItem_RemoveForce_ToolTip" xml:space="preserve">
+    <value>Removes any active force on the input, so it will return to the state of the hardware input</value>
+  </data>
+  <data name="Solution_Pad_DiscreteOutputItem_ForceOff" xml:space="preserve">
+    <value>Force Off</value>
+  </data>
+  <data name="Solution_Pad_DiscreteOutputItem_ForceOff_ToolTip" xml:space="preserve">
+    <value>Forces the output to the off state, regardless of the logic driving it</value>
+  </data>
+  <data name="Solution_Pad_DiscreteOutputItem_ForceOn" xml:space="preserve">
+    <value>Force On</value>
+  </data>
+  <data name="Solution_Pad_DiscreteOutputItem_ForceOn_ToolTip" xml:space="preserve">
+    <value>Forces the output to the on state, regardless of the logic driving it</value>
+  </data>
+  <data name="Solution_Pad_DiscreteOutputItem_RemoveForce" xml:space="preserve">
+    <value>Remove Force</value>
+  </data>
+  <data name="Solution_Pad_DiscreteOutputItem_RemoveForce_ToolTip" xml:space="preserve">
+    <value>Removes any active force on the output, so it will return control to the application logic</value>
+  </data>
+  <data name="Solution_Pad_PageCollectionItem_Add" xml:space="preserve">
+    <value>_Add</value>
+  </data>
+  <data name="Solution_Pad_PageCollectionItem_Add_Page" xml:space="preserve">
+    <value>_Page</value>
+  </data>
+  <data name="Solution_Pad_PageCollectionItem_Add_PageCollection" xml:space="preserve">
+    <value>_Folder</value>
+  </data>
+  <data name="Solution_Pad_PageCollectionItem_Add_PageCollection_ToolTip" xml:space="preserve">
+    <value>A subfolder that can hold pages.  A great way to organize your logic.</value>
+  </data>
+  <data name="Solution_Pad_PageCollectionItem_Add_Page_ToolTip" xml:space="preserve">
+    <value>A page is where you write the logic for your application.</value>
+  </data>
+  <data name="Solution_Pad_PageCollectionItem_Delete" xml:space="preserve">
+    <value>_Delete</value>
+  </data>
+  <data name="Solution_Pad_PageCollectionItem_Delete_ToolTip" xml:space="preserve">
+    <value>Remove this folder from the tree.</value>
+  </data>
+  <data name="Solution_Pad_PageCollectionItem_LogicRootName" xml:space="preserve">
+    <value>Logic</value>
+  </data>
+  <data name="Solution_Pad_PageCollectionItem_NewPageCollectionName" xml:space="preserve">
+    <value>New Folder</value>
+  </data>
+  <data name="Solution_Pad_PageItem_Delete" xml:space="preserve">
+    <value>_Delete</value>
+  </data>
+  <data name="Solution_Pad_PageItem_Delete_ToolTip" xml:space="preserve">
+    <value>Removes this page from the tree.</value>
+  </data>
+  <data name="Solution_Pad_PageItem_NewPageName" xml:space="preserve">
+    <value>New Page</value>
+  </data>
+  <data name="Solution_Pad_RootSolutionItem_Add" xml:space="preserve">
+    <value>_Add</value>
+  </data>
+  <data name="Solution_Pad_RootSolutionItem_Add_RuntimeApplication" xml:space="preserve">
+    <value>_Runtime Application</value>
+  </data>
+  <data name="Solution_Pad_RootSolutionItem_Add_RuntimeApplication_ToolTip" xml:space="preserve">
+    <value>A container for the program that will control the system.\nThis will be downloaded as a unit to the controller (on this PC or elsewhere).</value>
+  </data>
+  <data name="Solution_Pad_RootSolutionItem_Properties" xml:space="preserve">
+    <value>_Properties...</value>
+  </data>
+  <data name="Solution_Pad_RootSolutionItem_Properties_ToolTip" xml:space="preserve">
+    <value>Open the solution properties window.</value>
+  </data>
+  <data name="Solution_Pad_RuntimeApplicationItem_Connect" xml:space="preserve">
+    <value>Connect</value>
+  </data>
+  <data name="Solution_Pad_RuntimeApplicationItem_Connect_ToolTip" xml:space="preserve">
+    <value>Open a connection to the runtime</value>
+  </data>
+  <data name="Solution_Pad_RuntimeApplicationItem_Delete" xml:space="preserve">
+    <value>_Delete</value>
+  </data>
+  <data name="Solution_Pad_RuntimeApplicationItem_Delete_ToolTip" xml:space="preserve">
+    <value>Removes this runtime application from the solution.</value>
+  </data>
+  <data name="Solution_Pad_RuntimeApplicationItem_Disconnect" xml:space="preserve">
+    <value>Disconnect</value>
+  </data>
+  <data name="Solution_Pad_RuntimeApplicationItem_Disconnect_ToolTip" xml:space="preserve">
+    <value>Close the connection to the runtime</value>
+  </data>
+  <data name="Solution_Pad_RuntimeApplicationItem_Properties" xml:space="preserve">
+    <value>_Properties...</value>
+  </data>
+  <data name="Solution_Pad_RuntimeApplicationItem_Properties_ToolTip" xml:space="preserve">
+    <value>Open the runtime application properties window.</value>
+  </data>
+  <data name="Solution_Pad_Title" xml:space="preserve">
+    <value>Solution Explorer</value>
+  </data>
+  <data name="Solution_Root_NotLoadedHeader" xml:space="preserve">
+    <value>none loaded</value>
+  </data>
+  <data name="Solution_SaveAsFileDialog_Title" xml:space="preserve">
+    <value>Save Solution As...</value>
+  </data>
+  <data name="Solution_ToolBar_Name" xml:space="preserve">
+    <value>Solution</value>
+  </data>
+  <data name="Validation_Error" xml:space="preserve">
+    <value>Validation Error</value>
+  </data>
+  <data name="Workbench_AboutBox_Slogan" xml:space="preserve">
+    <value>"Snap is Not A PLC"</value>
+  </data>
+  <data name="Workbench_AboutBox_Copyright" xml:space="preserve">
+    <value>Copyright (c) 2010 SoapBox Automation Inc.</value>
+  </data>
+  <data name="Workbench_AboutBox_License" xml:space="preserve">
+    <value>Released under the GPLv3 License.</value>
+  </data>
+  <data name="Workbench_AboutBox_Ok" xml:space="preserve">
+    <value>   Ok   </value>
+  </data>
+  <data name="Workbench_AboutBox_Title" xml:space="preserve">
+    <value>About SoapBox Snap</value>
+  </data>
+  <data name="Workbench_Command_Tooltip_About" xml:space="preserve">
+    <value>Display information about SoapBox Snap</value>
+  </data>
+  <data name="Workbench_Documents_Editor_GroupHeaderText" xml:space="preserve">
+    <value>»</value>
+  </data>
+  <data name="Workbench_Documents_Editor_LanguagePluginNotFound" xml:space="preserve">
+    <value>Please install the language plugin for the following language: </value>
+  </data>
+  <data name="Workbench_Documents_Editor_Title" xml:space="preserve">
+    <value>Page Editor</value>
+  </data>
+  <data name="Workbench_MainMenu_File_Close" xml:space="preserve">
+    <value>_Close</value>
+  </data>
+  <data name="Workbench_MainMenu_File_New" xml:space="preserve">
+    <value>_New...</value>
+  </data>
+  <data name="Workbench_MainMenu_File_Open" xml:space="preserve">
+    <value>_Open...</value>
+  </data>
+  <data name="Workbench_MainMenu_File_Save" xml:space="preserve">
+    <value>_Save</value>
+  </data>
+  <data name="Workbench_MainMenu_File_SaveAs" xml:space="preserve">
+    <value>Save _As...</value>
+  </data>
+  <data name="Workbench_MainMenu_Help_About" xml:space="preserve">
+    <value>_About</value>
+  </data>
+  <data name="Workbench_MainMenu_View_Instructions" xml:space="preserve">
+    <value>Instructions</value>
+  </data>
+  <data name="Workbench_MainMenu_View_Instructions_ToolTip" xml:space="preserve">
+    <value>Open the Instructions tool box, so you can drag new instructions into the editor.</value>
+  </data>
+  <data name="Workbench_MainMenu_View_SolutionExplorer" xml:space="preserve">
+    <value>Solution E_xplorer</value>
+  </data>
+  <data name="Workbench_MainMenu_View_SolutionExplorer_ToolTip" xml:space="preserve">
+    <value>Open the solution explorer window to view the automation applications in your solution file.</value>
+  </data>
+  <data name="SignalChooserDialog_LiteralHeader" xml:space="preserve">
+    <value>Hard coded value:</value>
+  </data>
+  <data name="SignalChooserDialog_SignalHeader" xml:space="preserve">
+    <value>An existing coil or signal:</value>
+  </data>
+  <data name="SignalChooserDialog_Title" xml:space="preserve">
+    <value>Signal Chooser</value>
+  </data>
+  <data name="SignalChooserDialog_Buttons_Cancel" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="SignalChooserDialog_Buttons_Ok" xml:space="preserve">
+    <value>     Ok     </value>
+  </data>
+  <data name="Workbench_AboutBox_Trademark" xml:space="preserve">
+    <value>SoapBox Snap, "Snap is not a PLC" and the wolf cub image are trademarks of SoapBox Automation Inc.</value>
+  </data>
+  <data name="Solution_Pad_Closing_SaveMessage" xml:space="preserve">
+    <value>Would you like to save your work?</value>
+  </data>
+  <data name="Solution_Pad_Closing_SaveTitle" xml:space="preserve">
+    <value>Unsaved work</value>
+  </data>
+  <data name="Solution_Pad_PageItem_DeleteConfirmation" xml:space="preserve">
+    <value>This page contains logic.  Deleting a page can't be undone.  Are you sure you want to delete it?</value>
+  </data>
+  <data name="Solution_Pad_PageItem_DeleteTitle" xml:space="preserve">
+    <value>Delete page</value>
+  </data>
+  <data name="Solution_Pad_PageCollectionItem_DeleteConfirmation" xml:space="preserve">
+    <value>This folder is not empty.  Deleting pages and folders can't be undone.  Are you sure you want to delete it?</value>
+  </data>
+  <data name="Solution_Pad_PageCollectionItem_DeleteTitle" xml:space="preserve">
+    <value>Delete folder</value>
+  </data>
+  <data name="Solution_Pad_AnalogInputItem_Force" xml:space="preserve">
+    <value>Force</value>
+  </data>
+  <data name="Solution_Pad_AnalogInputItem_Force_ToolTip" xml:space="preserve">
+    <value>Forces the input to a specific value, regardless of the actual hardware input</value>
+  </data>
+  <data name="Solution_Pad_AnalogInputItem_RemoveForce" xml:space="preserve">
+    <value>Remove Force</value>
+  </data>
+  <data name="Solution_Pad_AnalogInputItem_RemoveForce_ToolTip" xml:space="preserve">
+    <value>Removes any active force on the output, so it will return control to the application logic</value>
+  </data>
+  <data name="Solution_Pad_AnalogOutputItem_Force" xml:space="preserve">
+    <value>Force</value>
+  </data>
+  <data name="Solution_Pad_AnalogOutputItem_Force_ToolTip" xml:space="preserve">
+    <value>Forces the output to a specific value, regardless of the logic driving it</value>
+  </data>
+  <data name="Solution_Pad_AnalogOutputItem_RemoveForce" xml:space="preserve">
+    <value>Remove Force</value>
+  </data>
+  <data name="Solution_Pad_AnalogOutputItem_RemoveForce_ToolTip" xml:space="preserve">
+    <value>Removes any active force on the output, so it will return control to the application logic</value>
+  </data>
+  <data name="Solution_Pad_StringInputItem_Force" xml:space="preserve">
+    <value>Force</value>
+  </data>
+  <data name="Solution_Pad_StringInputItem_Force_ToolTip" xml:space="preserve">
+    <value>Forces the input to a specific value, regardless of the actual hardware input</value>
+  </data>
+  <data name="Solution_Pad_StringInputItem_RemoveForce" xml:space="preserve">
+    <value>Remove Force</value>
+  </data>
+  <data name="Solution_Pad_StringInputItem_RemoveForce_ToolTip" xml:space="preserve">
+    <value>Removes any active force on the output, so it will return control to the application logic</value>
+  </data>
+  <data name="Solution_Pad_StringOutputItem_Force" xml:space="preserve">
+    <value>Force</value>
+  </data>
+  <data name="Solution_Pad_StringOutputItem_Force_ToolTip" xml:space="preserve">
+    <value>Forces the output to a specific value, regardless of the logic driving it</value>
+  </data>
+  <data name="Solution_Pad_StringOutputItem_RemoveForce" xml:space="preserve">
+    <value>Remove Force</value>
+  </data>
+  <data name="Solution_Pad_StringOutputItem_RemoveForce_ToolTip" xml:space="preserve">
+    <value>Removes any active force on the output, so it will return control to the application logic</value>
+  </data>
+  <data name="GetConstantDialog_Buttons_Cancel" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="GetConstantDialog_Buttons_Ok" xml:space="preserve">
+    <value>   Ok   </value>
+  </data>
+  <data name="GetConstantDialog_Title" xml:space="preserve">
+    <value>Enter a Value</value>
+  </data>
+  <data name="GetConstantDialog_Header" xml:space="preserve">
+    <value>Value:</value>
+  </data>
+  <data name="Solution_Pad_RuntimeApplicationItem_ConnectedMessage" xml:space="preserve">
+    <value>Connected successfully.  Application versions match.</value>
+  </data>
+  <data name="Solution_Pad_RuntimeApplicationItem_ConnectedTitle" xml:space="preserve">
+    <value>Connected</value>
+  </data>
+  <data name="Solution_Pad_RuntimeApplicationItem_DownloadTitle" xml:space="preserve">
+    <value>Download?</value>
+  </data>
+  <data name="Solution_Pad_RuntimeApplicationItem_NoApplication" xml:space="preserve">
+    <value>There is no application in the runtime.  Do you want to download?</value>
+  </data>
+  <data name="Solution_Pad_RuntimeApplicationItem_NotConnectedMessage" xml:space="preserve">
+    <value>Not connected to runtime.</value>
+  </data>
+  <data name="Solution_Pad_RuntimeApplicationItem_NotConnectedTitle" xml:space="preserve">
+    <value>Connection Failed</value>
+  </data>
+  <data name="Solution_Pad_RuntimeApplicationItem_Start" xml:space="preserve">
+    <value>Start</value>
+  </data>
+  <data name="Solution_Pad_RuntimeApplicationItem_Start_ToolTip" xml:space="preserve">
+    <value>Start the runtime engine executing (must be connected first)</value>
+  </data>
+  <data name="Solution_Pad_RuntimeApplicationItem_Stop" xml:space="preserve">
+    <value>Stop</value>
+  </data>
+  <data name="Solution_Pad_RuntimeApplicationItem_Stop_ToolTip" xml:space="preserve">
+    <value>Stop the execution of the runtime engine (must be connected first)</value>
+  </data>
+  <data name="UploadDownloadDialog_Title" xml:space="preserve">
+    <value>Upload/Download Runtime Application</value>
+  </data>
+  <data name="UploadDownloadDialog_Buttons_Cancel" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="UploadDownloadDialog_Buttons_Ok" xml:space="preserve">
+    <value>   Ok   </value>
+  </data>
+  <data name="UploadDownloadDialog_Header" xml:space="preserve">
+    <value>Would you like to:</value>
+  </data>
+  <data name="UploadDownloadDialog_Message_ApplicationMismatch" xml:space="preserve">
+    <value>The application in the editor is completely different from the one in the runtime engine.</value>
+  </data>
+  <data name="UploadDownloadDialog_Message_VersionMismatch" xml:space="preserve">
+    <value>The application versions in the runtime and the editor don't match (but they are different versions of the same application).</value>
+  </data>
+  <data name="UploadDownloadDialog_Download" xml:space="preserve">
+    <value>Download the application from the editor to the runtime engine</value>
+  </data>
+  <data name="UploadDownloadDialog_Upload" xml:space="preserve">
+    <value>Upload the application from the engine into the editor</value>
+  </data>
+  <data name="Solution_Pad_RuntimeApplicationItem_Save" xml:space="preserve">
+    <value>You must save before connecting.  Do you want to Save?</value>
+  </data>
+  <data name="Solution_Pad_RuntimeApplicationItem_SaveTitle" xml:space="preserve">
+    <value>Save</value>
+  </data>
+  <data name="Workbench_Documents_StartPage_Title" xml:space="preserve">
+    <value>SoapBox Snap Start Page</value>
+  </data>
+  <data name="Options_ApplicationOptions_Header" xml:space="preserve">
+    <value>Application</value>
+  </data>
+  <data name="Options_ApplicationOptions_General" xml:space="preserve">
+    <value>General</value>
+  </data>
+  <data name="Options_ApplicationOptions_General_AutoOpenStartPage" xml:space="preserve">
+    <value>Open SoapBox Snap Start Page at Startup</value>
+  </data>
+  <data name="Workbench_Documents_StartPage_GettingStarted" xml:space="preserve">
+    <value>Getting Started</value>
+  </data>
+  <data name="Workbench_Documents_StartPage_News" xml:space="preserve">
+    <value>SoapBox Snap News</value>
+  </data>
+  <data name="Workbench_Documents_StartPage_LoadExample" xml:space="preserve">
+    <value>Load Example Application</value>
+  </data>
+  <data name="Workbench_Documents_StartPage_LoadNewSolution" xml:space="preserve">
+    <value>New Program</value>
+  </data>
+  <data name="Workbench_MainMenu_View_StartPage" xml:space="preserve">
+    <value>SoapBox Snap Start Page</value>
+  </data>
+  <data name="Workbench_MainMenu_View_StartPage_ToolTip" xml:space="preserve">
+    <value>Opens the "Start Page" that normally launches automatically when SoapBox Snap starts.</value>
+  </data>
+  <data name="Workbench_Documents_StartPage_ViewTutorial" xml:space="preserve">
+    <value>View SoapBox Snap Tutorial</value>
+  </data>
+  <data name="Solution_Pad_PageItem_MoveDown" xml:space="preserve">
+    <value>Move Down</value>
+  </data>
+  <data name="Solution_Pad_PageItem_MoveUp" xml:space="preserve">
+    <value>Move Up</value>
+  </data>
+  <data name="Solution_Pad_PageItem_MoveDown_ToolTip" xml:space="preserve">
+    <value>Moves the selected page down after the next page (if possible)</value>
+  </data>
+  <data name="Solution_Pad_PageItem_MoveUp_ToolTip" xml:space="preserve">
+    <value>Moves the selected page up before the previous page (if possible)</value>
+  </data>
+  <data name="Solution_Pad_PageCollectionItem_MoveDown" xml:space="preserve">
+    <value>Move Down</value>
+  </data>
+  <data name="Solution_Pad_PageCollectionItem_MoveDown_ToolTip" xml:space="preserve">
+    <value>Move the selected folder after the next folder (if possible)</value>
+  </data>
+  <data name="Solution_Pad_PageCollectionItem_MoveUp" xml:space="preserve">
+    <value>Move Up</value>
+  </data>
+  <data name="Solution_Pad_PageCollectionItem_MoveUp_ToolTip" xml:space="preserve">
+    <value>Move the selected folder before the previous folder (if possible)</value>
+  </data>
+  <data name="RuntimeService_Disconnect_Message" xml:space="preserve">
+    <value>You can't make this edit while connected.  Do you want to disconnect?</value>
+  </data>
+  <data name="RuntimeService_Disconnect_Title" xml:space="preserve">
+    <value>Disconnect?</value>
+  </data>
+</root>

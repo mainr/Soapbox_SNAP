@@ -1,0 +1,35 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="clr-namespace:SoapBox.Snap.Application"
+    x:Class="SoapBox.Snap.Application.StartPageView">
+
+    <DataTemplate DataType="{x:Type local:StartPage}">
+        <DockPanel
+            Background="White">
+            <GroupBox
+                DockPanel.Dock="Left"
+                Header="{x:Static local:Resources.Strings.Workbench_Documents_StartPage_GettingStarted}">
+                <ItemsControl IsTabStop="False" ItemsSource="{Binding GettingStartedCommands}" Margin="6,2">
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate>
+                            <TextBlock Margin="2,6">
+                                <Hyperlink Command="{Binding}">
+                                  <TextBlock Text="{Binding Path=Text}" />
+                                </Hyperlink>
+                              </TextBlock>
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                </ItemsControl>
+
+            </GroupBox>
+            <GroupBox
+                Header="{x:Static local:Resources.Strings.Workbench_Documents_StartPage_News}">
+                <Frame
+                    Navigating="Frame_Navigating"
+                    NavigationUIVisibility="Visible"
+                    Source="{Binding FrameSource}"/>
+            </GroupBox>
+        </DockPanel>
+    </DataTemplate>
+
+</ResourceDictionary>

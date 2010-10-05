@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <Title>
+        Add SoapBox Field
+      </Title>
+      <Author>Scott Whitlock</Author>
+      <Description>The snippet creates a new field in a class derived from NodeBase</Description>
+      <Shortcut>sbf</Shortcut>
+    </Header>
+    <Snippet>
+      <Declarations>
+        <Literal>
+          <ID>FieldName</ID>
+          <ToolTip>Name of the field</ToolTip>
+          <Default>FieldName</Default>
+        </Literal>
+        <Literal>
+          <ID>FieldType</ID>
+          <ToolTip>Type of the field</ToolTip>
+          <Default>FieldType</Default>
+        </Literal>
+        <Literal>
+          <ID>ReturnType</ID>
+          <ToolTip>Should be the name of the class you're putting this in</ToolTip>
+          <Default>Node???</Default>
+        </Literal>
+      </Declarations>
+      <Code Language="CSharp">
+        <![CDATA[
+        #region " $FieldName$ ($FieldType$) "
+        public $FieldType$ $FieldName$
+        {
+            get
+            {
+                return ($FieldType$)Fields[new FieldIdentifier(m_$FieldName$Name)];
+            }
+        }
+        public $ReturnType$ Set$FieldName$($FieldType$ $FieldName$)
+        {
+            if ($FieldName$ == null)
+            {
+                throw new ArgumentNullException(m_$FieldName$Name);
+            }
+            return new $ReturnType$(this.SetField(new FieldIdentifier(m_$FieldName$Name), $FieldName$), ChildCollection);
+        }
+        static readonly string m_$FieldName$Name =
+            NotifyPropertyChangedHelper.GetPropertyName<$ReturnType$>(o => o.$FieldName$);
+        #endregion]]>
+      </Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>
+

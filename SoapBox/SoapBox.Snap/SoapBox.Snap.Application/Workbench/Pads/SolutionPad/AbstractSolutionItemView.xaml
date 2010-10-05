@@ -1,0 +1,43 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="clr-namespace:SoapBox.Snap.Application"
+    xmlns:core="clr-namespace:SoapBox.Core;assembly=SoapBox.Core.Contracts"
+    x:Class="SoapBox.Snap.Application.AbstractSolutionItemView">
+
+    <DataTemplate DataType="{x:Type local:AbstractSolutionItem}">
+        <DataTemplate.Resources>
+            <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter"/>
+        </DataTemplate.Resources>
+        <core:ContextMenuWrapper>
+            <StackPanel Orientation="Horizontal" 
+                        PreviewMouseLeftButtonDown="stackPanel_PreviewMouseLeftButtonDown"
+                        PreviewMouseMove="stackPanel_PreviewMouseMove"
+                        DragOver="stackPanel_DragOver"
+                        Drop="stackPanel_Drop" AllowDrop="True"
+                        MouseDown="FrameworkElement_MouseDown">
+                <ContentPresenter 
+                    Content="{Binding Path=(local:AbstractSolutionItem.Icon2)}" 
+                    MouseLeftButtonDown="TextBlock_MouseLeftButtonDown" MouseLeftButtonUp="TextBlock_MouseLeftButtonUp"
+                    MouseDown="FrameworkElement_MouseDown"/>
+                <ContentPresenter 
+                    Content="{Binding Path=(local:AbstractSolutionItem.Icon)}" 
+                    MouseLeftButtonDown="TextBlock_MouseLeftButtonDown" MouseLeftButtonUp="TextBlock_MouseLeftButtonUp"
+                    MouseDown="FrameworkElement_MouseDown"/>
+                <TextBlock x:Name="tbHeader"
+                           Margin="5,1,5,1" Text="{Binding Path=(local:AbstractSolutionItem.Header)}" 
+                           MouseLeftButtonDown="TextBlock_MouseLeftButtonDown"
+                           MouseLeftButtonUp="TextBlock_MouseLeftButtonUp"
+                           MouseDown="FrameworkElement_MouseDown"
+                           Visibility="{Binding Path=(local:AbstractSolutionItem.HeaderNotBeingEdited), 
+                                              Converter={StaticResource BooleanToVisibilityConverter}}"/>
+                <TextBox Margin="5,1,5,1" Text="{Binding Path=(local:AbstractSolutionItem.HeaderEdit), UpdateSourceTrigger=PropertyChanged}" 
+                         Visibility="{Binding Path=(local:AbstractSolutionItem.HeaderBeingEdited), 
+                                              Converter={StaticResource BooleanToVisibilityConverter}}"
+                         Width="{Binding ElementName=tbHeader, Path=ActualWidth}"
+                         LostKeyboardFocus="TextBox_LostKeyboardFocus" KeyDown="TextBox_KeyDown" 
+                         MinWidth="100"/>
+            </StackPanel>
+        </core:ContextMenuWrapper>
+    </DataTemplate>
+
+</ResourceDictionary>

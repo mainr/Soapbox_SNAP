@@ -1,0 +1,41 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="clr-namespace:SoapBox.Snap.LD"
+    xmlns:core="clr-namespace:SoapBox.Core;assembly=SoapBox.Core.Contracts"
+    xmlns:contracts="clr-namespace:SoapBox.Snap;assembly=SoapBox.Snap.Contracts"
+    x:Class="SoapBox.Snap.LD.InstructionLDContactNOView">
+
+    <DataTemplate DataType="{x:Type local:InstructionLDContactNO}">
+        <core:ContextMenuWrapper>
+            <DockPanel>
+                <ContentPresenter
+                    DockPanel.Dock="Top"
+                    Content="{Binding Path=ContactDescriptionDisplay.VmEditableTextBlock}"/>
+                <ContentPresenter
+                    DockPanel.Dock="Top"
+                    Content="{Binding Path=ContactSignalChooser.VmSignalChooserTextBlock}"/>
+                <StackPanel 
+                    HorizontalAlignment="Center"
+                    Orientation="Horizontal">
+                    <Line 
+                        X1="0" X2="0" Y1="0" Y2="{x:Static local:InstructionLDAbstractContact.CONTACT_HEIGHT}"
+                        Stroke="Black" StrokeThickness="2"/>
+                    <Rectangle
+                        Stroke="Transparent"
+                        StrokeThickness="0"
+                        Fill="White" 
+                        contracts:SignalValueBehavior.NodeItem="{Binding}"
+                        contracts:SignalValueBehavior.TrueColor="Green"
+                        contracts:SignalValueBehavior.FalseColor="White"
+                        contracts:SignalValueBehavior.ControlFillColorBySignalIn="{Binding Path=ContactSignalIn}"
+                        Width="{x:Static local:InstructionLDAbstractContact.CONTACT_WIDTH}"
+                        Height="{x:Static local:InstructionLDAbstractContact.CONTACT_HEIGHT}"/>
+                    <Line 
+                        X1="0" X2="0" Y1="0" Y2="{x:Static local:InstructionLDAbstractContact.CONTACT_HEIGHT}"
+                        Stroke="Black" StrokeThickness="2"/>
+                </StackPanel>
+            </DockPanel>
+        </core:ContextMenuWrapper>
+    </DataTemplate>
+
+</ResourceDictionary>

@@ -1,0 +1,14 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="clr-namespace:SoapBox.Snap.Application"
+    xmlns:contracts="clr-namespace:SoapBox.Snap;assembly=SoapBox.Snap.Contracts"
+    x:Class="SoapBox.Snap.Application.InstructionGroupDummyView">
+
+    <DataTemplate DataType="{x:Type local:InstructionGroupDummy}">
+        <StackPanel Orientation="Horizontal">
+            <TextBlock Text="{x:Static local:Resources.Strings.Workbench_Documents_Editor_LanguagePluginNotFound}"/>
+            <TextBlock Text="{Binding Language}"/>
+        </StackPanel>
+    </DataTemplate>
+
+</ResourceDictionary>
