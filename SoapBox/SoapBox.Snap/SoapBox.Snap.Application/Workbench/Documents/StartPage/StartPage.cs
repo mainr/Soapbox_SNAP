@@ -37,7 +37,7 @@ namespace SoapBox.Snap.Application
     [Document(Name = Extensions.Workbench.Documents.StartPage)]
     class StartPage : AbstractDocument, IPartImportsSatisfiedNotification
     {
-        public const string SOAPBOXAUTOMATION_URL = "http://dev.soapboxautomation.com";
+        public const string SOAPBOXAUTOMATION_URL = "http://soapboxautomation.com";
 
         /// <summary>
         /// Called by MEF (to satisfy the imports)
