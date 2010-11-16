@@ -124,6 +124,78 @@ namespace SoapBox.Snap.LD.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Addition.
+        /// </summary>
+        public static string LD_Snap_Add_DefaultName {
+            get {
+                return ResourceManager.GetString("LD_Snap_Add_DefaultName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Add this:.
+        /// </summary>
+        public static string LD_Snap_Add_FirstSignalName {
+            get {
+                return ResourceManager.GetString("LD_Snap_Add_FirstSignalName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Add.
+        /// </summary>
+        public static string LD_Snap_Add_InstructionName {
+            get {
+                return ResourceManager.GetString("LD_Snap_Add_InstructionName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to To this:.
+        /// </summary>
+        public static string LD_Snap_Add_SecondSignalName {
+            get {
+                return ResourceManager.GetString("LD_Snap_Add_SecondSignalName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to New Choice.
+        /// </summary>
+        public static string LD_Snap_ChooseNumber_DefaultName {
+            get {
+                return ResourceManager.GetString("LD_Snap_ChooseNumber_DefaultName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to If rung-in condition is true:.
+        /// </summary>
+        public static string LD_Snap_ChooseNumber_FirstSignalName {
+            get {
+                return ResourceManager.GetString("LD_Snap_ChooseNumber_FirstSignalName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Choose Number.
+        /// </summary>
+        public static string LD_Snap_ChooseNumber_InstructionName {
+            get {
+                return ResourceManager.GetString("LD_Snap_ChooseNumber_InstructionName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to If rung-in condition is false:.
+        /// </summary>
+        public static string LD_Snap_ChooseNumber_SecondSignalName {
+            get {
+                return ResourceManager.GetString("LD_Snap_ChooseNumber_SecondSignalName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Count Down.
         /// </summary>
         public static string LD_Snap_CntDN_InstructionName {
@@ -214,11 +286,254 @@ namespace SoapBox.Snap.LD.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Division.
+        /// </summary>
+        public static string LD_Snap_Divide_DefaultName {
+            get {
+                return ResourceManager.GetString("LD_Snap_Divide_DefaultName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Divide this:.
+        /// </summary>
+        public static string LD_Snap_Divide_FirstSignalName {
+            get {
+                return ResourceManager.GetString("LD_Snap_Divide_FirstSignalName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Divide.
+        /// </summary>
+        public static string LD_Snap_Divide_InstructionName {
+            get {
+                return ResourceManager.GetString("LD_Snap_Divide_InstructionName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to By this:.
+        /// </summary>
+        public static string LD_Snap_Divide_SecondSignalName {
+            get {
+                return ResourceManager.GetString("LD_Snap_Divide_SecondSignalName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to This:.
+        /// </summary>
+        public static string LD_Snap_Equal_FirstSignalName {
+            get {
+                return ResourceManager.GetString("LD_Snap_Equal_FirstSignalName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Equal (=).
+        /// </summary>
+        public static string LD_Snap_Equal_InstructionName {
+            get {
+                return ResourceManager.GetString("LD_Snap_Equal_InstructionName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Is equal to:.
+        /// </summary>
+        public static string LD_Snap_Equal_SecondSignalName {
+            get {
+                return ResourceManager.GetString("LD_Snap_Equal_SecondSignalName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Falling Edge.
         /// </summary>
         public static string LD_Snap_FallingEdge_InstructionName {
             get {
                 return ResourceManager.GetString("LD_Snap_FallingEdge_InstructionName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to This:.
+        /// </summary>
+        public static string LD_Snap_GreaterThan_FirstSignalName {
+            get {
+                return ResourceManager.GetString("LD_Snap_GreaterThan_FirstSignalName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Greater Than (&gt;).
+        /// </summary>
+        public static string LD_Snap_GreaterThan_InstructionName {
+            get {
+                return ResourceManager.GetString("LD_Snap_GreaterThan_InstructionName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Is greater than:.
+        /// </summary>
+        public static string LD_Snap_GreaterThan_SecondSignalName {
+            get {
+                return ResourceManager.GetString("LD_Snap_GreaterThan_SecondSignalName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to This:.
+        /// </summary>
+        public static string LD_Snap_GreaterThanOrEqual_FirstSignalName {
+            get {
+                return ResourceManager.GetString("LD_Snap_GreaterThanOrEqual_FirstSignalName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Greater Than or Equal (&gt;=).
+        /// </summary>
+        public static string LD_Snap_GreaterThanOrEqual_InstructionName {
+            get {
+                return ResourceManager.GetString("LD_Snap_GreaterThanOrEqual_InstructionName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Is greater than or equal to:.
+        /// </summary>
+        public static string LD_Snap_GreaterThanOrEqual_SecondSignalName {
+            get {
+                return ResourceManager.GetString("LD_Snap_GreaterThanOrEqual_SecondSignalName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to This:.
+        /// </summary>
+        public static string LD_Snap_LessThan_FirstSignalName {
+            get {
+                return ResourceManager.GetString("LD_Snap_LessThan_FirstSignalName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Less Than (&lt;).
+        /// </summary>
+        public static string LD_Snap_LessThan_InstructionName {
+            get {
+                return ResourceManager.GetString("LD_Snap_LessThan_InstructionName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Is less than:.
+        /// </summary>
+        public static string LD_Snap_LessThan_SecondSignalName {
+            get {
+                return ResourceManager.GetString("LD_Snap_LessThan_SecondSignalName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to This:.
+        /// </summary>
+        public static string LD_Snap_LessThanOrEqual_FirstSignalName {
+            get {
+                return ResourceManager.GetString("LD_Snap_LessThanOrEqual_FirstSignalName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Less Than or Equal (&lt;=).
+        /// </summary>
+        public static string LD_Snap_LessThanOrEqual_InstructionName {
+            get {
+                return ResourceManager.GetString("LD_Snap_LessThanOrEqual_InstructionName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Is less than or equal to:.
+        /// </summary>
+        public static string LD_Snap_LessThanOrEqual_SecondSignalName {
+            get {
+                return ResourceManager.GetString("LD_Snap_LessThanOrEqual_SecondSignalName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Result:.
+        /// </summary>
+        public static string LD_Snap_MathBase_ResultLabel {
+            get {
+                return ResourceManager.GetString("LD_Snap_MathBase_ResultLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Multiplication.
+        /// </summary>
+        public static string LD_Snap_Multiply_DefaultName {
+            get {
+                return ResourceManager.GetString("LD_Snap_Multiply_DefaultName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Multiply this:.
+        /// </summary>
+        public static string LD_Snap_Multiply_FirstSignalName {
+            get {
+                return ResourceManager.GetString("LD_Snap_Multiply_FirstSignalName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Multiply.
+        /// </summary>
+        public static string LD_Snap_Multiply_InstructionName {
+            get {
+                return ResourceManager.GetString("LD_Snap_Multiply_InstructionName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to By this:.
+        /// </summary>
+        public static string LD_Snap_Multiply_SecondSignalName {
+            get {
+                return ResourceManager.GetString("LD_Snap_Multiply_SecondSignalName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to This:.
+        /// </summary>
+        public static string LD_Snap_NotEqual_FirstSignalName {
+            get {
+                return ResourceManager.GetString("LD_Snap_NotEqual_FirstSignalName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Not Equal.
+        /// </summary>
+        public static string LD_Snap_NotEqual_InstructionName {
+            get {
+                return ResourceManager.GetString("LD_Snap_NotEqual_InstructionName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Is not equal to:.
+        /// </summary>
+        public static string LD_Snap_NotEqual_SecondSignalName {
+            get {
+                return ResourceManager.GetString("LD_Snap_NotEqual_SecondSignalName", resourceCulture);
             }
         }
         
@@ -313,6 +628,42 @@ namespace SoapBox.Snap.LD.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Subtraction.
+        /// </summary>
+        public static string LD_Snap_Subtract_DefaultName {
+            get {
+                return ResourceManager.GetString("LD_Snap_Subtract_DefaultName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Take this:.
+        /// </summary>
+        public static string LD_Snap_Subtract_FirstSignalName {
+            get {
+                return ResourceManager.GetString("LD_Snap_Subtract_FirstSignalName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Subtract.
+        /// </summary>
+        public static string LD_Snap_Subtract_InstructionName {
+            get {
+                return ResourceManager.GetString("LD_Snap_Subtract_InstructionName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to And subtract this:.
+        /// </summary>
+        public static string LD_Snap_Subtract_SecondSignalName {
+            get {
+                return ResourceManager.GetString("LD_Snap_Subtract_SecondSignalName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to New Timer.
         /// </summary>
         public static string LD_Snap_Tmr_DefaultName {
@@ -367,6 +718,24 @@ namespace SoapBox.Snap.LD.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Add.
+        /// </summary>
+        public static string ToolTipAdd {
+            get {
+                return ResourceManager.GetString("ToolTipAdd", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Choose from two numbers using the rung-in condition.
+        /// </summary>
+        public static string ToolTipChooseNumber {
+            get {
+                return ResourceManager.GetString("ToolTipChooseNumber", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Count Down Counter.
         /// </summary>
         public static string ToolTipCntDN {
@@ -412,11 +781,83 @@ namespace SoapBox.Snap.LD.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Divide.
+        /// </summary>
+        public static string ToolTipDivide {
+            get {
+                return ResourceManager.GetString("ToolTipDivide", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Compare two numbers for equality.
+        /// </summary>
+        public static string ToolTipEqual {
+            get {
+                return ResourceManager.GetString("ToolTipEqual", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Falling Edge Detection.
         /// </summary>
         public static string ToolTipFallingEdge {
             get {
                 return ResourceManager.GetString("ToolTipFallingEdge", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Compare two numbers to see if the first is greater.
+        /// </summary>
+        public static string ToolTipGreaterThan {
+            get {
+                return ResourceManager.GetString("ToolTipGreaterThan", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Compare two numbers to see if the first is greater or equal.
+        /// </summary>
+        public static string ToolTipGreaterThanOrEqual {
+            get {
+                return ResourceManager.GetString("ToolTipGreaterThanOrEqual", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Compare two numbers to see if the first is less.
+        /// </summary>
+        public static string ToolTipLessThan {
+            get {
+                return ResourceManager.GetString("ToolTipLessThan", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Compare two numbers to see if the first is less or equal.
+        /// </summary>
+        public static string ToolTipLessThanOrEqual {
+            get {
+                return ResourceManager.GetString("ToolTipLessThanOrEqual", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Multiply.
+        /// </summary>
+        public static string ToolTipMultiply {
+            get {
+                return ResourceManager.GetString("ToolTipMultiply", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Compare two numbers for inequality.
+        /// </summary>
+        public static string ToolTipNotEqual {
+            get {
+                return ResourceManager.GetString("ToolTipNotEqual", resourceCulture);
             }
         }
         
@@ -457,6 +898,15 @@ namespace SoapBox.Snap.LD.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Subtract.
+        /// </summary>
+        public static string ToolTipSubtract {
+            get {
+                return ResourceManager.GetString("ToolTipSubtract", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Delay-off Timer.
         /// </summary>
         public static string ToolTipTmrOFF {
@@ -489,6 +939,24 @@ namespace SoapBox.Snap.LD.Resources {
         public static string Undo_Action_EditCoilName {
             get {
                 return ResourceManager.GetString("Undo_Action_EditCoilName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Edited comparison instruction first input.
+        /// </summary>
+        public static string Undo_Action_EditComparisonFirstSignal {
+            get {
+                return ResourceManager.GetString("Undo_Action_EditComparisonFirstSignal", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Edited comparison instruction second input.
+        /// </summary>
+        public static string Undo_Action_EditComparisonSecondSignal {
+            get {
+                return ResourceManager.GetString("Undo_Action_EditComparisonSecondSignal", resourceCulture);
             }
         }
         
@@ -561,6 +1029,42 @@ namespace SoapBox.Snap.LD.Resources {
         public static string Undo_Action_EditFallingEdgeName {
             get {
                 return ResourceManager.GetString("Undo_Action_EditFallingEdgeName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Edited instruction description.
+        /// </summary>
+        public static string Undo_Action_EditInstructionDescription {
+            get {
+                return ResourceManager.GetString("Undo_Action_EditInstructionDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Edited instruction name.
+        /// </summary>
+        public static string Undo_Action_EditInstructionName {
+            get {
+                return ResourceManager.GetString("Undo_Action_EditInstructionName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Edited math instruction first input.
+        /// </summary>
+        public static string Undo_Action_EditMathFirstSignal {
+            get {
+                return ResourceManager.GetString("Undo_Action_EditMathFirstSignal", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Edited math instruction second input.
+        /// </summary>
+        public static string Undo_Action_EditMathSecondSignal {
+            get {
+                return ResourceManager.GetString("Undo_Action_EditMathSecondSignal", resourceCulture);
             }
         }
         

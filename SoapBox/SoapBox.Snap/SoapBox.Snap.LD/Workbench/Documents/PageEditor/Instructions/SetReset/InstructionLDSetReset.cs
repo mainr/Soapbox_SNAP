@@ -48,14 +48,13 @@ namespace SoapBox.Snap.LD
         public const double RUNG_IN_OFFSET = 10;
         public const double MAX_WIDTH = 150;
         public const double MAX_DESCRIPTION_HEIGHT = 70;
-        public const string SEPARATOR = ".";
 
         internal static readonly FieldInstructionType m_InstructionType = new FieldInstructionType(
                    new FieldIdentifier(Extensions.Workbench.Documents.PageEditor_.InstructionItems.LD),
                    new FieldIdentifier(Extensions.Workbench.Documents.PageEditor_.InstructionItems.LD_.Snap),
                    new FieldIdentifier(Extensions.Workbench.Documents.PageEditor_.InstructionItems.LD_.Snap_.SetReset));
 
-        protected InstructionLDSetReset()
+        internal InstructionLDSetReset()
             : base(null, m_InstructionType)
         {
         }
@@ -91,8 +90,11 @@ namespace SoapBox.Snap.LD
             }
 
             // Build the context menu
-            ContextMenu = extensionService.SortAndJoin(ldInstructionContextMenu, m_staticMenuItemSeparator, contextMenu);
-            ContextMenuEnabled = true;
+            if (extensionService != null)
+            {
+                ContextMenu = extensionService.SortAndJoin(ldInstructionContextMenu, m_staticMenuItemSeparator, contextMenu);
+                ContextMenuEnabled = true;
+            }
         }
 
         private static IMenuItem m_staticMenuItemSeparator = new ConcreteMenuItemSeparator();
@@ -234,7 +236,6 @@ namespace SoapBox.Snap.LD
 
         private void calculateVerticalRungOffset()
         {
-            // It's the size of the description, plus the SetReset name, plus half the SetReset size
             m_VerticalRungOffset = RUNG_IN_OFFSET;
             m_VerticalRungOffset += SetResetDescriptionEditor.ActualHeight;
             m_VerticalRungOffset += SetResetNameEditor.ActualHeight;

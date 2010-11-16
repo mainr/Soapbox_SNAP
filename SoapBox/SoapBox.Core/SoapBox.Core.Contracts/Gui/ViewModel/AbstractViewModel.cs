@@ -32,6 +32,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.Composition;
+using SoapBox.Utilities;
 
 namespace SoapBox.Core
 {
@@ -56,6 +57,7 @@ namespace SoapBox.Core
             }
         }
         private static ILoggingService m_logger = null;
+        public static string m_logger_Name = NotifyPropertyChangedHelper.GetPropertyName<AbstractViewModel>(o => o.logger);
         #endregion
 
         #region " Implement INotifyPropertyChanged "

@@ -103,14 +103,38 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Images.resx</DependentUpon>
     </Compile>
+    <Compile Include="Runtime\InstructionExecutors\Comparison\Equal\InstructionLDEqual.cs" />
+    <Compile Include="Runtime\InstructionExecutors\Comparison\GreaterThanOrEqual\InstructionLDGreaterThanOrEqual.cs" />
+    <Compile Include="Runtime\InstructionExecutors\Comparison\GreaterThan\InstructionLDGreaterThan.cs" />
+    <Compile Include="Runtime\InstructionExecutors\Comparison\InstructionLDComparisonBase.cs" />
+    <Compile Include="Runtime\InstructionExecutors\Comparison\LessThanOrEqual\InstructionLDLessThanOrEqual.cs" />
+    <Compile Include="Runtime\InstructionExecutors\Comparison\LessThan\InstructionLDLessThan.cs" />
+    <Compile Include="Runtime\InstructionExecutors\Comparison\NotEqual\InstructionLDNotEqual.cs" />
     <Compile Include="Runtime\InstructionExecutors\Counters\InstructionLDCntDN.cs" />
     <Compile Include="Runtime\InstructionExecutors\Counters\InstructionLDCntUP.cs" />
     <Compile Include="Runtime\InstructionExecutors\Edge\InstructionLDFallingEdge.cs" />
     <Compile Include="Runtime\InstructionExecutors\Edge\InstructionLDRisingEdge.cs" />
+    <Compile Include="Runtime\IGroupExecutorLD.cs" />
+    <Compile Include="Runtime\InstructionExecutors\Math\Add\InstructionLDAdd.cs" />
+    <Compile Include="Runtime\InstructionExecutors\Math\ChooseNumber\InstructionLDChooseNumber.cs" />
+    <Compile Include="Runtime\InstructionExecutors\Math\Divide\InstructionLDDivide.cs" />
+    <Compile Include="Runtime\InstructionExecutors\Math\InstructionLDMathBase.cs" />
+    <Compile Include="Runtime\InstructionExecutors\Math\Multiply\InstructionLDMultiply.cs" />
+    <Compile Include="Runtime\InstructionExecutors\Math\Subtract\InstructionLDSubtract.cs" />
     <Compile Include="Runtime\InstructionExecutors\SetReset\InstructionLDSetReset.cs" />
     <Compile Include="Runtime\InstructionExecutors\String\StringContains\InstructionLDStringContains.cs" />
     <Compile Include="Runtime\InstructionExecutors\Timers\InstructionLDTmrOFF.cs" />
     <Compile Include="Runtime\InstructionExecutors\Timers\InstructionLDTmrON.cs" />
+    <Compile Include="Workbench\Documents\PageEditor\Instructions\Comparison\Equal\InstructionLDEqual.cs" />
+    <Compile Include="Workbench\Documents\PageEditor\Instructions\Comparison\GreaterThanOrEqual\InstructionLDGreaterThanOrEqual.cs" />
+    <Compile Include="Workbench\Documents\PageEditor\Instructions\Comparison\GreaterThan\InstructionLDGreaterThan.cs" />
+    <Compile Include="Workbench\Documents\PageEditor\Instructions\Comparison\InstructionLDComparisonBase.cs" />
+    <Compile Include="Workbench\Documents\PageEditor\Instructions\Comparison\InstructionLDComparisonBaseView.xaml.cs">
+      <DependentUpon>InstructionLDComparisonBaseView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Workbench\Documents\PageEditor\Instructions\Comparison\LessThanOrEqual\InstructionLDLessThanOrEqual.cs" />
+    <Compile Include="Workbench\Documents\PageEditor\Instructions\Comparison\LessThan\InstructionLDLessThan.cs" />
+    <Compile Include="Workbench\Documents\PageEditor\Instructions\Comparison\NotEqual\InstructionLDNotEqual.cs" />
     <Compile Include="Workbench\Documents\PageEditor\Instructions\ContextMenu\Delete.cs" />
     <Compile Include="Workbench\Documents\PageEditor\Instructions\Counters\CntDN\InstructionLDCntDN.cs" />
     <Compile Include="Workbench\Documents\PageEditor\Instructions\Counters\CntUP\InstructionLDCntUP.cs" />
@@ -124,6 +148,15 @@
       <DependentUpon>InstructionLDAbstractEdgeView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Workbench\Documents\PageEditor\Instructions\Edge\RisingEdge\InstructionLDRisingEdge.cs" />
+    <Compile Include="Workbench\Documents\PageEditor\Instructions\Math\Add\InstructionLDAdd.cs" />
+    <Compile Include="Workbench\Documents\PageEditor\Instructions\Math\ChooseNumber\InstructionLDChooseNumber.cs" />
+    <Compile Include="Workbench\Documents\PageEditor\Instructions\Math\Divide\InstructionLDDivide.cs" />
+    <Compile Include="Workbench\Documents\PageEditor\Instructions\Math\InstructionLDMathBase.cs" />
+    <Compile Include="Workbench\Documents\PageEditor\Instructions\Math\InstructionLDMathBaseView.xaml.cs">
+      <DependentUpon>InstructionLDMathBaseView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Workbench\Documents\PageEditor\Instructions\Math\Multiply\InstructionLDMultiply.cs" />
+    <Compile Include="Workbench\Documents\PageEditor\Instructions\Math\Subtract\InstructionLDSubtract.cs" />
     <Compile Include="Workbench\Documents\PageEditor\Instructions\Parallel\ContextMenu\AppendBranch.cs" />
     <Compile Include="Workbench\Documents\PageEditor\Instructions\Parallel\ContextMenu\RemoveEmptyBranches.cs" />
     <Compile Include="Workbench\Documents\PageEditor\Instructions\Parallel\LDParallelPanel.cs" />
@@ -242,6 +275,10 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Page Include="Workbench\Documents\PageEditor\Instructions\Comparison\InstructionLDComparisonBaseView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Workbench\Documents\PageEditor\Instructions\Contacts\NC\InstructionLDContactNCView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -263,6 +300,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="Workbench\Documents\PageEditor\Instructions\Edge\InstructionLDAbstractEdgeView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Workbench\Documents\PageEditor\Instructions\Math\InstructionLDMathBaseView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -360,10 +401,40 @@
     <Folder Include="Workbench\Documents\PageEditor\Instructions\String\SubString\" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\SprCoil1.png" />
+    <None Include="Resources\SprStringContains.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\SprStringContains.png" />
+    <None Include="Resources\SprSubtract.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SprAdd.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SprDivide.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SprMultiply.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SprChooseNumber.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SprEqual.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SprNotEqual.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SprGreaterThan.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SprGreaterThanOrEqual.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SprLessThan.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SprLessThanOrEqual.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

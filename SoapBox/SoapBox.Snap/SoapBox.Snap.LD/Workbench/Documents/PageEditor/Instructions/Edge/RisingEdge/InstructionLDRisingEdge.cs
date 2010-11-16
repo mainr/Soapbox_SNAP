@@ -56,7 +56,7 @@ namespace SoapBox.Snap.LD
         /// <summary>
         /// Just here for MEF to call, to do the imports
         /// </summary>
-        private InstructionLDRisingEdge()
+        internal InstructionLDRisingEdge()
             : base(m_InstructionType)
         {
         }

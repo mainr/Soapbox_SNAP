@@ -163,5 +163,13 @@ namespace SoapBox.Protocol.Automation
             return Builder;
         }
         #endregion
+
+        public NodeInstruction SetSignalInToSignalId(int index, FieldGuid signalId)
+        {
+            var oldSignalIn = this.NodeSignalInChildren[index];
+            var newSignalIn = NodeSignalIn.BuildWith(oldSignalIn.DataType, signalId);
+            var newInstruction = this.NodeSignalInChildren.Replace(oldSignalIn, newSignalIn);
+            return newInstruction;
+        }
     }
 }

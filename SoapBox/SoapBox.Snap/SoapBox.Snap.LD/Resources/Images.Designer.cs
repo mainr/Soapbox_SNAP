@@ -81,6 +81,20 @@ namespace SoapBox.Snap.LD.Resources {
             }
         }
         
+        public static System.Drawing.Bitmap SprAdd {
+            get {
+                object obj = ResourceManager.GetObject("SprAdd", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        public static System.Drawing.Bitmap SprChooseNumber {
+            get {
+                object obj = ResourceManager.GetObject("SprChooseNumber", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
         public static System.Drawing.Bitmap SprCntDN {
             get {
                 object obj = ResourceManager.GetObject("SprCntDN", resourceCulture);
@@ -116,9 +130,65 @@ namespace SoapBox.Snap.LD.Resources {
             }
         }
         
+        public static System.Drawing.Bitmap SprDivide {
+            get {
+                object obj = ResourceManager.GetObject("SprDivide", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        public static System.Drawing.Bitmap SprEqual {
+            get {
+                object obj = ResourceManager.GetObject("SprEqual", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
         public static System.Drawing.Bitmap SprFallingEdge {
             get {
                 object obj = ResourceManager.GetObject("SprFallingEdge", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        public static System.Drawing.Bitmap SprGreaterThan {
+            get {
+                object obj = ResourceManager.GetObject("SprGreaterThan", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        public static System.Drawing.Bitmap SprGreaterThanOrEqual {
+            get {
+                object obj = ResourceManager.GetObject("SprGreaterThanOrEqual", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        public static System.Drawing.Bitmap SprLessThan {
+            get {
+                object obj = ResourceManager.GetObject("SprLessThan", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        public static System.Drawing.Bitmap SprLessThanOrEqual {
+            get {
+                object obj = ResourceManager.GetObject("SprLessThanOrEqual", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        public static System.Drawing.Bitmap SprMultiply {
+            get {
+                object obj = ResourceManager.GetObject("SprMultiply", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        public static System.Drawing.Bitmap SprNotEqual {
+            get {
+                object obj = ResourceManager.GetObject("SprNotEqual", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -147,6 +217,13 @@ namespace SoapBox.Snap.LD.Resources {
         public static System.Drawing.Bitmap SprStringContains {
             get {
                 object obj = ResourceManager.GetObject("SprStringContains", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        public static System.Drawing.Bitmap SprSubtract {
+            get {
+                object obj = ResourceManager.GetObject("SprSubtract", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

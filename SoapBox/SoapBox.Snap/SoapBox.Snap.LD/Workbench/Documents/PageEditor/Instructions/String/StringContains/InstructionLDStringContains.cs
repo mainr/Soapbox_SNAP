@@ -55,7 +55,7 @@ namespace SoapBox.Snap.LD
                    new FieldIdentifier(Extensions.Workbench.Documents.PageEditor_.InstructionItems.LD_.Snap),
                    new FieldIdentifier(Extensions.Workbench.Documents.PageEditor_.InstructionItems.LD_.Snap_.StringContains));
 
-        protected InstructionLDStringContains()
+        internal InstructionLDStringContains()
             : base(null, m_InstructionType)
         {
         }
@@ -101,8 +101,11 @@ namespace SoapBox.Snap.LD
             }
 
             // Build the context menu
-            ContextMenu = extensionService.SortAndJoin(ldInstructionContextMenu, m_staticMenuItemSeparator, contextMenu);
-            ContextMenuEnabled = true;
+            if (extensionService != null)
+            {
+                ContextMenu = extensionService.SortAndJoin(ldInstructionContextMenu, m_staticMenuItemSeparator, contextMenu);
+                ContextMenuEnabled = true;
+            }
         }
 
         private static IMenuItem m_staticMenuItemSeparator = new ConcreteMenuItemSeparator();

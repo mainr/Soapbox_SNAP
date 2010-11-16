@@ -51,7 +51,10 @@ namespace SoapBox.Snap.LD
 
             m_instructionNode = instructionNode;
             SignalIn = signalIn;
-            runtimeService.SignalChanged += new SignalChangedHandler(runtimeService_SignalChanged);
+            if (runtimeService != null)
+            {
+                runtimeService.SignalChanged += new SignalChangedHandler(runtimeService_SignalChanged);
+            }
         }
 
         void runtimeService_SignalChanged(NodeSignal signal)

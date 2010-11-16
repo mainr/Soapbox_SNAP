@@ -92,5 +92,49 @@ namespace SoapBox.Snap.LD.ExtensionPoints
         {
             public const string ContextMenu = "SoapBox.Snap.LD.ExtensionPoints.Instructions.StringContains.ContextMenu";
         }
+        public static class Add
+        {
+            public const string ContextMenu = "SoapBox.Snap.LD.ExtensionPoints.Instructions.Add.ContextMenu";
+        }
+        public static class Subtract
+        {
+            public const string ContextMenu = "SoapBox.Snap.LD.ExtensionPoints.Instructions.Subtract.ContextMenu";
+        }
+        public static class Multiply
+        {
+            public const string ContextMenu = "SoapBox.Snap.LD.ExtensionPoints.Instructions.Multiply.ContextMenu";
+        }
+        public static class Divide
+        {
+            public const string ContextMenu = "SoapBox.Snap.LD.ExtensionPoints.Instructions.Divide.ContextMenu";
+        }
+        public static class ChooseNumber
+        {
+            public const string ContextMenu = "SoapBox.Snap.LD.ExtensionPoints.Instructions.ChooseNumber.ContextMenu";
+        }
+        public static class Equal
+        {
+            public const string ContextMenu = "SoapBox.Snap.LD.ExtensionPoints.Instructions.Equal.ContextMenu";
+        }
+        public static class NotEqual
+        {
+            public const string ContextMenu = "SoapBox.Snap.LD.ExtensionPoints.Instructions.NotEqual.ContextMenu";
+        }
+        public static class GreaterThan
+        {
+            public const string ContextMenu = "SoapBox.Snap.LD.ExtensionPoints.Instructions.GreaterThan.ContextMenu";
+        }
+        public static class GreaterThanOrEqual
+        {
+            public const string ContextMenu = "SoapBox.Snap.LD.ExtensionPoints.Instructions.GreaterThanOrEqual.ContextMenu";
+        }
+        public static class LessThan
+        {
+            public const string ContextMenu = "SoapBox.Snap.LD.ExtensionPoints.Instructions.LessThan.ContextMenu";
+        }
+        public static class LessThanOrEqual
+        {
+            public const string ContextMenu = "SoapBox.Snap.LD.ExtensionPoints.Instructions.LessThanOrEqual.ContextMenu";
+        }
     }
 }

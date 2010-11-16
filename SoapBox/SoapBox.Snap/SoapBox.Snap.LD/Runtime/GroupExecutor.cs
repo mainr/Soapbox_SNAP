@@ -38,7 +38,7 @@ namespace SoapBox.Snap.LD
     [Export(CompositionPoints.Runtime.Snap.LD.GroupExecutor, typeof(GroupExecutor))]
     [GroupExecutor(
         Language = Extensions.Runtime.Snap.GroupExecutors.LD)]
-    class GroupExecutor : AbstractExtension, IGroupExecutor, IPartImportsSatisfiedNotification
+    class GroupExecutor : AbstractExtension, IGroupExecutorLD, IPartImportsSatisfiedNotification
     {
         private GroupExecutor()
         {

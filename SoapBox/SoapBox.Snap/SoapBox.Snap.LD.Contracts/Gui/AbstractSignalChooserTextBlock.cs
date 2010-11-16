@@ -212,7 +212,7 @@ namespace SoapBox.Snap.LD
                     nodeItemBinding.Source = this;
                     m_VmSignalChooserTextBlock.SetBinding(SignalChooserTextBlock.NodeItemProperty, nodeItemBinding);
 
-                    // Bind signalId property
+                    // Bind signalIn property
                     Binding signalInBinding = new Binding(m_SignalInName);
                     signalInBinding.Source = this;
                     signalInBinding.Mode = BindingMode.TwoWay;

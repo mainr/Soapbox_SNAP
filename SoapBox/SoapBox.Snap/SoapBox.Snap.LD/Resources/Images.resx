@@ -127,6 +127,12 @@
   <data name="Instruction_Parallel_RemoveEmptyBranches" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>arrow_in.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="SprAdd" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>SprAdd.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SprChooseNumber" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>SprChooseNumber.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="SprCntDN" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>SprCntDN.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -142,8 +148,32 @@
   <data name="SprContactNO" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>SprContactNO.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="SprDivide" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>SprDivide.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SprEqual" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>SprEqual.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="SprFallingEdge" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>SprFallingEdge.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SprGreaterThan" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>SprGreaterThan.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SprGreaterThanOrEqual" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>SprGreaterThanOrEqual.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SprLessThan" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>SprLessThan.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SprLessThanOrEqual" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>SprLessThanOrEqual.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SprMultiply" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>SprMultiply.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SprNotEqual" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>SprNotEqual.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="SprParallel" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>SprParallel.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -156,6 +186,9 @@
   </data>
   <data name="SprStringContains" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>SprStringContains.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SprSubtract" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>SprSubtract.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="SprTmrOFF" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>SprTmrOFF.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>

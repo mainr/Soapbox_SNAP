@@ -72,6 +72,40 @@ namespace SoapBox.Snap.LD.Extensions
                             public const string StringContains = "StringContains";
                             public const double StringContains_SortOrder = 12;
                         }
+
+                        public const string SnapComparison = "SnapComparison"; // library
+                        public static class SnapComparison_
+                        {
+                            // Instructions
+                            public const string Equal = "Equal";
+                            public const double Equal_SortOrder = 1;
+                            public const string NotEqual = "NotEqual";
+                            public const double NotEqual_SortOrder = 2;
+                            public const string GreaterThan = "GreaterThan";
+                            public const double GreaterThan_SortOrder = 3;
+                            public const string GreaterThanOrEqual = "GreaterThanOrEqual";
+                            public const double GreaterThanOrEqual_SortOrder = 4;
+                            public const string LessThan = "LessThan";
+                            public const double LessThan_SortOrder = 5;
+                            public const string LessThanOrEqual = "LessThanOrEqual";
+                            public const double LessThanOrEqual_SortOrder = 6;
+                        }
+
+                        public const string SnapMath = "SnapMath"; // library
+                        public static class SnapMath_
+                        {
+                            // Instructions
+                            public const string Add = "Add";
+                            public const double Add_SortOrder = 1;
+                            public const string Subtract = "Subtract";
+                            public const double Subtract_SortOrder = 2;
+                            public const string Multiply = "Multiply";
+                            public const double Multiply_SortOrder = 3;
+                            public const string Divide = "Divide";
+                            public const double Divide_SortOrder = 4;
+                            public const string ChooseNumber = "ChooseNumber";
+                            public const double ChooseNumber_SortOrder = 5;
+                        }
                     }
                 }
             }

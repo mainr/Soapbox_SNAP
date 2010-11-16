@@ -138,6 +138,30 @@
   <data name="Instruction_Parallel_RemoveEmptyBranches_ToolTip" xml:space="preserve">
     <value>Removes branches that have no instructions</value>
   </data>
+  <data name="LD_Snap_Add_DefaultName" xml:space="preserve">
+    <value>Addition</value>
+  </data>
+  <data name="LD_Snap_Add_FirstSignalName" xml:space="preserve">
+    <value>Add this:</value>
+  </data>
+  <data name="LD_Snap_Add_InstructionName" xml:space="preserve">
+    <value>Add</value>
+  </data>
+  <data name="LD_Snap_Add_SecondSignalName" xml:space="preserve">
+    <value>To this:</value>
+  </data>
+  <data name="LD_Snap_ChooseNumber_DefaultName" xml:space="preserve">
+    <value>New Choice</value>
+  </data>
+  <data name="LD_Snap_ChooseNumber_FirstSignalName" xml:space="preserve">
+    <value>If rung-in condition is true:</value>
+  </data>
+  <data name="LD_Snap_ChooseNumber_InstructionName" xml:space="preserve">
+    <value>Choose Number</value>
+  </data>
+  <data name="LD_Snap_ChooseNumber_SecondSignalName" xml:space="preserve">
+    <value>If rung-in condition is false:</value>
+  </data>
   <data name="LD_Snap_CntDN_InstructionName" xml:space="preserve">
     <value>Count Down</value>
   </data>
@@ -168,8 +192,89 @@
   <data name="LD_Snap_Ctr_SetpointLabel" xml:space="preserve">
     <value>Setpoint:</value>
   </data>
+  <data name="LD_Snap_Divide_DefaultName" xml:space="preserve">
+    <value>Division</value>
+  </data>
+  <data name="LD_Snap_Divide_FirstSignalName" xml:space="preserve">
+    <value>Divide this:</value>
+  </data>
+  <data name="LD_Snap_Divide_InstructionName" xml:space="preserve">
+    <value>Divide</value>
+  </data>
+  <data name="LD_Snap_Divide_SecondSignalName" xml:space="preserve">
+    <value>By this:</value>
+  </data>
+  <data name="LD_Snap_Equal_FirstSignalName" xml:space="preserve">
+    <value>This:</value>
+  </data>
+  <data name="LD_Snap_Equal_InstructionName" xml:space="preserve">
+    <value>Equal (=)</value>
+  </data>
+  <data name="LD_Snap_Equal_SecondSignalName" xml:space="preserve">
+    <value>Is equal to:</value>
+  </data>
   <data name="LD_Snap_FallingEdge_InstructionName" xml:space="preserve">
     <value>Falling Edge</value>
+  </data>
+  <data name="LD_Snap_GreaterThanOrEqual_FirstSignalName" xml:space="preserve">
+    <value>This:</value>
+  </data>
+  <data name="LD_Snap_GreaterThanOrEqual_InstructionName" xml:space="preserve">
+    <value>Greater Than or Equal (&gt;=)</value>
+  </data>
+  <data name="LD_Snap_GreaterThanOrEqual_SecondSignalName" xml:space="preserve">
+    <value>Is greater than or equal to:</value>
+  </data>
+  <data name="LD_Snap_GreaterThan_FirstSignalName" xml:space="preserve">
+    <value>This:</value>
+  </data>
+  <data name="LD_Snap_GreaterThan_InstructionName" xml:space="preserve">
+    <value>Greater Than (&gt;)</value>
+  </data>
+  <data name="LD_Snap_GreaterThan_SecondSignalName" xml:space="preserve">
+    <value>Is greater than:</value>
+  </data>
+  <data name="LD_Snap_LessThanOrEqual_FirstSignalName" xml:space="preserve">
+    <value>This:</value>
+  </data>
+  <data name="LD_Snap_LessThanOrEqual_InstructionName" xml:space="preserve">
+    <value>Less Than or Equal (&lt;=)</value>
+  </data>
+  <data name="LD_Snap_LessThanOrEqual_SecondSignalName" xml:space="preserve">
+    <value>Is less than or equal to:</value>
+  </data>
+  <data name="LD_Snap_LessThan_FirstSignalName" xml:space="preserve">
+    <value>This:</value>
+  </data>
+  <data name="LD_Snap_LessThan_InstructionName" xml:space="preserve">
+    <value>Less Than (&lt;)</value>
+  </data>
+  <data name="LD_Snap_LessThan_SecondSignalName" xml:space="preserve">
+    <value>Is less than:</value>
+  </data>
+  <data name="LD_Snap_MathBase_ResultLabel" xml:space="preserve">
+    <value>Result:</value>
+  </data>
+  <data name="LD_Snap_Multiply_DefaultName" xml:space="preserve">
+    <value>Multiplication</value>
+  </data>
+  <data name="LD_Snap_Multiply_FirstSignalName" xml:space="preserve">
+    <value>Multiply this:</value>
+  </data>
+  <data name="LD_Snap_Multiply_InstructionName" xml:space="preserve">
+    <value>Multiply</value>
+  </data>
+  <data name="LD_Snap_Multiply_SecondSignalName" xml:space="preserve">
+    <value>By this:</value>
+  </data>
+  <data name="LD_Snap_NotEqual_FirstSignalName" xml:space="preserve">
+    <value>This:</value>
+  </data>
+  <data name="LD_Snap_NotEqual_InstructionName" xml:space="preserve">
+    <value>Not Equal</value>
+  </data>
+  <data name="LD_Snap_NotEqual_SecondSignalName" xml:space="preserve">
+    <value>Is not equal to:</value>
   </data>
   <data name="LD_Snap_RisingEdge_DefaultName" xml:space="preserve">
     <value>Rising Edge</value>
@@ -201,6 +306,18 @@
   <data name="LD_Snap_StringContains_StringToSearchLabel" xml:space="preserve">
     <value>Text to Search:</value>
   </data>
+  <data name="LD_Snap_Subtract_DefaultName" xml:space="preserve">
+    <value>Subtraction</value>
+  </data>
+  <data name="LD_Snap_Subtract_FirstSignalName" xml:space="preserve">
+    <value>Take this:</value>
+  </data>
+  <data name="LD_Snap_Subtract_InstructionName" xml:space="preserve">
+    <value>Subtract</value>
+  </data>
+  <data name="LD_Snap_Subtract_SecondSignalName" xml:space="preserve">
+    <value>And subtract this:</value>
+  </data>
   <data name="LD_Snap_TmrOFF_InstructionName" xml:space="preserve">
     <value>Delay Off Timer</value>
   </data>
@@ -219,6 +336,12 @@
   <data name="LD_Snap_Tmr_SetpointLabel" xml:space="preserve">
     <value>Setpoint (ms):</value>
   </data>
+  <data name="ToolTipAdd" xml:space="preserve">
+    <value>Add</value>
+  </data>
+  <data name="ToolTipChooseNumber" xml:space="preserve">
+    <value>Choose from two numbers using the rung-in condition</value>
+  </data>
   <data name="ToolTipCntDN" xml:space="preserve">
     <value>Count Down Counter</value>
   </data>
@@ -234,8 +357,32 @@
   <data name="ToolTipContactNO" xml:space="preserve">
     <value>Normally Open Contact</value>
   </data>
+  <data name="ToolTipDivide" xml:space="preserve">
+    <value>Divide</value>
+  </data>
+  <data name="ToolTipEqual" xml:space="preserve">
+    <value>Compare two numbers for equality</value>
+  </data>
   <data name="ToolTipFallingEdge" xml:space="preserve">
     <value>Falling Edge Detection</value>
+  </data>
+  <data name="ToolTipGreaterThan" xml:space="preserve">
+    <value>Compare two numbers to see if the first is greater</value>
+  </data>
+  <data name="ToolTipGreaterThanOrEqual" xml:space="preserve">
+    <value>Compare two numbers to see if the first is greater or equal</value>
+  </data>
+  <data name="ToolTipLessThan" xml:space="preserve">
+    <value>Compare two numbers to see if the first is less</value>
+  </data>
+  <data name="ToolTipLessThanOrEqual" xml:space="preserve">
+    <value>Compare two numbers to see if the first is less or equal</value>
+  </data>
+  <data name="ToolTipMultiply" xml:space="preserve">
+    <value>Multiply</value>
+  </data>
+  <data name="ToolTipNotEqual" xml:space="preserve">
+    <value>Compare two numbers for inequality</value>
   </data>
   <data name="ToolTipParallel" xml:space="preserve">
     <value>Parallel Branch(es)</value>
@@ -249,6 +396,9 @@
   <data name="ToolTipStringContains" xml:space="preserve">
     <value>Find Text: Detects one piece of text inside of another</value>
   </data>
+  <data name="ToolTipSubtract" xml:space="preserve">
+    <value>Subtract</value>
+  </data>
   <data name="ToolTipTmrOFF" xml:space="preserve">
     <value>Delay-off Timer</value>
   </data>
@@ -260,6 +410,12 @@
   </data>
   <data name="Undo_Action_EditCoilName" xml:space="preserve">
     <value>Edited coil name</value>
+  </data>
+  <data name="Undo_Action_EditComparisonFirstSignal" xml:space="preserve">
+    <value>Edited comparison instruction first input</value>
+  </data>
+  <data name="Undo_Action_EditComparisonSecondSignal" xml:space="preserve">
+    <value>Edited comparison instruction second input</value>
   </data>
   <data name="Undo_Action_EditContactSignal" xml:space="preserve">
     <value>Edited contact signal</value>
@@ -284,6 +440,18 @@
   </data>
   <data name="Undo_Action_EditFallingEdgeName" xml:space="preserve">
     <value>Edited falling edge name</value>
+  </data>
+  <data name="Undo_Action_EditInstructionDescription" xml:space="preserve">
+    <value>Edited instruction description</value>
+  </data>
+  <data name="Undo_Action_EditInstructionName" xml:space="preserve">
+    <value>Edited instruction name</value>
+  </data>
+  <data name="Undo_Action_EditMathFirstSignal" xml:space="preserve">
+    <value>Edited math instruction first input</value>
+  </data>
+  <data name="Undo_Action_EditMathSecondSignal" xml:space="preserve">
+    <value>Edited math instruction second input</value>
   </data>
   <data name="Undo_Action_EditResetSignal" xml:space="preserve">
     <value>Edited counter reset signal</value>

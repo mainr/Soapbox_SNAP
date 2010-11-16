@@ -44,7 +44,7 @@ namespace SoapBox.Snap.LD.Runtime.InstructionExecutors
         }
 
         [Import(CompositionPoints.Runtime.Snap.LD.GroupExecutor, typeof(GroupExecutor))]
-        private GroupExecutor groupExecutorLD { get; set; }
+        private IGroupExecutorLD groupExecutorLD { get; set; }
 
         public InstructionGroupExecutorContextLD  ScanInstruction(
             NodeRuntimeApplication rta, NodeInstruction instruction, 
