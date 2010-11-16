@@ -1,0 +1,41 @@
+﻿<ResourceDictionary 
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="clr-namespace:SoapBox.Snap.LD"
+    xmlns:core="clr-namespace:SoapBox.Core;assembly=SoapBox.Core.Contracts"
+    xmlns:contracts="clr-namespace:SoapBox.Snap;assembly=SoapBox.Snap.Contracts"
+    xmlns:util="clr-namespace:SoapBox.Utilities;assembly=SoapBox.Utilities"
+    x:Class="SoapBox.Snap.LD.InstructionLDMathBaseView">
+
+    <DataTemplate DataType="{x:Type local:InstructionLDMathBase}">
+        <core:ContextMenuWrapper>
+            <DockPanel>
+                <ContentPresenter
+                    DockPanel.Dock="Top"
+                    Content="{Binding Path=OutputSignalDescriptionEditor.VmEditableTextBlock}"/>
+                <ContentPresenter
+                    DockPanel.Dock="Top"
+                    Content="{Binding Path=OutputSignalNameEditor.VmEditableTextBlock}"/>
+                <Border
+                    BorderBrush="Black"
+                    BorderThickness="1.5"
+                    Background="White"
+                    Width="{x:Static local:InstructionLDMathBase.MAX_WIDTH}">
+                    <StackPanel Margin="3,0,3,0">
+                        <TextBlock Text="{Binding Path=InstructionName}"/>
+                        <TextBlock Text="{Binding Path=FirstSignalName}"/>
+                        <ContentPresenter
+                            Content="{Binding Path=FirstSignalChooser.VmSignalChooserTextBlock}"/>
+                        <TextBlock Text="{Binding Path=SecondSignalName}"/>
+                        <ContentPresenter
+                            Content="{Binding Path=SecondSignalChooser.VmSignalChooserTextBlock}"/>
+                        <TextBlock Text="{x:Static local:Resources.Strings.LD_Snap_MathBase_ResultLabel}"/>
+                        <ContentPresenter
+                            Content="{Binding Path=ResultSignalValue.VmSignalValueTextBlock}"/>
+                    </StackPanel>
+                </Border>
+            </DockPanel>
+        </core:ContextMenuWrapper>
+    </DataTemplate>
+
+</ResourceDictionary>

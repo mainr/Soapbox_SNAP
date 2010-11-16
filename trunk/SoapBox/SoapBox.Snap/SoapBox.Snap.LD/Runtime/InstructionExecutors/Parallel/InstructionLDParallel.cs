@@ -28,8 +28,9 @@ using System.ComponentModel.Composition;
 using SoapBox.Core;
 using SoapBox.Protocol.Automation;
 using SoapBox.Snap.LD;
+using SoapBox.Snap.Runtime;
 
-namespace SoapBox.Snap.Runtime.LD.Runtime.InstructionExecutors
+namespace SoapBox.Snap.LD.Runtime.InstructionExecutors
 {
     [Export(SoapBox.Snap.LD.ExtensionPoints.Runtime.Snap.GroupExecutors_.LD_.InstructionExecutors, 
         typeof(IInstructionExecutor<InstructionGroupExecutorContextLD>))]
@@ -44,7 +45,7 @@ namespace SoapBox.Snap.Runtime.LD.Runtime.InstructionExecutors
         }
 
         [Import(SoapBox.Snap.LD.CompositionPoints.Runtime.Snap.LD.GroupExecutor, typeof(GroupExecutor))]
-        private GroupExecutor groupExecutorLD { get; set; }
+        internal IGroupExecutorLD groupExecutorLD { get; set; }
 
         public InstructionGroupExecutorContextLD ScanInstruction(
             NodeRuntimeApplication rta, NodeInstruction instruction,

@@ -301,5 +301,28 @@ namespace SoapBox.Protocol.Automation
             return Builder;
         }
         #endregion
+
+        public static NodeSignal BuildBooleanSignal(string signalName)
+        {
+            return buildHelper(signalName, FieldDataType.DataTypeEnum.BOOL, false);
+        }
+
+        public static NodeSignal BuildNumberSignal(string signalName)
+        {
+            return buildHelper(signalName, FieldDataType.DataTypeEnum.NUMBER, 0);
+        }
+
+        public static NodeSignal BuildStringSignal(string signalName)
+        {
+            return buildHelper(signalName, FieldDataType.DataTypeEnum.STRING, string.Empty);
+        }
+
+        private static NodeSignal buildHelper(string signalName, FieldDataType.DataTypeEnum dataType, object defaultValue)
+        {
+            var signal = BuildWith(new FieldSignalName(signalName),
+                new FieldDataType(dataType),
+                new FieldBool(false), new FieldConstant(dataType, defaultValue));
+            return signal;
+        }
     }
 }

@@ -1,0 +1,32 @@
+﻿<ResourceDictionary 
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="clr-namespace:SoapBox.Snap.LD"
+    xmlns:core="clr-namespace:SoapBox.Core;assembly=SoapBox.Core.Contracts"
+    xmlns:contracts="clr-namespace:SoapBox.Snap;assembly=SoapBox.Snap.Contracts"
+    xmlns:util="clr-namespace:SoapBox.Utilities;assembly=SoapBox.Utilities"
+    x:Class="SoapBox.Snap.LD.InstructionLDComparisonBaseView">
+
+    <DataTemplate DataType="{x:Type local:InstructionLDComparisonBase}">
+        <core:ContextMenuWrapper>
+            <DockPanel>
+                <Border
+                    BorderBrush="Black"
+                    BorderThickness="1.5"
+                    Background="White"
+                    Width="{x:Static local:InstructionLDComparisonBase.MAX_WIDTH}">
+                    <StackPanel Margin="3,0,3,0">
+                        <TextBlock Text="{Binding Path=InstructionName}"/>
+                        <TextBlock Text="{Binding Path=FirstSignalName}"/>
+                        <ContentPresenter
+                            Content="{Binding Path=FirstSignalChooser.VmSignalChooserTextBlock}"/>
+                        <TextBlock Text="{Binding Path=SecondSignalName}"/>
+                        <ContentPresenter
+                            Content="{Binding Path=SecondSignalChooser.VmSignalChooserTextBlock}"/>
+                    </StackPanel>
+                </Border>
+            </DockPanel>
+        </core:ContextMenuWrapper>
+    </DataTemplate>
+
+</ResourceDictionary>

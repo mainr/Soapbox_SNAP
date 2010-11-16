@@ -66,7 +66,8 @@ namespace SoapBox.Snap
             }
         }
         private static IRuntimeService m_runtimeService = null;
-
+        public static string m_runtimeService_Name = 
+            NotifyPropertyChangedHelper.GetPropertyName<AbstractEditorItem>(o => o.runtimeService);
         #endregion
 
         private void parentChanged()

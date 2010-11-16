@@ -59,17 +59,40 @@ namespace SoapBox.Core
             IEnumerable<T> sorted1 = Sort(extensionCollection1);
             IEnumerable<T> sorted2 = Sort(extensionCollection2);
 
-            foreach (T t in sorted1)
+            if (collectionHasAny(sorted1))
             {
-                yield return t;
+                foreach (T t in sorted1)
+                {
+                    yield return t;
+                }
             }
 
-            yield return joinItem;
-
-            foreach (T t in sorted2)
+            if (collectionHasAny(sorted1) || collectionHasAny(sorted2))
             {
-                yield return t;
+                yield return joinItem;
             }
+
+            if (collectionHasAny(sorted2))
+            {
+                foreach (T t in sorted2)
+                {
+                    yield return t;
+                }
+            }
+        }
+
+        private bool collectionHasAny<T>(IEnumerable<T> extensionCollection) where T : IExtension
+        {
+            bool retVal = false;
+            if (extensionCollection != null)
+            {
+                foreach (T extension in extensionCollection)
+                {
+                    retVal = true;
+                    break;
+                }
+            }
+            return retVal;
         }
 
         /// <summary>

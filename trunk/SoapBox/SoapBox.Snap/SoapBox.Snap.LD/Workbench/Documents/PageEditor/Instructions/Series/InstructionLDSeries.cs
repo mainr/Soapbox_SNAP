@@ -63,7 +63,7 @@ namespace SoapBox.Snap.LD
         /// <summary>
         /// Just here for MEF to call, to do the imports
         /// </summary>
-        protected InstructionLDSeries()
+        internal InstructionLDSeries()
             : base(null, m_InstructionType)
         {
         }
