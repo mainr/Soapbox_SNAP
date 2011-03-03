@@ -45,6 +45,8 @@ namespace SoapBox.Core
     /// </summary>
     public abstract class AbstractTreeViewItem : AbstractLabel, ITreeViewItem
     {
+        [System.Runtime.InteropServices.DllImport("gdi32.dll")]
+        public static extern bool DeleteObject(IntPtr hObject);
 
         #region " IsSelected "
         /// <summary>
@@ -158,13 +160,22 @@ namespace SoapBox.Core
         /// <param name="value"></param>
         public System.Windows.Controls.Image AddIconFromBitmap(System.Drawing.Bitmap value)
         {
-            BitmapSource b = System.Windows.Interop.Imaging.CreateBitmapSourceFromHBitmap(
-                value.GetHbitmap(),
-                IntPtr.Zero,
-                Int32Rect.Empty,
-                System.Windows.Media.Imaging.BitmapSizeOptions.FromEmptyOptions());
-            System.Windows.Controls.Image img = new System.Windows.Controls.Image();
-            img.Source = b;
+            IntPtr hBitmap = value.GetHbitmap();
+            System.Windows.Controls.Image img;
+            try
+            {
+                BitmapSource b = System.Windows.Interop.Imaging.CreateBitmapSourceFromHBitmap(
+                    hBitmap,
+                    IntPtr.Zero,
+                    Int32Rect.Empty,
+                    System.Windows.Media.Imaging.BitmapSizeOptions.FromEmptyOptions());
+                img = new System.Windows.Controls.Image();
+                img.Source = b;
+            }
+            finally
+            {
+                DeleteObject(hBitmap);
+            }
             Icons.Add(img);
             return img;
         }

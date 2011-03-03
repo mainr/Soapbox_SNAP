@@ -41,6 +41,8 @@ namespace SoapBox.Core
     public abstract class AbstractMenuItem
         : AbstractCommandControl, IMenuItem
     {
+        [System.Runtime.InteropServices.DllImport("gdi32.dll")]
+        public static extern bool DeleteObject(IntPtr hObject);
 
         public AbstractMenuItem()
             : base()
@@ -189,12 +191,21 @@ namespace SoapBox.Core
         /// <param name="value"></param>
         protected void SetIconFromBitmap(System.Drawing.Bitmap value)
         {
-            BitmapSource b = System.Windows.Interop.Imaging.CreateBitmapSourceFromHBitmap(
-                value.GetHbitmap(),
-                IntPtr.Zero,
-                Int32Rect.Empty,
-                System.Windows.Media.Imaging.BitmapSizeOptions.FromEmptyOptions());
-            IconFull = b;
+            if (value == null) throw new ArgumentNullException();
+            IntPtr hBitmap = value.GetHbitmap();
+            try
+            {
+                BitmapSource b = System.Windows.Interop.Imaging.CreateBitmapSourceFromHBitmap(
+                    hBitmap,
+                    IntPtr.Zero,
+                    Int32Rect.Empty,
+                    System.Windows.Media.Imaging.BitmapSizeOptions.FromEmptyOptions());
+                IconFull = b;
+            }
+            finally
+            {
+                DeleteObject(hBitmap);
+            }
         }
 
         #endregion

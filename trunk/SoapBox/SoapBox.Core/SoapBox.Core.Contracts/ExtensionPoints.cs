@@ -37,6 +37,7 @@ namespace SoapBox.Core.ExtensionPoints
 {
     public static class Host
     {
+        public const string Theme = "ExtensionPoints.Host.Theme";
         public const string Styles = "ExtensionPoints.Host.Styles";
         public const string Views = "ExtensionPoints.Host.Views";
         public const string StartupCommands = "ExtensionPoints.Host.StartupCommands";

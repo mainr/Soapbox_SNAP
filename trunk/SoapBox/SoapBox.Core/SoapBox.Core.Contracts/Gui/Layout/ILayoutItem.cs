@@ -31,6 +31,8 @@
 using System;
 using System.Collections.Generic;
 using System.Windows;
+using System.Windows.Media;
+using System.Windows.Media.Imaging;
 
 namespace SoapBox.Core
 {
@@ -38,6 +40,7 @@ namespace SoapBox.Core
     {
         string Name { get; }
         string Title { get; }
+        ImageSource Icon { get; }
 
         void OnGotFocus(object sender, RoutedEventArgs e);
         void OnLostFocus(object sender, RoutedEventArgs e);

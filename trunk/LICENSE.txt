@@ -10,7 +10,9 @@ under the terms of the GNU General Public License as published by the
 Free Software Foundation, either version 3 of the License, or 
 (at your option) any later version.
 
-EXCEPTION: This distribution of SoapBox Snap may be linked against the Phidgets Driver Library according to the terms of the section below entitled "Phidgets Driver Exception."
+EXCEPTION: This distribution of SoapBox Snap may be linked against 
+the Phidgets Driver Library according to the terms of the section below 
+entitled "Phidgets Driver Exception."
 
 SoapBox Snap is distributed in the hope that it will be useful, but
 WITHOUT ANY WARRANTY; without even the implied warranty of
@@ -271,6 +273,11 @@ Microsoft Windows operating system product.
 
 The C API section of Phidget21 is covered by the GNU Lesser General Public 
 License: <http://www.phidgets.com/documentation/Licenses/GNULGPL-GPLv3.pdf>. 
+
+============================================================================
+
+SlimDX is distributed under the MIT license.
+Read more here: <http://slimdx.org/license.php>.
 
 ===========================================================================
 

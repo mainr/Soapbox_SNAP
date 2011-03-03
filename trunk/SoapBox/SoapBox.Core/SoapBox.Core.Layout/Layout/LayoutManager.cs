@@ -82,9 +82,7 @@ namespace SoapBox.Core.Layout
             if (!m_padLookup.ContainsKey(pad))
             {
                 DockableContent content = new DockableContent();
-                content.Content = pad;
-                content.Title = pad.Title;
-                content.Name = pad.Name;
+                setManagedContentProperties(pad, content);
                 m_padLookup.Add(pad, content);
                 DockablePane dp = new DockablePane();
                 dp.Items.Add(content);
@@ -94,6 +92,14 @@ namespace SoapBox.Core.Layout
                 content.LostFocus += new RoutedEventHandler(pad.OnLostFocus);
             }
             m_padLookup[pad].Show(DockManager);
+        }
+
+        private static void setManagedContentProperties(ILayoutItem layoutItem, ManagedContent content)
+        {
+            content.Content = layoutItem;
+            content.Title = layoutItem.Title;
+            content.Name = layoutItem.Name;
+            content.Icon = layoutItem.Icon;
         }
 
         /// <summary>
@@ -133,9 +139,7 @@ namespace SoapBox.Core.Layout
                 if (!m_documentLookup.ContainsKey(doc))
                 {
                     DocumentContent content = new DocumentContent();
-                    content.Content = doc;
-                    content.Title = doc.Title;
-                    content.Name = doc.Name;
+                    setManagedContentProperties(doc, content);
                     m_documentLookup.Add(doc, content);
                     m_docPane.Items.Add(content);
                     // all these event handlers get unsubscribed in the content_Closing method
@@ -173,6 +177,10 @@ namespace SoapBox.Core.Layout
                     {
                         content.Name = pad.Name;
                     }
+                    else if (e.PropertyName == m_IconName)
+                    {
+                        content.Icon = pad.Icon;
+                    }
                 }
             }
         }
@@ -195,6 +203,10 @@ namespace SoapBox.Core.Layout
                     {
                         content.Name = doc.Name;
                     }
+                    else if (e.PropertyName == m_IconName)
+                    {
+                        content.Icon = doc.Icon;
+                    }
                 }
             }
         }
@@ -202,6 +214,8 @@ namespace SoapBox.Core.Layout
             NotifyPropertyChangedHelper.GetPropertyName<ILayoutItem>(o => o.Title);
         private static string m_NameName =
             NotifyPropertyChangedHelper.GetPropertyName<ILayoutItem>(o => o.Name);
+        private static string m_IconName =
+            NotifyPropertyChangedHelper.GetPropertyName<ILayoutItem>(o => o.Icon);
 
         /// <summary>
         /// Closes the given instance of a document, if it exists

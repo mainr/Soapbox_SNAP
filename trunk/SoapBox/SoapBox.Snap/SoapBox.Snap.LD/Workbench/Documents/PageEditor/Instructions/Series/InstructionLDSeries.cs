@@ -191,6 +191,7 @@ namespace SoapBox.Snap.LD
             NotifyPropertyChanged(m_VerticalRungOffsetArgs);
         }
 
+        #region " Drag & Drop "
         // Index is the item to drop it *before*.  If index is
         // one greater than the last index, we drop it at the end.
         public bool CanDrop(IEnumerable<ILDInstructionItem> source, int index)
@@ -253,6 +254,7 @@ namespace SoapBox.Snap.LD
                 insert(source, index);
             }
         }
+        #endregion
 
         /// <summary>
         /// Inserts the given item *before* the given index.

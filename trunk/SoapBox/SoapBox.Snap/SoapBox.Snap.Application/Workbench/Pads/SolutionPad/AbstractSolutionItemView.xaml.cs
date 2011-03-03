@@ -13,6 +13,7 @@ using System.Windows.Controls;
 using SoapBox.Core;
 using System.Windows.Input;
 using SoapBox.Protocol.Base;
+using SoapBox.Utilities;
 
 namespace SoapBox.Snap.Application
 {

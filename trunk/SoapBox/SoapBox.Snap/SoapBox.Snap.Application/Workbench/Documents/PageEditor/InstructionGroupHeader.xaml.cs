@@ -17,6 +17,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using SoapBox.Core;
+using SoapBox.Utilities;
 
 namespace SoapBox.Snap.Application
 {
