@@ -209,40 +209,9 @@ namespace SoapBox.Snap
         private readonly FieldInstructionType m_InstructionType = null;
         #endregion
 
-        #region " Drag & Drop "
-        public bool CanDrop(IDataObject source)
-        {
-            if (Node != null && source.GetDataPresent(typeof(IInstructionItem)))
-            {
-                var sourceItem = (IInstructionItem)source.GetData(typeof(IInstructionItem));
-                return QueryCanDrop(sourceItem);
-            }
-            else
-            {
-                return false;
-            }
-        }
-
-        protected virtual bool QueryCanDrop(IInstructionItem source)
-        {
-            return false;
-        }
-
-        public void Drop(IDataObject source)
-        {
-            if (source.GetDataPresent(typeof(IInstructionItem)))
-            {
-                var sourceItem = (IInstructionItem)source.GetData(typeof(IInstructionItem));
-                OnDrop(sourceItem);
-            }
-        }
-
-        protected virtual void OnDrop(IInstructionItem source) { }
-        #endregion
-
         /// <summary>
         /// You can use this to change the Instruction property including doing all
-        /// the legwork for the Undo/Redo framework, but only if the change it *doesn't*
+        /// the legwork for the Undo/Redo framework, but only if the change *doesn't*
         /// involve editing the NodeInstructionChildren (child instructions)
         /// </summary>
         /// <param name="newInstruction"></param>

@@ -36,8 +36,6 @@ namespace SoapBox.Snap
         IInstructionItem Create(IEditorItem parent, NodeInstruction instruction);
         NodeInstruction Instruction { get; set; }
         FieldInstructionType InstructionType { get; }
-        bool CanDrop(IDataObject source);
-        void Drop(IDataObject source);
         void ChildInstruction_Edited(INodeWrapper sender, NodeBase oldNode, NodeBase newNode);
         void ChildInstruction_Deleted(INodeWrapper sender, NodeBase deletedNode);
     }

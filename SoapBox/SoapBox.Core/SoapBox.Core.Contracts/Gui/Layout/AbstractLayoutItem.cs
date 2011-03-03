@@ -40,6 +40,9 @@ namespace SoapBox.Core
 {
     public abstract class AbstractLayoutItem : AbstractExtension, ILayoutItem
     {
+        [System.Runtime.InteropServices.DllImport("gdi32.dll")]
+        public static extern bool DeleteObject(IntPtr hObject);
+
         #region " ILayoutItem Implementation "
 
         #region " Name "
@@ -98,6 +101,53 @@ namespace SoapBox.Core
         static readonly PropertyChangedEventArgs m_TitleArgs =
             NotifyPropertyChangedHelper.CreateArgs<AbstractLayoutItem>(o => o.Title);
 
+        #endregion
+
+        #region " Icon "
+        /// <summary>
+        /// Optional icon that can be displayed in the layout item.
+        /// </summary>
+        public ImageSource Icon
+        {
+            get
+            {
+                return m_Icon;
+            }
+            protected set
+            {
+                if (m_Icon != value)
+                {
+                    m_Icon = value;
+                    NotifyPropertyChanged(m_IconArgs);
+                }
+            }
+        }
+        private ImageSource m_Icon = null;
+        static readonly PropertyChangedEventArgs m_IconArgs =
+            NotifyPropertyChangedHelper.CreateArgs<AbstractLayoutItem>(o => o.Icon);
+
+        /// <summary>
+        /// This is a helper function so you can assign the Icon directly
+        /// from a Bitmap, such as one from a resources file.
+        /// </summary>
+        /// <param name="value"></param>
+        protected void SetIconFromBitmap(System.Drawing.Bitmap value)
+        {
+            IntPtr hBitmap = value.GetHbitmap();
+            try
+            {
+                BitmapSource b = System.Windows.Interop.Imaging.CreateBitmapSourceFromHBitmap(
+                    hBitmap,
+                    IntPtr.Zero,
+                    Int32Rect.Empty,
+                    System.Windows.Media.Imaging.BitmapSizeOptions.FromEmptyOptions());
+                Icon = b;
+            }
+            finally
+            {
+                DeleteObject(hBitmap);
+            }
+        }
         #endregion
 
         public virtual void OnGotFocus(object sender, RoutedEventArgs e) { }

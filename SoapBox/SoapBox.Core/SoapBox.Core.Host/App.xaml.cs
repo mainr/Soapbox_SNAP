@@ -62,11 +62,19 @@ namespace SoapBox.Core.Host
         }
 
         /// <summary>
+        /// This imports a resource dictionary for a Theme so it's
+        /// added to the application resources.
+        /// This gets imported before the Styles.
+        /// </summary>
+        [Import(ExtensionPoints.Host.Theme, typeof(ResourceDictionary), AllowRecomposition = true, AllowDefault=true)]
+        private ResourceDictionary Theme { get; set; }
+
+        /// <summary>
         /// This imports resource dictionaries for Styles so they're
         /// all added to the application resources.
         /// These get imported before the Views.
         /// </summary>
-        [ImportMany(ExtensionPoints.Host.Styles, typeof(ResourceDictionary), AllowRecomposition=true)]
+        [ImportMany(ExtensionPoints.Host.Styles, typeof(ResourceDictionary), AllowRecomposition = true)]
         private IEnumerable<ResourceDictionary> Styles { get; set; }
 
         /// <summary>
@@ -195,6 +203,11 @@ namespace SoapBox.Core.Host
             // Add the imported resource dictionaries
             // to the application resources
             this.Resources.MergedDictionaries.Clear(); // in case of recompose
+            if (Theme != null) // Theme is optional
+            {
+                logger.Info("Importing Theme...");
+                this.Resources.MergedDictionaries.Add(Theme);
+            }
             logger.Info("Importing Styles...");
             foreach (ResourceDictionary r in Styles)
             {
