@@ -1,0 +1,48 @@
+Structure of program is:
+Field1: offset 0, NodeRuntimeApplication version GUID (16 bytes)
+Field2: offset 16, bits per bool address (1 byte)
+Field3: offset 17, bits per numeric address (1 byte)
+Field4: offset 18, Program (dynamic bytes), ends with ProgramEnd opcode
+
+Name			OpCode	Operands
+----			------	--------
+Coil			000		OUT0: bCoil
+NO				001		IN0: bContact
+NC				010		IN0: bContact
+SeriesEnd		011
+RisingEdge		10000	OUT0: bState (0x10)
+FallingEdge		10001	OUT0: bState (0x11)
+SetReset		10010	IN0: bReset, OUT0: bState (0x12)
+TmrON			10011	IN0: nSetpoint, OUT0: bDone, OUT1: nElapsed (0x13)
+TmrOFF			10100	IN0: nSetpoint, OUT0: bDone, OUT1: nElapsed (0x14)
+ParallelStart	10101 (0x15)
+ParallelEnd		10110 (0x16)
+
+				(Both counters look like 0x17 when loaded as 5 bits)
+CntUP			101110	IN0: nSetpoint, IN1: bReset... OUT0: bDone, OUT1: nCount, OUT2: bOneshotState (0x2E)
+CntDN			101111	Same (0x2F)
+
+Comparison:
+==				11000	2 NUMERIC (0x18)
+>				11001	2 NUMERIC (0x19)
+>=				11010	2 NUMERIC (0x1A)
+<				11011	2 NUMERIC (0x1B)
+<=				11100	2 NUMERIC (0x1C)
+!=				11101	2 NUMERIC (0x1D)
+
+Math:
++				1111000	IN0: nOperand1, IN1: nOperand2, OUT0: nResult (0x78)
+-				1111001	Same (0x79)
+*				1111010	Same (0x7A)
+/				1111011	Same (0x7B)
+Choose#			1111100	Same (0x7C)
+
+ProgramEnd		11111111 (0xFF)
+
+
+Operand encoding:
+BOOL INSTRUCTION INPUT: 00 = constant false, 01 = constant true, 1 + address
+BOOL INSTRUCTION OUTPUT: address
+NUMERIC INSTRUCTION INPUT: 0 + isFloat bit + <2 bits length (00=1,01=2...)> + 1-4 bytes = constant, 1 + address
+ - note that 2 bits length is optional, only if isFloat = false
+NUMERIC INSTRUCTION OUTPUT: address

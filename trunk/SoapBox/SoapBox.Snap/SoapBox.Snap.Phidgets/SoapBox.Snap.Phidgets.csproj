@@ -97,6 +97,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Device\AbstractPhidget.cs" />
+    <Compile Include="Device\Phidget_AdvancedServo.cs" />
     <Compile Include="Device\Phidget_ServoMotor_8.cs" />
     <Compile Include="Device\Phidget_ServoMotor_4.cs" />
     <Compile Include="Device\Phidget_InterfaceKit_488.cs" />

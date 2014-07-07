@@ -1,4 +1,4 @@
-SoapBox Snap is Copyright (C) 2010 SoapBox Automation Inc.
+SoapBox Snap is Copyright (C) 2010-2014 SoapBox Automation
 Contact: SoapBox Automation Licencing (license@soapboxautomation.com)
 
 ====================
@@ -55,7 +55,7 @@ If you do not wish to grant these permissions, remove this section entitled
 
 SoapBox Core is distributed under this license:
 
-SoapBox Core is Copyright (C) 2009 SoapBox Automation Inc.
+SoapBox Core is Copyright (C) 2009 SoapBox Automation
 Contact: SoapBox Automation Licencing (license@soapboxautomation.com)
 
 ====================
@@ -178,7 +178,7 @@ SOFTWARE.
 
 SoapBox Utilities is distributed under this license:
 
-SoapBox Utilities is Copyright (C) 2010 SoapBox Automation Inc.
+SoapBox Utilities is Copyright (C) 2010 SoapBox Automation
 Contact: SoapBox Automation Licencing (license@soapboxautomation.com)
 
 =========================

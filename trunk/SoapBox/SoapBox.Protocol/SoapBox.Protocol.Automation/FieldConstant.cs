@@ -1,6 +1,6 @@
 #region "SoapBox.Protocol License"
 /// <header module="SoapBox.Protocol"> 
-/// Copyright (C) 2010 SoapBox Automation Inc., All Rights Reserved.
+/// Copyright (C) 2010 SoapBox Automation, All Rights Reserved.
 /// Contact: SoapBox Automation Licencing (license@soapboxautomation.com)
 /// 
 /// This file is part of SoapBox Protocol.
@@ -47,7 +47,7 @@ namespace SoapBox.Protocol.Automation
             public static class BOOL
             {
                 public readonly static FieldConstant HIGH = new FieldConstant(FieldDataType.DataTypeEnum.BOOL, true);
-                public readonly static FieldConstant LOW = new FieldConstant(FieldDataType.DataTypeEnum.BOOL, true);
+                public readonly static FieldConstant LOW = new FieldConstant(FieldDataType.DataTypeEnum.BOOL, false);
             }
             public static class NUMBER
             {

@@ -1,6 +1,6 @@
 #region "SoapBox.Snap License"
 /// <header module="SoapBox.Snap"> 
-/// Copyright (C) 2009 SoapBox Automation Inc., All Rights Reserved.
+/// Copyright (C) 2009-2014 SoapBox Automation, All Rights Reserved.
 /// Contact: SoapBox Automation Licencing (license@soapboxautomation.com)
 /// 
 /// This file is part of SoapBox Snap.
@@ -35,14 +35,15 @@ namespace SoapBox.Snap
         bool Start(); // true = success
         bool Stop(); // true = success
         bool Running { get; }
-        bool RuntimeApplicationDownload(NodeRuntimeApplication runtimeApplication); // true = success
+        bool RuntimeApplicationDownload(NodeRuntimeApplication runtimeApplication, bool onlineChange); // true = success
         NodeRuntimeApplication RuntimeApplicationUpload(); // return null if it couldn't read
+        void RuntimeApplicationGoOnline(NodeRuntimeApplication runtimeApplication); // calls this if app version in runtime matches
         FieldGuid RuntimeId(); // returns null if there is no runtime application loaded in the engine
         FieldGuid RuntimeVersionId(); // returns null if there is no runtime application loaded in the engine
         NodeDeviceConfiguration ReadConfiguration(); // return null if it couldn't read
-        NodePeer Peer { get; }
         void MessageReceivedFromPeer(NodeBase message);
         NodeBase DeltaReceivedFromPeer(FieldGuid basedOnMessageID);
         void ReadSignalValues(IEnumerable<NodeSignal> signals);
+        void Disconnect();
     }
 }

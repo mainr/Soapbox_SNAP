@@ -39,6 +39,7 @@ using System.ComponentModel.Composition.Hosting;
 using System.Reflection;
 using System.Diagnostics;
 using System.Threading;
+using System.Net;
 
 
 namespace SoapBox.Core.Host
@@ -237,6 +238,14 @@ namespace SoapBox.Core.Host
                     } 
                     logger.Info("Startup command " + cmd.ID + " completed.");
                 }
+            }
+        }
+
+        private void Application_DispatcherUnhandledException(object sender, System.Windows.Threading.DispatcherUnhandledExceptionEventArgs e)
+        {
+            if (e.Exception is WebException)
+            {
+                e.Handled = true;
             }
         }
 

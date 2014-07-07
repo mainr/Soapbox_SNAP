@@ -1,6 +1,6 @@
 #region "SoapBox.Snap License"
 /// <header module="SoapBox.Snap"> 
-/// Copyright (C) 2009 SoapBox Automation Inc., All Rights Reserved.
+/// Copyright (C) 2009-2014 SoapBox Automation, All Rights Reserved.
 /// Contact: SoapBox Automation Licencing (license@soapboxautomation.com)
 /// 
 /// This file is part of SoapBox Snap.
@@ -82,6 +82,7 @@ namespace SoapBox.Snap.Application
             }
             Window dlg = new UploadDownloadDialogView();
             dlg.Owner = mainWindowExport.Value;
+            this.m_Upload = true; // default to upload
             dlg.DataContext = this;
             dlg.ShowDialog();
             if (m_inSync)
@@ -104,7 +105,8 @@ namespace SoapBox.Snap.Application
                 }
                 else // download
                 {
-                    m_inSync = runtimeApplicationItem.Runtime.RuntimeApplicationDownload(runtimeApplicationItem.RuntimeApplication);
+                    m_inSync = runtimeApplicationItem.Runtime
+                        .RuntimeApplicationDownload(runtimeApplicationItem.RuntimeApplication, onlineChange: false);
                 }
             }
             return m_inSync;

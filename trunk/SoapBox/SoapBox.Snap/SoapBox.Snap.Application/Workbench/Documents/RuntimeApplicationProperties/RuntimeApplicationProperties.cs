@@ -1,6 +1,6 @@
 #region "SoapBox.Snap License"
 /// <header module="SoapBox.Snap"> 
-/// Copyright (C) 2009 SoapBox Automation Inc., All Rights Reserved.
+/// Copyright (C) 2009-2014 SoapBox Automation, All Rights Reserved.
 /// Contact: SoapBox Automation Licencing (license@soapboxautomation.com)
 /// 
 /// This file is part of SoapBox Snap.
@@ -265,14 +265,14 @@ namespace SoapBox.Snap.Application
             }
             set
             {
-                    InvalidProperty(m_CodeName);
-                    if (m_editRuntimeApplication.Code.ToString() != value)
-                    {
-                        m_editRuntimeApplication
-                            = m_editRuntimeApplication.SetCode(new FieldIdentifier(value));
-                        NotifyPropertyChanged(m_CodeArgs);
-                    }
-                    ValidProperty(m_CodeName);
+                InvalidProperty(m_CodeName);
+                if (m_editRuntimeApplication.Code.ToString() != value)
+                {
+                    m_editRuntimeApplication
+                        = m_editRuntimeApplication.SetCode(new FieldIdentifier(value));
+                    NotifyPropertyChanged(m_CodeArgs);
+                }
+                ValidProperty(m_CodeName);
             }
         }
         static readonly PropertyChangedEventArgs m_CodeArgs =
@@ -390,6 +390,60 @@ namespace SoapBox.Snap.Application
         }
         static readonly PropertyChangedEventArgs m_ExecuteOnStartupArgs =
             NotifyPropertyChangedHelper.CreateArgs<RuntimeApplicationProperties>(o => o.ExecuteOnStartup);
+
+        #endregion
+
+        #region "Address"
+
+        public string Address
+        {
+            get
+            {
+                return m_editRuntimeApplication.Address.ToString();
+            }
+            set
+            {
+                InvalidProperty(m_AddressName);
+                if (m_editRuntimeApplication.Address.ToString() != value)
+                {
+                    m_editRuntimeApplication
+                        = m_editRuntimeApplication.SetAddress(new FieldString(value));
+                    NotifyPropertyChanged(m_AddressArgs);
+                }
+                ValidProperty(m_AddressName);
+            }
+        }
+        static readonly PropertyChangedEventArgs m_AddressArgs =
+            NotifyPropertyChangedHelper.CreateArgs<RuntimeApplicationProperties>(o => o.Address);
+        static readonly string m_AddressName =
+            NotifyPropertyChangedHelper.GetPropertyName<RuntimeApplicationProperties>(o => o.Address);
+
+        #endregion
+
+        #region "Configuration"
+
+        public string Configuration
+        {
+            get
+            {
+                return m_editRuntimeApplication.Configuration.Decode();
+            }
+            set
+            {
+                InvalidProperty(m_ConfigurationName);
+                if (m_editRuntimeApplication.Configuration.Decode() != value)
+                {
+                    m_editRuntimeApplication
+                        = m_editRuntimeApplication.SetConfiguration(FieldBase64.Encode(value));
+                    NotifyPropertyChanged(m_ConfigurationArgs);
+                }
+                ValidProperty(m_ConfigurationName);
+            }
+        }
+        static readonly PropertyChangedEventArgs m_ConfigurationArgs =
+            NotifyPropertyChangedHelper.CreateArgs<RuntimeApplicationProperties>(o => o.Configuration);
+        static readonly string m_ConfigurationName =
+            NotifyPropertyChangedHelper.GetPropertyName<RuntimeApplicationProperties>(o => o.Configuration);
 
         #endregion
 

@@ -1,6 +1,6 @@
 #region "SoapBox.Utilities License"
 /// <header module="SoapBox.Utilities"> 
-/// Copyright (C) 2010 SoapBox Automation Inc., All Rights Reserved.
+/// Copyright (C) 2010 SoapBox Automation, All Rights Reserved.
 /// Contact: SoapBox Automation Licencing (license@soapboxautomation.com)
 /// 
 /// This file is part of SoapBox Utilities.

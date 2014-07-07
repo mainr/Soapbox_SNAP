@@ -126,11 +126,17 @@
   <data name="DriverName" xml:space="preserve">
     <value>Phidgets</value>
   </data>
+  <data name="Enable" xml:space="preserve">
+    <value>Enable</value>
+  </data>
   <data name="Input" xml:space="preserve">
     <value>Input</value>
   </data>
   <data name="Output" xml:space="preserve">
     <value>Output</value>
+  </data>
+  <data name="Phidget_AdvancedServo_Name" xml:space="preserve">
+    <value>Phidget Advanced Servo</value>
   </data>
   <data name="Phidget_InterfaceKit_004_Name" xml:space="preserve">
     <value>Phidget Interface Kit 0-0-4</value>
