@@ -1,6 +1,6 @@
 #region "SoapBox.Snap License"
 /// <header module="SoapBox.Snap"> 
-/// Copyright (C) 2009 SoapBox Automation Inc., All Rights Reserved.
+/// Copyright (C) 2009-2014 SoapBox Automation, All Rights Reserved.
 /// Contact: SoapBox Automation Licencing (license@soapboxautomation.com)
 /// 
 /// This file is part of SoapBox Snap.
@@ -362,7 +362,7 @@ namespace SoapBox.Snap.LD
             {
                 if (m_CountSignalValue == null)
                 {
-                    m_CountSignalValue = new SignalValue(this, Instruction.NodeSignalChildren[1], MAX_WIDTH, TextAlignment.Center, "{0:0.}");
+                    m_CountSignalValue = new SignalValue(this, Instruction.NodeSignalChildren[1], MAX_WIDTH, TextAlignment.Center, "{0:0.##############################}");
                 }
                 return m_CountSignalValue;
             }

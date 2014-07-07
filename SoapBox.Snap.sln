@@ -14,17 +14,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SoapBox.Protocol", "SoapBox
 		SoapBox\SoapBox.Protocol\LICENSE.SoapBox.Protocol.txt = SoapBox\SoapBox.Protocol\LICENSE.SoapBox.Protocol.txt
 	EndProjectSection
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CodeSnippets", "CodeSnippets", "{04E1AF9A-A0F4-49DC-84AF-69C7056EA04A}"
-	ProjectSection(SolutionItems) = preProject
-		SoapBox\CodeSnippets\License-Core.snippet = SoapBox\CodeSnippets\License-Core.snippet
-		SoapBox\CodeSnippets\License-Snap.snippet = SoapBox\CodeSnippets\License-Snap.snippet
-		SoapBox\CodeSnippets\SoapBoxChild.snippet = SoapBox\CodeSnippets\SoapBoxChild.snippet
-		SoapBox\CodeSnippets\SoapBoxField.snippet = SoapBox\CodeSnippets\SoapBoxField.snippet
-		SoapBox\CodeSnippets\SoapBoxNode.snippet = SoapBox\CodeSnippets\SoapBoxNode.snippet
-		SoapBox\CodeSnippets\VMProperty.snippet = SoapBox\CodeSnippets\VMProperty.snippet
-	EndProjectSection
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SoapBox.Snap", "SoapBox.Snap", "{98E3BA07-ED24-4E4B-9FBA-E5E8E09AD807}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "NLog", "NLog", "{20546FFD-4AE5-4849-8D5B-FF0EA906629F}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "AvalonDock", "AvalonDock", "{F04777FF-7CBC-4D9D-9E69-314418D9A262}"
 EndProject
@@ -86,6 +78,8 @@ EndProject
 Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "SoapBox.Snap.Setup", "SoapBox\SoapBox.Snap\SoapBox.Snap.Setup\SoapBox.Snap.Setup.vdproj", "{8D1B6D4A-BB2B-4D26-8C96-4823786A1991}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SoapBox.Snap.GameControllers", "SoapBox\SoapBox.Snap\SoapBox.Snap.GameControllers\SoapBox.Snap.GameControllers.csproj", "{BB522E3A-69B7-4631-83C4-7022289941D2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SoapBox.Snap.ArduinoRuntime", "SoapBox\SoapBox.Snap\SoapBox.Snap.ArduinoRuntime\SoapBox.Snap.ArduinoRuntime.csproj", "{44701911-146C-4B85-B76E-0A05D5C5A37A}"
 EndProject
 Global
 	GlobalSection(TestCaseManagementSettings) = postSolution
@@ -294,13 +288,19 @@ Global
 		{BB522E3A-69B7-4631-83C4-7022289941D2}.Release|Any CPU.Build.0 = Release|x86
 		{BB522E3A-69B7-4631-83C4-7022289941D2}.Release|x86.ActiveCfg = Release|x86
 		{BB522E3A-69B7-4631-83C4-7022289941D2}.Release|x86.Build.0 = Release|x86
+		{44701911-146C-4B85-B76E-0A05D5C5A37A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{44701911-146C-4B85-B76E-0A05D5C5A37A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{44701911-146C-4B85-B76E-0A05D5C5A37A}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{44701911-146C-4B85-B76E-0A05D5C5A37A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{44701911-146C-4B85-B76E-0A05D5C5A37A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{44701911-146C-4B85-B76E-0A05D5C5A37A}.Release|x86.ActiveCfg = Release|x86
+		{44701911-146C-4B85-B76E-0A05D5C5A37A}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{8D685AC7-4D46-4B45-ABE5-CF89341F2559} = {A193112F-A541-4AC5-A50C-0D91FA9CF2E9}
-		{04E1AF9A-A0F4-49DC-84AF-69C7056EA04A} = {A193112F-A541-4AC5-A50C-0D91FA9CF2E9}
 		{98E3BA07-ED24-4E4B-9FBA-E5E8E09AD807} = {A193112F-A541-4AC5-A50C-0D91FA9CF2E9}
 		{BD1BB86B-680B-4009-A16B-A3A87CB5B0A2} = {A193112F-A541-4AC5-A50C-0D91FA9CF2E9}
 		{28CCC32E-9FEC-40B5-B7A9-299449635464} = {A193112F-A541-4AC5-A50C-0D91FA9CF2E9}
@@ -318,6 +318,7 @@ Global
 		{DAA8B359-7920-4BD1-8EDF-A41ADD71E136} = {98E3BA07-ED24-4E4B-9FBA-E5E8E09AD807}
 		{8D1B6D4A-BB2B-4D26-8C96-4823786A1991} = {98E3BA07-ED24-4E4B-9FBA-E5E8E09AD807}
 		{BB522E3A-69B7-4631-83C4-7022289941D2} = {98E3BA07-ED24-4E4B-9FBA-E5E8E09AD807}
+		{44701911-146C-4B85-B76E-0A05D5C5A37A} = {98E3BA07-ED24-4E4B-9FBA-E5E8E09AD807}
 		{87E61430-4243-45F2-B74E-0A4C096CEBF3} = {F04777FF-7CBC-4D9D-9E69-314418D9A262}
 		{B2211ECA-B258-4434-B0F2-0F2D114B1744} = {BD1BB86B-680B-4009-A16B-A3A87CB5B0A2}
 		{67ACA6E7-69A1-4D98-BF02-270E7D1F0C2C} = {BD1BB86B-680B-4009-A16B-A3A87CB5B0A2}

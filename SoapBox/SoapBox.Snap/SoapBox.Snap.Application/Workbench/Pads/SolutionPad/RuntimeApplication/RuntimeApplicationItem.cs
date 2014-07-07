@@ -1,6 +1,6 @@
 #region "SoapBox.Snap License"
 /// <header module="SoapBox.Snap"> 
-/// Copyright (C) 2009 SoapBox Automation Inc., All Rights Reserved.
+/// Copyright (C) 2009-2014 SoapBox Automation, All Rights Reserved.
 /// Contact: SoapBox Automation Licencing (license@soapboxautomation.com)
 /// 
 /// This file is part of SoapBox Snap.
@@ -139,7 +139,7 @@ namespace SoapBox.Snap.Application
                 Header = value.Code.ToString();
                 if (Connected)
                 {
-                    Runtime.RuntimeApplicationDownload(value);
+                    Runtime.RuntimeApplicationDownload(value, onlineChange: true);
                 }
                 NotifyPropertyChanged(m_RuntimeApplicationArgs);
             }
@@ -193,6 +193,7 @@ namespace SoapBox.Snap.Application
                         }
                         else
                         {
+                            Runtime.Disconnect();
                             SetIconFromBitmap(Resources.Images.Disconnected);
                             Icon2 = null;
                         }
@@ -303,7 +304,7 @@ namespace SoapBox.Snap.Application
                         Resources.Strings.Solution_Pad_RuntimeApplicationItem_DownloadTitle, 
                         System.Windows.Forms.MessageBoxButtons.YesNo) == System.Windows.Forms.DialogResult.Yes)
                     {
-                        inSync = Runtime.RuntimeApplicationDownload(RuntimeApplication);
+                        inSync = Runtime.RuntimeApplicationDownload(RuntimeApplication, onlineChange: false);
                     }
                 }
                 else if (Runtime.RuntimeId() != RuntimeApplication.RuntimeId || Runtime.RuntimeVersionId() != RuntimeApplication.ID)
@@ -316,6 +317,7 @@ namespace SoapBox.Snap.Application
                     inSync = true;
                     messagingService.Value.ShowMessage(Resources.Strings.Solution_Pad_RuntimeApplicationItem_ConnectedMessage, 
                         Resources.Strings.Solution_Pad_RuntimeApplicationItem_ConnectedTitle);
+                    this.Runtime.RuntimeApplicationGoOnline(RuntimeApplication);
                 }
 
                 if (!inSync)

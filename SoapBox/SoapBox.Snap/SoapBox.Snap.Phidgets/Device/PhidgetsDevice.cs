@@ -1,6 +1,6 @@
 #region "SoapBox.Snap License"
 /// <header module="SoapBox.Snap"> 
-/// Copyright (C) 2009 SoapBox Automation Inc., All Rights Reserved.
+/// Copyright (C) 2009-2014 SoapBox Automation, All Rights Reserved.
 /// Contact: SoapBox Automation Licencing (license@soapboxautomation.com)
 /// 
 /// This file is part of SoapBox Snap.
@@ -102,11 +102,23 @@ namespace SoapBox.Snap.Phidgets
                     device = Phidget_ServoMotor_4.StaticBuild(Phidget.SerialNumber);
                     break;
                 case Phidget.PhidgetID.ADVANCEDSERVO_8MOTOR:
-                    device = Phidget_ServoMotor_8.StaticBuild(Phidget.SerialNumber);
+                    device = Phidget_AdvancedServo.StaticBuild(Phidget.SerialNumber, 8);
                     break;
                 default:
-                    device = Unknown_Phidget.StaticBuild();
+                    if (Phidget is AdvancedServo)
+                    {
+                        var advancedServo = Phidget as AdvancedServo;
+                        var serialNumber = advancedServo.SerialNumber;
+                        if (advancedServo.Name.ToLower().Contains(" 1-motor"))
+                        {
+                            device = Phidget_AdvancedServo.StaticBuild(serialNumber, 1);
+                        }
+                    }
                     break;
+            }
+            if (device == null)
+            {
+                device = Unknown_Phidget.StaticBuild();
             }
 
             return device;

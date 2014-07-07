@@ -26,6 +26,8 @@
                         <RowDefinition Height="Auto"/>
                         <RowDefinition Height="Auto"/>
                         <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
                     </Grid.RowDefinitions>
 
                     <!-- Code -->
@@ -57,6 +59,29 @@
                         IsChecked="{Binding ExecuteOnStartup}">
                         <TextBlock Text="{x:Static local:Resources.Strings.RuntimeApplication_ExecuteOnStartup}"/>
                     </CheckBox>
+
+                    <!-- Address -->
+                    <TextBlock 
+                        Grid.Row="3" Grid.Column="0" Margin="5"
+                        HorizontalAlignment="Right"
+                        Text="{x:Static local:Resources.Strings.RuntimeApplication_Address}"/>
+                    <TextBox 
+                        Grid.Row="3" Grid.Column="1" Margin="5"
+                        ToolTip="{x:Static local:Resources.Strings.RuntimeApplication_Address_Tooltip}"
+                        Text="{Binding Path=Address,ValidatesOnExceptions=True,UpdateSourceTrigger=PropertyChanged}">
+                    </TextBox>
+
+                    <!-- Configuration -->
+                    <TextBlock 
+                        Grid.Row="4" Grid.Column="0" Margin="5"
+                        HorizontalAlignment="Right"
+                        Text="{x:Static local:Resources.Strings.RuntimeApplication_Configuration}"/>
+                    <TextBox 
+                        Grid.Row="4" Grid.Column="1" Margin="5"
+                        ToolTip="{x:Static local:Resources.Strings.RuntimeApplication_Configuration_Tooltip}"
+                        AcceptsReturn="True"
+                        Text="{Binding Path=Configuration,ValidatesOnExceptions=True,UpdateSourceTrigger=PropertyChanged}">
+                    </TextBox>
 
                 </Grid>
             </ScrollViewer>

@@ -717,4 +717,16 @@
   <data name="RuntimeService_Disconnect_Title" xml:space="preserve">
     <value>Disconnect?</value>
   </data>
+  <data name="RuntimeApplication_Configuration" xml:space="preserve">
+    <value>Configuration:</value>
+  </data>
+  <data name="RuntimeApplication_Configuration_Tooltip" xml:space="preserve">
+    <value>Enter custom configuration data here, specific to the type or Runtime</value>
+  </data>
+  <data name="RuntimeApplication_Address" xml:space="preserve">
+    <value>Address:</value>
+  </data>
+  <data name="RuntimeApplication_Address_Tooltip" xml:space="preserve">
+    <value>Enter address or connection info here, like an IP address or COM Port</value>
+  </data>
 </root>

@@ -1,6 +1,6 @@
 #region "SoapBox.Snap License"
 /// <header module="SoapBox.Snap"> 
-/// Copyright (C) 2009 SoapBox Automation Inc., All Rights Reserved.
+/// Copyright (C) 2009-2014 SoapBox Automation, All Rights Reserved.
 /// Contact: SoapBox Automation Licencing (license@soapboxautomation.com)
 /// 
 /// This file is part of SoapBox Snap.
@@ -161,7 +161,9 @@ namespace SoapBox.Snap.Phidgets
                 {
                     switch(device.Code.ToString())
                     {
+                        case Phidget_InterfaceKit_488.CODE:
                         case Phidget_InterfaceKit_888.CODE:
+                        case Phidget_InterfaceKit_0_16_16.CODE:
                             var ifKit = OpenInterfaceKit(device);
                             if (ifKit.Attached)
                             {
@@ -200,7 +202,11 @@ namespace SoapBox.Snap.Phidgets
                 {
                     switch(device.Code.ToString())
                     {
+                        case Phidget_InterfaceKit_004.CODE:
+                        case Phidget_InterfaceKit_008.CODE:
+                        case Phidget_InterfaceKit_488.CODE:
                         case Phidget_InterfaceKit_888.CODE:
+                        case Phidget_InterfaceKit_0_16_16.CODE:
                             var ifKit = OpenInterfaceKit(device);
                             if (ifKit.Attached)
                             {
@@ -224,6 +230,8 @@ namespace SoapBox.Snap.Phidgets
                             }
                             break;
                         case Phidget_ServoMotor_1.CODE:
+                        case Phidget_ServoMotor_4.CODE:
+                        case Phidget_ServoMotor_8.CODE:
                             var mtrControl = OpenServo(device);
                             if (mtrControl.Attached)
                             {
@@ -241,6 +249,45 @@ namespace SoapBox.Snap.Phidgets
                                             {
                                                 // FIXME - tie in to error reporting mechanism
                                             }
+                                        }
+                                    }
+                                }
+                            }
+                            break;
+                        case Phidget_AdvancedServo.CODE:
+                            var advServo = OpenAdvancedServo(device);
+                            if (advServo.Attached)
+                            {
+                                for (int i = 0; i < advServo.servos.Count; i++)
+                                {
+                                    var enable =
+                                        (from o in device.NodeDiscreteOutputChildren.Items
+                                         where Int32.Parse(o.Address.ToString()) == i
+                                         select o).FirstOrDefault();
+                                    if (enable != null)
+                                    {
+                                        try
+                                        {
+                                            advServo.servos[i].Engaged = enable.GetValue(runtimeApplication);
+                                        }
+                                        catch
+                                        {
+                                            // FIXME - tie in to error reporting mechanism
+                                        }
+                                    }
+                                    var output =
+                                        (from o in device.NodeAnalogOutputChildren.Items
+                                         where Int32.Parse(o.Address.ToString()) == i
+                                         select o).FirstOrDefault();
+                                    if (output != null)
+                                    {
+                                        try
+                                        {
+                                            advServo.servos[i].Position = Convert.ToDouble(output.GetValue(runtimeApplication));
+                                        }
+                                        catch
+                                        {
+                                            // FIXME - tie in to error reporting mechanism
                                         }
                                     }
                                 }
@@ -312,6 +359,23 @@ namespace SoapBox.Snap.Phidgets
         }
         private readonly Dictionary<string, Servo> servos =
             new Dictionary<string, Servo>();
+
+        private AdvancedServo OpenAdvancedServo(NodeDevice device)
+        {
+            string address = device.Address.ToString();
+            if (address == string.Empty)
+            {
+                throw new ArgumentOutOfRangeException();
+            }
+            if (!advancedServos.ContainsKey(address))
+            {
+                advancedServos.Add(address, new AdvancedServo());
+                advancedServos[address].open(Int32.Parse(address));
+            }
+            return advancedServos[address];
+        }
+        private readonly Dictionary<string, AdvancedServo> advancedServos =
+            new Dictionary<string, AdvancedServo>();
 
         private TextLCD OpenTextLCD(NodeDevice device)
         {

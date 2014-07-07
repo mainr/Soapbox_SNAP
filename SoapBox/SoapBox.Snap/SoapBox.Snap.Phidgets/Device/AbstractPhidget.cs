@@ -1,6 +1,6 @@
 #region "SoapBox.Snap License"
 /// <header module="SoapBox.Snap"> 
-/// Copyright (C) 2009 SoapBox Automation Inc., All Rights Reserved.
+/// Copyright (C) 2009-2014 SoapBox Automation, All Rights Reserved.
 /// Contact: SoapBox Automation Licencing (license@soapboxautomation.com)
 /// 
 /// This file is part of SoapBox Snap.
@@ -67,12 +67,20 @@ namespace SoapBox.Snap.Phidgets
             int discreteInputs, int discreteOutputs, int analogInputs, int analogOutputs, int stringInputs, int stringOutputs)
         {
             return StaticBuildHelper(deviceName, serialNumber, code, typeId, discreteInputs, discreteOutputs, analogInputs, analogOutputs,
-                stringInputs, stringOutputs, Resources.Strings.AnalogOutput);
+                stringInputs, stringOutputs, Resources.Strings.AnalogOutput, Resources.Strings.Output);
+        }
+
+        public static NodeDevice StaticBuildHelper(string deviceName, int serialNumber, string code, string typeId,
+            int discreteInputs, int discreteOutputs, int analogInputs, int analogOutputs, int stringInputs, int stringOutputs,
+            string analogOutputNameOverride)
+        {
+            return StaticBuildHelper(deviceName, serialNumber, code, typeId, discreteInputs, discreteOutputs, analogInputs, analogOutputs,
+                stringInputs, stringOutputs, analogOutputNameOverride, Resources.Strings.Output);
         }
 
         public static NodeDevice StaticBuildHelper(string deviceName, int serialNumber, string code, string typeId, 
             int discreteInputs, int discreteOutputs, int analogInputs, int analogOutputs, int stringInputs, int stringOutputs, 
-            string analogOutputNameOverride)
+            string analogOutputNameOverride, string discreteOutputNameOverride)
         {
             FieldIdentifier c;
             FieldGuid typ;
@@ -127,7 +135,7 @@ namespace SoapBox.Snap.Phidgets
                 outputsMutable.Add(NodeDiscreteOutput.BuildWith(
                     new FieldIdentifier(Resources.Strings.Output + i),
                     new FieldString(i.ToString()),
-                    new FieldSignalName(Resources.Strings.Output + " " + i)));
+                    new FieldSignalName(discreteOutputNameOverride + " " + i)));
             }
             var outputs = new ReadOnlyCollection<NodeDiscreteOutput>(outputsMutable);
             device = device.NodeDiscreteOutputChildren.Append(outputs);

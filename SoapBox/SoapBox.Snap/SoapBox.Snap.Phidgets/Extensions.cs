@@ -1,6 +1,6 @@
 #region "SoapBox.Snap License"
 /// <header module="SoapBox.Snap"> 
-/// Copyright (C) 2009 SoapBox Automation Inc., All Rights Reserved.
+/// Copyright (C) 2009-2014 SoapBox Automation, All Rights Reserved.
 /// Contact: SoapBox Automation Licencing (license@soapboxautomation.com)
 /// 
 /// This file is part of SoapBox Snap.
@@ -63,6 +63,7 @@ namespace SoapBox.Snap.Phidgets.Extensions
                 public const string Phidget_ServoMotor_1 = "Phidget_ServoMotor_1";
                 public const string Phidget_ServoMotor_4 = "Phidget_ServoMotor_4";
                 public const string Phidget_ServoMotor_8 = "Phidget_ServoMotor_8";
+                public const string Phidget_AdvancedServo = "Phidget_AdvancedServo";
             }
         }
     }

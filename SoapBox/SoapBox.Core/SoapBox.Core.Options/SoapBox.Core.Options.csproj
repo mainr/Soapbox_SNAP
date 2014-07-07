@@ -113,7 +113,7 @@
   <ItemGroup>
     <ProjectReference Include="..\..\SoapBox.Utilities\SoapBox.Utilities.csproj">
       <Project>{28CCC32E-9FEC-40B5-B7A9-299449635464}</Project>
-      <Name>SoapBox.Utilities %28SoapBox\SoapBox.Utilities\SoapBox.Utilities%29</Name>
+      <Name>SoapBox.Utilities</Name>
     </ProjectReference>
     <ProjectReference Include="..\SoapBox.Core.Contracts\SoapBox.Core.Contracts.csproj">
       <Project>{FDF772E9-FEF6-487A-B5C7-B64267449CC0}</Project>

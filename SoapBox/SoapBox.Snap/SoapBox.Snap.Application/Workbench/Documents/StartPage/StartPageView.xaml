@@ -26,6 +26,7 @@
                 Header="{x:Static local:Resources.Strings.Workbench_Documents_StartPage_News}">
                 <Frame
                     Navigating="Frame_Navigating"
+                    Navigated="Frame_Navigated"
                     NavigationUIVisibility="Visible"
                     Source="{Binding FrameSource}"/>
             </GroupBox>
