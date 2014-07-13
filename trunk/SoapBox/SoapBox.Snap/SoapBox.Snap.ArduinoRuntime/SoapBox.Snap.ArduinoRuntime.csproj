@@ -128,7 +128,9 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="ArduinoFirmware\BoardSelect.h" />
+    <Content Include="ArduinoFirmware\BoardSelect.h">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="ArduinoFirmware\DeviceConfig.cpp">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -147,7 +149,9 @@
     <Content Include="ArduinoFirmware\IO.h">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="ArduinoFirmware\LICENSE.txt" />
+    <Content Include="ArduinoFirmware\LICENSE.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="ArduinoFirmware\Memory.cpp">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -186,7 +190,9 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <None Include="ArduinoFirmware\ClearEEPROM\ClearEEPROM.ino" />
+    <Content Include="ArduinoFirmware\ClearEEPROM\ClearEEPROM.ino">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
