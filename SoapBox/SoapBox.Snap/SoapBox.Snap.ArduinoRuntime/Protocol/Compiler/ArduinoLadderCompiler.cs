@@ -1,6 +1,6 @@
 #region "SoapBox.Snap License"
 /// <header module="SoapBox.Snap"> 
-/// Copyright (C) 2009-2014 SoapBox Automation, All Rights Reserved.
+/// Copyright (C) 2009-2015 SoapBox Automation, All Rights Reserved.
 /// Contact: SoapBox Automation Licencing (license@soapboxautomation.com)
 /// 
 /// This file is part of SoapBox Snap.
@@ -164,7 +164,22 @@ namespace SoapBox.Snap.ArduinoRuntime.Protocol.Compiler
             // analog jumpers (from internal signals to outputs)
             foreach (var numericJumper in signalTable.NumericJumpers)
             {
-                throw new NotImplementedException("Numeric output jumpers (2 analog outputs mapped to same signal) not implemented");
+                var sourceAddress = numericJumper.Item1;
+                var destinationAddress = numericJumper.Item2;
+
+                var compiledOperand1Signal = new CompiledNumericSignal(true, sourceAddress, signalTable.NumericAddressBits);
+                var operand2SignalIn = NodeSignalIn.BuildWith(
+                    new FieldDataType(FieldDataType.DataTypeEnum.NUMBER),
+                    new FieldConstant(FieldDataType.DataTypeEnum.NUMBER, 0M));
+                var compiledOperand2Signal = numericSignal(operand2SignalIn, signalTable);
+
+                var compiledResultSignal = new CompiledNumericSignal(false, destinationAddress, signalTable.NumericAddressBits);
+                var add = new CompiledInstruction(
+                    0x78, // add
+                    7,
+                    compiledOperand1Signal, compiledOperand2Signal, compiledResultSignal);
+                compiledInstructions.Add(add);
+                compiledInstructions.Add(new CompiledInstruction(0x03, 3)); // series instruction end (end of rung)
             }
 
             // analog forces

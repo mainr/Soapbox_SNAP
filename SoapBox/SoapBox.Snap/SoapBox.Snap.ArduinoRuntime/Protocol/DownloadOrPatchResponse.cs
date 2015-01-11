@@ -28,25 +28,36 @@ using SoapBox.Snap.ArduinoRuntime.Protocol.Helpers;
 
 namespace SoapBox.Snap.ArduinoRuntime.Protocol
 {
-    class RuntimeStatusResponse
+    class DownloadOrPatchResponse
     {
-        public RuntimeStatusResponse(SendReceiveResult response)
+        public DownloadOrPatchResponse(SendReceiveResult response)
         {
             if (response == null) throw new ArgumentNullException("response");
             if (!response.Success)
             {
                 throw new ProtocolException(response.Error);
             }
-            if (response.Lines.Count != 1)
+            if (response.Lines.Count != 2)
             {
-                throw new ProtocolException("Response to \"status\" command wasn't 1 lines long.");
+                throw new ProtocolException("Response to \"download\" or \"patch\" command wasn't 2 lines long.");
             }
 
-            var runningLine = new KeyAndValue(response.Lines[0]);
-            if (runningLine.Key != "Running") throw new ProtocolException("Key of Running line isn't right.");
-            this.Running = bool.Parse(runningLine.Value);
+            var successLine = new KeyAndValue(response.Lines[0]);
+            if (successLine.Key != "Success") throw new ProtocolException("Key of Success line isn't right.");
+            this.Success = bool.Parse(successLine.Value);
+
+            var bytesLine = new KeyAndValue(response.Lines[1]);
+            if (bytesLine.Key != "Bytes") throw new ProtocolException("Key of Bytes line isn't right.");
+            this.Bytes = Int32.Parse(bytesLine.Value);
         }
 
-        public bool Running { get; private set; }
+        public DownloadOrPatchResponse()
+        {
+            this.Success = false;
+            this.Bytes = 0;
+        }
+
+        public bool Success { get; private set; }
+        public int Bytes { get; private set; }
     }
 }

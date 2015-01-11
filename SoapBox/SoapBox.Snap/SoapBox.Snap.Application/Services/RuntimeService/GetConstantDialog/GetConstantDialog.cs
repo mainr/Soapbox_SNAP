@@ -1,6 +1,6 @@
 #region "SoapBox.Snap License"
 /// <header module="SoapBox.Snap"> 
-/// Copyright (C) 2009-2014 SoapBox Automation, All Rights Reserved.
+/// Copyright (C) 2009-2015 SoapBox Automation, All Rights Reserved.
 /// Contact: SoapBox Automation Licencing (license@soapboxautomation.com)
 /// 
 /// This file is part of SoapBox Snap.

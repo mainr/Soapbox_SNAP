@@ -79,6 +79,7 @@
     <Compile Include="Protocol\Compiler\ArduinoLadderCompiler.cs" />
     <Compile Include="Protocol\Compiler\Helpers\CompiledSignal.cs" />
     <Compile Include="Protocol\DeviceConfigurationResponse.cs" />
+    <Compile Include="Protocol\DownloadOrPatchResponse.cs" />
     <Compile Include="Protocol\Helpers\KeyAndValue.cs" />
     <Compile Include="Protocol\Helpers\SendReceiveResult.cs" />
     <Compile Include="Protocol\InformationResponse.cs" />
@@ -147,6 +148,9 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="ArduinoFirmware\IO.h">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ArduinoFirmware\LICENSE.GPL3.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="ArduinoFirmware\LICENSE.txt">

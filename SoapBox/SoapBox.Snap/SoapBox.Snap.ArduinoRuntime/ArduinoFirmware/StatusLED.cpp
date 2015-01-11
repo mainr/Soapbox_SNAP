@@ -3,6 +3,7 @@
 StatusLED::StatusLED(int ledPin, Engine* engine) {
   _ledPin = ledPin;
   _engine = engine;
+  _innerCounter = 0; // counts 0 to STATUS_LED_10_PERCENT-1
   _counter = 0; // counts 0 to 9
 }
 
@@ -11,6 +12,14 @@ void StatusLED::init() {
 }
 
 void StatusLED::timerISR() {
+  _innerCounter++;
+  if(_innerCounter >= STATUS_LED_10_PERCENT) {
+    _innerCounter = 0;
+    countTenth();
+  }
+}
+
+void StatusLED::countTenth() {
   _counter++;
   if(_counter >= 10) {
     _counter = 0;

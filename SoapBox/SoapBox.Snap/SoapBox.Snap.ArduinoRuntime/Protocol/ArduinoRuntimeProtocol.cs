@@ -1,6 +1,6 @@
 #region "SoapBox.Snap License"
 /// <header module="SoapBox.Snap"> 
-/// Copyright (C) 2009-2014 SoapBox Automation, All Rights Reserved.
+/// Copyright (C) 2009-2015 SoapBox Automation, All Rights Reserved.
 /// Contact: SoapBox Automation Licencing (license@soapboxautomation.com)
 /// 
 /// This file is part of SoapBox Snap.
@@ -147,30 +147,53 @@ namespace SoapBox.Snap.ArduinoRuntime.Protocol
             return new DeviceConfigurationResponse(response);
         }
 
-        public CommandResponse Download(byte[] bytes)
+        public DownloadOrPatchResponse Download(byte[] bytes)
         {
             return downloadOrPatch(bytes, "download");
         }
 
-        public CommandResponse Patch(byte[] bytes)
+        public DownloadOrPatchResponse Patch(byte[] bytes)
         {
             return downloadOrPatch(bytes, "patch");
         }
 
-        private CommandResponse downloadOrPatch(byte[] bytes, string command)
+        private DownloadOrPatchResponse downloadOrPatch(byte[] bytes, string command)
         {
             if (command == null) throw new ArgumentNullException("command");
             lock (this.m_sendAndReceive_Lock) // don't allow other communication to interrupt
             {
                 var response1 = sendAndReceive(command + " " + bytes.Length);
-                var commandResponse1 = new CommandResponse(response1);
-                if (commandResponse1.Success)
+                var commandResponse1 = new DownloadOrPatchResponse(response1);
+                if (commandResponse1.Success && commandResponse1.Bytes == bytes.Length)
                 {
                     // it's now ready to accept a binary program (expecting the length we gave it above)
                     var response2 = sendAndReceive(bytes);
-                    return new CommandResponse(response2);
+                    var commandResponse2 = new DownloadOrPatchResponse(response2);
+                    if (commandResponse2.Success && commandResponse2.Bytes == bytes.Length)
+                    {
+                        return commandResponse2;
+                    }
+                    else if (!commandResponse2.Success)
+                    {
+                        throw new ProtocolException("Download/patch failed.");
+                    }
+                    else
+                    {
+                        throw new ProtocolException("Tried to download/patch " + bytes.Length
+                            + " bytes but runtime responded that " + commandResponse2.Bytes
+                            + " bytes were downloaded/patched.");
+                    }
                 }
-                return commandResponse1;
+                else if (!commandResponse1.Success)
+                {
+                    throw new ProtocolException("Download/patch failed.");
+                }
+                else
+                {
+                    throw new ProtocolException("Tried to download/patch " + bytes.Length
+                        + " bytes but runtime responded that " + commandResponse1.Bytes
+                        + " were expected to be downloaded/patched.");
+                }
             }
         }
 
@@ -196,6 +219,18 @@ namespace SoapBox.Snap.ArduinoRuntime.Protocol
             try
             {
                 result = this.sendAndReceive(serialPort => serialPort.WriteLine(request));
+                Console.WriteLine("sent: " + request);
+                if (result.Success)
+                {
+                    foreach (var line in result.Lines)
+                    {
+                        Console.WriteLine(line);
+                    }
+                }
+                else
+                {
+                    Console.WriteLine(result.Error);
+                }
             }
             catch (IOException ex)
             {
@@ -275,7 +310,7 @@ namespace SoapBox.Snap.ArduinoRuntime.Protocol
                 sendAction(this.m_serialPort);
                 while (true)
                 {
-                    this.m_serialPort.ReadTimeout = 500;
+                    this.m_serialPort.ReadTimeout = 1000;
                     var line = this.m_serialPort.ReadLine();
                     if (line == TERMINATION_LINE)
                     {

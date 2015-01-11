@@ -2,16 +2,6 @@
 #include <Arduino.h>
 #include <EEPROM.h>
 
-// EEPROM Map (reserved 4 bytes)
-// Byte 0:
-//   bit 2 to 7 = pinMode for pins 2 through 7 (pins 0, 1 are serial)
-// Byte 1:
-//   bit 0 to 4 = pinMode for pins 8 to 12 (pin 13 is status LED)
-// Byte 2:
-//   reserved
-// Byte 3:
-//   reserved
-
 DeviceConfig::DeviceConfig(int eepromAddress) {
   _eepromAddress = eepromAddress;
 }
@@ -27,27 +17,74 @@ void DeviceConfig::writeToEeprom() {
   }
 }
 
-boolean DeviceConfig::isOutput(int pin) {
-  if(pin < MIN_PIN_NUMBER || pin > MAX_PIN_NUMBER) return false;
-  int addressByteNumber = pin >> 3;
-  int addressBitNumber = pin & 7;
-  return bitRead(_config[addressByteNumber], addressBitNumber);
+boolean DeviceConfig::isInput(int pin) {
+  if(pin < MIN_PIN_NUMBER || pin > MAX_PIN_NUMBER || pin == STATUS_LED_PIN) return false;
+  return _config[pin] == pin_config_input;
 }
 
-void DeviceConfig::setOutput(int pin, boolean isOutput) {
-  if(pin < MIN_PIN_NUMBER || pin > MAX_PIN_NUMBER) return;
-  int addressByteNumber = pin >> 3;
-  int addressBitNumber = pin & 7;
-  if(isOutput) {
-    bitSet(_config[addressByteNumber], addressBitNumber);
-  }
-  else {
-    bitClear(_config[addressByteNumber], addressBitNumber);
-  }
+void DeviceConfig::setInput(int pin) {
+  if(pin < MIN_PIN_NUMBER || pin > MAX_PIN_NUMBER || pin == STATUS_LED_PIN) return;
+  _config[pin] = pin_config_input;
+}
+
+boolean DeviceConfig::isOutput(int pin) {
+  if(pin < MIN_PIN_NUMBER || pin > MAX_PIN_NUMBER || pin == STATUS_LED_PIN) return false;
+  return _config[pin] == pin_config_output;
+}
+
+void DeviceConfig::setOutput(int pin) {
+  if(pin < MIN_PIN_NUMBER || pin > MAX_PIN_NUMBER || pin == STATUS_LED_PIN) return;
+  _config[pin] = pin_config_output;
+}
+
+boolean DeviceConfig::isPwm(int pin) {
+  if(!validPwmPin(pin)) return false;
+  return _config[pin] == pin_config_pwm;
+}
+
+void DeviceConfig::setPwm(int pin) {
+  if(!validPwmPin(pin)) return;
+  _config[pin] = pin_config_pwm;
 }
 
 void DeviceConfig::reset() {
   for(int i = MIN_PIN_NUMBER; i <= MAX_PIN_NUMBER; i++) {
-    setOutput(i, false);
+    if(i != STATUS_LED_PIN) {
+      setInput(i);
+    }
   }
+}
+
+int DeviceConfig::getAddress(int pin) {
+  // return a boolean address
+  return pin - MIN_PIN_NUMBER;
+}
+
+byte DeviceConfig::getPwmAddress(int pin) {
+  if(!isPwm(pin)) {
+    return 0; // this is actually an error... not sure what to do about it here
+  }
+  // return a numeric address
+  // first N numeric addresses are used by the analog inputs
+  byte pwmAddress = MAX_ANALOG_INPUT + 1;
+  // assign addresses in order of pwm pins in use
+  for(int i = 0; i < PWM_PIN_COUNT; i++) {
+    int pwmPin = PWM_PINS[i];
+    if(pwmPin == pin) {
+      return pwmAddress;
+    }
+    if(isPwm(pwmPin)) {
+      pwmAddress++;
+    }
+  }
+  return 0;
+}
+
+boolean DeviceConfig::validPwmPin(int pin) {
+  for(int i = 0; i < PWM_PIN_COUNT; i++) {
+    if(PWM_PINS[i] == pin) {
+      return true;
+    }
+  }
+  return false;
 }

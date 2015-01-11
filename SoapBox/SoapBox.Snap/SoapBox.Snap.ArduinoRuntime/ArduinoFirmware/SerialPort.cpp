@@ -99,10 +99,24 @@ void SerialPort::processLine(String &line) {
   else if(line.startsWith("config-output ")) {
     String p = line.substring(14);
     int pin = p.toInt();
-    _deviceConfig->setOutput(pin, true);
+    _deviceConfig->setOutput(pin);
     _deviceConfig->writeToEeprom();
     _io->configureIO();
     printSuccess(true); 
+  }
+  else if(line.startsWith("config-pwm ")) {
+    String p = line.substring(11);
+    int pin = p.toInt();
+    if(_deviceConfig->validPwmPin(pin)) {
+      _deviceConfig->setPwm(pin);
+      _deviceConfig->writeToEeprom();
+      _io->configureIO();
+      printSuccess(true); 
+    }
+    else {
+      Serial.print(F("Error=Not a valid PWM pin: "));
+      Serial.println(pin);
+    }
   }
   else if(line.equals("status")) {
     Serial.print(F("Running=")); // status of runtime (running or stopped)
@@ -221,6 +235,8 @@ void SerialPort::download(String &line, boolean patch) {
     int length = len.toInt(); // length is in bytes
     _program->setProgramSize(length);
     printSuccess(true); // means start transmitting program
+    Serial.print(F("Bytes="));
+    Serial.println(length);
     printEOM();
     if(!patch) {
       _engine->stopEngine();
@@ -235,6 +251,8 @@ void SerialPort::download(String &line, boolean patch) {
     }
     _program->writeToEeprom(); // stores it in persistent storage
     printSuccess(true);
+    Serial.print(F("Bytes="));
+    Serial.println(totalBytesRead);
     if(!patch) {
       _engine->startEngine();
     }
