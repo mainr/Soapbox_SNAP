@@ -15,7 +15,7 @@ Memory memory = Memory(); // these are the current values of coils and analog va
 IO io = IO(&deviceConfig, &memory);
 Engine engine = Engine(DEVICE_CONFIG_EEPROM_BYTES, &program, &memory);
 SerialPort serialPort = SerialPort(&io, &memory, &deviceConfig, &program, &engine);
-StatusLED statusLED = StatusLED(13, &engine);
+StatusLED statusLED = StatusLED(STATUS_LED_PIN, &engine);
 
 void setup() {        
   deviceConfig.readFromEeprom(); 
@@ -25,13 +25,12 @@ void setup() {
   engine.preScan();
   io.configureIO();
   statusLED.init();
-  serialPort.setupSerialPort();  
-  Timer1.initialize(100000); // every 0.1 seconds
+  serialPort.setupSerialPort();
   Timer1.attachInterrupt(timerISR);
 }
 
 void timerISR() {
-  statusLED.timerISR();
+  statusLED.timerISR(); // called 490 times per second by Timer1 (default PWM frequency)
 }
 
 void loop() {  

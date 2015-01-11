@@ -1,6 +1,6 @@
 #region "SoapBox.Snap License"
 /// <header module="SoapBox.Snap"> 
-/// Copyright (C) 2009-2014 SoapBox Automation, All Rights Reserved.
+/// Copyright (C) 2009-2015 SoapBox Automation, All Rights Reserved.
 /// Contact: SoapBox Automation Licencing (license@soapboxautomation.com)
 /// 
 /// This file is part of SoapBox Snap.
@@ -190,7 +190,8 @@ namespace SoapBox.Snap.ArduinoRuntime
                         .Split(new string[] { Environment.NewLine }, StringSplitOptions.RemoveEmptyEntries);
                     foreach (var configurationLine in configurationLines)
                     {
-                        if (configurationLine.StartsWith("config-output "))
+                        if (configurationLine.StartsWith("config-output ")
+                            || configurationLine.StartsWith("config-pwm "))
                         {
                             var configurationResponse = this.m_arduinoRuntimeProtocol.Configure(configurationLine);
                             if (!configurationResponse.Success)

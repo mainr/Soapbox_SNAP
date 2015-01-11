@@ -5,7 +5,6 @@
 #ifndef IO_h
 #define IO_h
 
-
 class IO {  
   public:
     IO(DeviceConfig* deviceConfig, Memory* memory);
@@ -20,7 +19,6 @@ class IO {
     Memory* _memory;
     
     void printPinConfig(int pin);
-    int getAddress(int pin); // returns boolean address in memory for pin
 };
 
 #endif

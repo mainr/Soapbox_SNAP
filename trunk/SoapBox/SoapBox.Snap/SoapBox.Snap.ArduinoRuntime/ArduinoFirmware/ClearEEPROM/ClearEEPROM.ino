@@ -1,4 +1,4 @@
-#define EEPROM_BYTES 1024
+#define EEPROM_BYTES 1024 // change to 4096 for Mega
 
 #include <EEPROM.h>
 

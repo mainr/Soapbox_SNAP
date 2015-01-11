@@ -1,11 +1,8 @@
 #include <Arduino.h>
+#include "BoardSelect.h"
 
 #ifndef Memory_h
 #define Memory_h
-
-const int NUM_BOOLEANS = 512; // has to be a multiple of 8
-const byte NUM_NUMERICS = 24; // has to be a multiple of 8
-const byte NUM_STRINGS = 0; // not implemented yet
 
 union NumericMemoryLocation {
   long longValue;

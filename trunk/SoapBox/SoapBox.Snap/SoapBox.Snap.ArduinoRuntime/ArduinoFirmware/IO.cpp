@@ -7,7 +7,7 @@ IO::IO(DeviceConfig* deviceConfig, Memory* memory) {
 
 void IO::configureIO() {
   for(int pin = MIN_PIN_NUMBER; pin <= MAX_PIN_NUMBER; pin++) {
-    if(_deviceConfig->isOutput(pin)) {
+    if(_deviceConfig->isOutput(pin) || _deviceConfig->isPwm(pin)) {
       pinMode(pin, OUTPUT);
     }
     else {
@@ -18,15 +18,27 @@ void IO::configureIO() {
 
 void IO::printIO() {
   for(int pin = MIN_PIN_NUMBER; pin <= MAX_PIN_NUMBER; pin++) {
-    printPinConfig(pin);
+    if(pin != STATUS_LED_PIN) {
+      printPinConfig(pin);
+    }
   }
   for(int analog = MIN_ANALOG_INPUT; analog <= MAX_ANALOG_INPUT; analog++) {
     int address = analog - MIN_ANALOG_INPUT;
-    Serial.print("A");
+    Serial.print(F("A"));
     Serial.print(analog);
-    Serial.print(", ");
+    Serial.print(F(", "));
     Serial.print(address);
-    Serial.println(", analogInput");
+    Serial.println(F(", analogInput"));
+  }
+  for(int pwmPin = MIN_PIN_NUMBER; pwmPin <= MAX_PIN_NUMBER; pwmPin++) {
+    if(_deviceConfig->isPwm(pwmPin)) {
+      byte pwmAddress = _deviceConfig->getPwmAddress(pwmPin);
+      Serial.print(F("pin"));
+      Serial.print(pwmPin);
+      Serial.print(F(", "));
+      Serial.print(pwmAddress);
+      Serial.println(F(", analogOutput"));
+    }
   }
 }
 
@@ -34,30 +46,26 @@ void IO::printPinConfig(int pin) {
   // format for each line is: name, address, type
   // Type is: input, output, analogInput, analogOutput
   
-  int address = getAddress(pin);
+  int address = _deviceConfig->getAddress(pin);
   
-  Serial.print("pin");
+  Serial.print(F("pin"));
   Serial.print(pin);
-  Serial.print(", ");
+  Serial.print(F(", "));
   Serial.print(address);
-  Serial.print(", ");
+  Serial.print(F(", "));
   if(_deviceConfig->isOutput(pin)) {
-    Serial.print("output");
+    Serial.print(F("output"));
   }
-  else {
-    Serial.print("input");
+  else if(_deviceConfig->isInput(pin)) {
+    Serial.print(F("input"));
   }
   Serial.println();
 }
 
-int IO::getAddress(int pin) {
-  return pin - MIN_PIN_NUMBER;
-}
-
 void IO::scanInputs() {
   for(int pin = MIN_PIN_NUMBER; pin <= MAX_PIN_NUMBER; pin++) {
-    if(!_deviceConfig->isOutput(pin)) {
-      int address = getAddress(pin);
+    if(pin != STATUS_LED_PIN && _deviceConfig->isInput(pin)) {
+      int address = _deviceConfig->getAddress(pin);
       if(digitalRead(pin) == HIGH) {
         _memory->writeBoolean(address, true);
       }
@@ -78,14 +86,38 @@ void IO::scanInputs() {
 
 void IO::scanOutputs() {
   for(int pin = MIN_PIN_NUMBER; pin <= MAX_PIN_NUMBER; pin++) {
-    if(_deviceConfig->isOutput(pin)) {
-      int address = getAddress(pin);
-      boolean value = _memory->readBoolean(address);
-      if(value) {
-        digitalWrite(pin, HIGH);
+    if(pin != STATUS_LED_PIN) {
+      if(_deviceConfig->isOutput(pin)) {
+        int address = _deviceConfig->getAddress(pin);
+        boolean value = _memory->readBoolean(address);
+        if(value) {
+          digitalWrite(pin, HIGH);
+        }
+        else {
+          digitalWrite(pin, LOW);
+        }
       }
-      else {
-        digitalWrite(pin, LOW);
+      else if(_deviceConfig->isPwm(pin)) {
+        byte pwmAddress = _deviceConfig->getPwmAddress(pin);
+        NumericMemoryValue pwmMemoryValue = _memory->readNumeric(pwmAddress);
+        long outputValue;
+        if(pwmMemoryValue.isFloat) {
+          outputValue = (long)(pwmMemoryValue.value.floatValue);
+        }
+        else {
+          outputValue = pwmMemoryValue.value.longValue;
+        }
+        byte byteOutputValue;
+        if(outputValue > 255) {
+          byteOutputValue = 255;
+        }
+        else if(outputValue < 0) {
+          byteOutputValue = 0;
+        }
+        else {
+          byteOutputValue = outputValue;
+        }
+        analogWrite(pin, byteOutputValue);
       }
     }
   }
@@ -93,9 +125,13 @@ void IO::scanOutputs() {
 
 void IO::turnOutputsOff() {
   for(int pin = MIN_PIN_NUMBER; pin <= MAX_PIN_NUMBER; pin++) {
-    if(_deviceConfig->isOutput(pin)) {
-      int address = getAddress(pin);
-      digitalWrite(pin, LOW);
+    if(pin != STATUS_LED_PIN) {
+      if(_deviceConfig->isOutput(pin)) {
+        digitalWrite(pin, LOW);
+      }
+      else if(_deviceConfig->isPwm(pin)) {
+        analogWrite(pin, 0);
+      }
     }
   }
 }
