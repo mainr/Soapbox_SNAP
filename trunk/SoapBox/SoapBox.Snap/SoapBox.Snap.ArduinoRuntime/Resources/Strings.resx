@@ -120,6 +120,18 @@
   <data name="DriverName" xml:space="preserve">
     <value>Local I/O</value>
   </data>
+  <data name="Options_RuntimeOptions_General" xml:space="preserve">
+    <value>General</value>
+  </data>
+  <data name="Options_RuntimeOptions_General_ExportSignalTable" xml:space="preserve">
+    <value>Export Signal Table</value>
+  </data>
+  <data name="Options_RuntimeOptions_General_ExportSignalTableExplanation" xml:space="preserve">
+    <value>Exports addresses of signals to a CSV file after each download, to this directory</value>
+  </data>
+  <data name="Options_RuntimeOptions_Header" xml:space="preserve">
+    <value>SoapBox Snap Arduino Runtime</value>
+  </data>
   <data name="Runtime_Name" xml:space="preserve">
     <value>SoapBox Snap Arduino Runtime</value>
   </data>

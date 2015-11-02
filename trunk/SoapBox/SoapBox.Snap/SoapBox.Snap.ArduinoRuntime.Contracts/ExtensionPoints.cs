@@ -1,4 +1,4 @@
-#region "SoapBox.Snap License"
+﻿#region "SoapBox.Snap License"
 /// <header module="SoapBox.Snap"> 
 /// Copyright (C) 2009-2015 SoapBox Automation, All Rights Reserved.
 /// Contact: SoapBox Automation Licencing (license@soapboxautomation.com)
@@ -25,17 +25,17 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace SoapBox.Snap.ArduinoRuntime.Extensions
+namespace SoapBox.Snap.ArduinoRuntime.ExtensionPoints
 {
     public static class Runtime
     {
-        public const string Arduino = "Arduino";
+        public static class Snap
+        {
+            public const string RuntimeOptionItems = "SoapBox.Snap.ArduinoRuntime.ExtensionPoints.Runtime.Snap.RuntimeOptionItems";
+        }
     }
     public static class Driver
     {
-        public static class Types
-        {
-            public const string ArduinoLocalIO = "ArduinoLocalIO";
-        }
+        public const string ContextMenu = "SoapBox.Snap.ArduinoRuntime.ExtensionPoints.Driver.ContextMenu";
     }
 }

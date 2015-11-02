@@ -202,12 +202,21 @@ namespace SoapBox.Snap.LD
             }
             else
             {
+                INodeWrapper beforeItem = null;
+                if (index < Items.Count)
+                {
+                    beforeItem = Items[index];
+                }
                 int rightCount = 0;
                 foreach (var ldInstructionItem in source)
                 {
                     if (ldInstructionItem.InstructionType.Language !=
                         Extensions.Workbench.Documents.PageEditor_.InstructionGroupItems.LD
                         || ldInstructionItem.Instruction == null)
+                    {
+                        return false;
+                    }
+                    if (beforeItem != null && ldInstructionItem == beforeItem)
                     {
                         return false;
                     }

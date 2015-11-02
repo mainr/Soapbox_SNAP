@@ -22,7 +22,7 @@ namespace SoapBox.Snap.ArduinoRuntime.Resources {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    internal class Strings {
+    public class Strings {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
@@ -36,7 +36,7 @@ namespace SoapBox.Snap.ArduinoRuntime.Resources {
         ///   Returns the cached ResourceManager instance used by this class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Resources.ResourceManager ResourceManager {
+        public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
                     global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("SoapBox.Snap.ArduinoRuntime.Resources.Strings", typeof(Strings).Assembly);
@@ -51,7 +51,7 @@ namespace SoapBox.Snap.ArduinoRuntime.Resources {
         ///   resource lookups using this strongly typed resource class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Globalization.CultureInfo Culture {
+        public static global::System.Globalization.CultureInfo Culture {
             get {
                 return resourceCulture;
             }
@@ -63,16 +63,52 @@ namespace SoapBox.Snap.ArduinoRuntime.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Local I/O.
         /// </summary>
-        internal static string DriverName {
+        public static string DriverName {
             get {
                 return ResourceManager.GetString("DriverName", resourceCulture);
             }
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to General.
+        /// </summary>
+        public static string Options_RuntimeOptions_General {
+            get {
+                return ResourceManager.GetString("Options_RuntimeOptions_General", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Export Signal Table.
+        /// </summary>
+        public static string Options_RuntimeOptions_General_ExportSignalTable {
+            get {
+                return ResourceManager.GetString("Options_RuntimeOptions_General_ExportSignalTable", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Exports addresses of signals to a CSV file after each download, to this directory.
+        /// </summary>
+        public static string Options_RuntimeOptions_General_ExportSignalTableExplanation {
+            get {
+                return ResourceManager.GetString("Options_RuntimeOptions_General_ExportSignalTableExplanation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to SoapBox Snap Arduino Runtime.
         /// </summary>
-        internal static string Runtime_Name {
+        public static string Options_RuntimeOptions_Header {
+            get {
+                return ResourceManager.GetString("Options_RuntimeOptions_Header", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to SoapBox Snap Arduino Runtime.
+        /// </summary>
+        public static string Runtime_Name {
             get {
                 return ResourceManager.GetString("Runtime_Name", resourceCulture);
             }

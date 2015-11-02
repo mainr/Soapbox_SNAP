@@ -34,6 +34,7 @@ using SoapBox.Snap.ArduinoRuntime.Protocol.Compiler;
 using System.Xml.Linq;
 using System.ComponentModel.Composition;
 using SoapBox.Core;
+using System.IO;
 
 namespace SoapBox.Snap.ArduinoRuntime
 {
@@ -146,6 +147,22 @@ namespace SoapBox.Snap.ArduinoRuntime
             this.nodeRuntimeApplication = runtimeApplication;
             if (runtimeApplication != null)
             {
+                if (Properties.Settings.Default.ExportSignalTable)
+                {
+                    var csv = this.m_signalTable.GenerateCSV();
+                    try
+                    {
+                        var directory = Properties.Settings.Default.ExportSignalTableTo;
+                        var filename = string.Format(@"{0}_{1}.csv",
+                            runtimeApplication.Code,
+                            "SignalTable");
+                        var fullyQualifiedFilename = Path.Combine(directory, filename);
+                        File.WriteAllText(fullyQualifiedFilename, csv);
+                    }
+                    catch (Exception)
+                    {
+                    }
+                }
                 var compiledApplication = this.m_compiler.Compile(runtimeApplication, this.m_signalTable);
                 var bytes = compiledApplication.ToByteArray();
 
