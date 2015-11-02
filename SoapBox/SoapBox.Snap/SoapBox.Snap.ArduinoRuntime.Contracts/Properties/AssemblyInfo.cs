@@ -5,12 +5,12 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("SoapBox.Core.Layout")]
+[assembly: AssemblyTitle("SoapBox.Snap.ArduinoRuntime.Contracts")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("SoapBox.Core.Layout")]
-[assembly: AssemblyCopyright("Copyright ©  2009")]
+[assembly: AssemblyProduct("SoapBox.Snap.ArduinoRuntime.Contracts")]
+[assembly: AssemblyCopyright("Copyright ©  2015")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("a0dbd299-7f1d-444f-8b02-0dfa993e4c22")]
+[assembly: Guid("9df0a696-e906-43fc-8a32-5f06d8fa2c3e")]
 
 // Version information for an assembly consists of the following four values:
 //

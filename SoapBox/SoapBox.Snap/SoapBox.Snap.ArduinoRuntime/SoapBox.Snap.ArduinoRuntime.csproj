@@ -64,13 +64,22 @@
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ArduinoRuntimeProxy.cs" />
+    <Compile Include="Options\RuntimeOptions.cs" />
+    <Compile Include="Options\RuntimeOptionsPad.cs" />
+    <Compile Include="Options\RuntimeOptionsPadView.xaml.cs">
+      <DependentUpon>RuntimeOptionsPadView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
     <Compile Include="Protocol\ArduinoRuntimeProtocol.cs" />
     <Compile Include="Driver\SnapDriver.cs" />
-    <Compile Include="ExtensionPoints.cs" />
-    <Compile Include="Extensions.cs" />
     <Compile Include="Protocol\CommandResponse.cs" />
     <Compile Include="Protocol\Compiler\Helpers\CompiledBooleanSignal.cs" />
     <Compile Include="Protocol\Compiler\Helpers\CompiledInstruction.cs" />
@@ -97,6 +106,7 @@
     </Compile>
     <Compile Include="RuntimeType.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Settings.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\SoapBox.Core\SoapBox.Core.Contracts\SoapBox.Core.Contracts.csproj">
@@ -114,6 +124,10 @@
     <ProjectReference Include="..\..\SoapBox.Utilities\SoapBox.Utilities.csproj">
       <Project>{28CCC32E-9FEC-40B5-B7A9-299449635464}</Project>
       <Name>SoapBox.Utilities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SoapBox.Snap.ArduinoRuntime.Contracts\SoapBox.Snap.ArduinoRuntime.Contracts.csproj">
+      <Project>{C402848A-ACAA-4CA2-A3CF-D278863ED193}</Project>
+      <Name>SoapBox.Snap.ArduinoRuntime.Contracts</Name>
     </ProjectReference>
     <ProjectReference Include="..\SoapBox.Snap.Contracts\SoapBox.Snap.Contracts.csproj">
       <Project>{EA1DF330-F94C-4753-8822-2B82FCCBAA45}</Project>
@@ -184,7 +198,7 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Resources\Strings.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
+      <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Strings.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
@@ -197,6 +211,19 @@
     <Content Include="ArduinoFirmware\ClearEEPROM\ClearEEPROM.ino">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="Options\RuntimeOptionsPadView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

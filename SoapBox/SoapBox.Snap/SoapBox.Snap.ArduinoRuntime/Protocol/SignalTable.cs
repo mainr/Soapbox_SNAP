@@ -219,6 +219,38 @@ namespace SoapBox.Snap.ArduinoRuntime.Protocol
             return false;
         }
 
+        public string GenerateCSV()
+        {
+            var result = new StringBuilder();
+            for (int i = 0; i < this.m_information.Booleans; i++)
+            {
+                if (this.m_booleanSignalsByAddress[i] == null)
+                {
+                    break;
+                }
+                result.AppendFormat("{0},{1},{2},{3}",
+                    i,
+                    FieldDataType.DataTypeEnum.BOOL,
+                    this.m_booleanSignalsByAddress[i].SignalName, // note that signal name can't have a comma
+                    this.m_booleanSignalsByAddress[i].Comment);
+                result.AppendLine();
+            }
+            for (int i = 0; i < this.m_information.Numerics; i++)
+            {
+                if (this.m_numericSignalsByAddress[i] == null)
+                {
+                    break;
+                }
+                result.AppendFormat("{0},{1},{2},{3}",
+                    i,
+                    FieldDataType.DataTypeEnum.NUMBER,
+                    this.m_numericSignalsByAddress[i].SignalName, // note that signal name can't have a comma
+                    this.m_booleanSignalsByAddress[i].Comment);
+                result.AppendLine();
+            }
+            return result.ToString();
+        }
+
         public void BuildSignalTable(NodeRuntimeApplication runtimeApplication)
         {
             // initialize signal table to empty
