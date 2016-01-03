@@ -369,7 +369,7 @@ void Engine::cnt(boolean up) {
     return;
   }
   
-  boolean newRungOutCondition;
+  boolean newRungOutCondition = done;
   countValue.isFloat = false;
   if(reset) {
     if(up) {
@@ -382,7 +382,7 @@ void Engine::cnt(boolean up) {
   }
   else if(done) {
     // don't touch the count value
-    newRungOutCondition = done;
+    // newRungOutCondition = done; // redundant
   }
   else if(_rungCondition && !oneshotState) { // rising edge
     if(up) {

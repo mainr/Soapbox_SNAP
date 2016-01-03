@@ -1,6 +1,6 @@
 #region "SoapBox.Snap License"
 /// <header module="SoapBox.Snap"> 
-/// Copyright (C) 2009-2015 SoapBox Automation, All Rights Reserved.
+/// Copyright (C) 2009-2016 SoapBox Automation, All Rights Reserved.
 /// Contact: SoapBox Automation Licencing (license@soapboxautomation.com)
 /// 
 /// This file is part of SoapBox Snap.
@@ -245,7 +245,7 @@ namespace SoapBox.Snap.ArduinoRuntime.Protocol
                     i,
                     FieldDataType.DataTypeEnum.NUMBER,
                     this.m_numericSignalsByAddress[i].SignalName, // note that signal name can't have a comma
-                    this.m_booleanSignalsByAddress[i].Comment);
+                    this.m_numericSignalsByAddress[i].Comment);
                 result.AppendLine();
             }
             return result.ToString();

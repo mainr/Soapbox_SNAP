@@ -2254,7 +2254,7 @@
         "RemovePreviousVersions" = "11:TRUE"
         "DetectNewerInstalledVersion" = "11:TRUE"
         "InstallAllUsers" = "11:TRUE"
-        "ProductVersion" = "8:15.11.01"
+        "ProductVersion" = "8:16.01.03"
         "Manufacturer" = "8:SoapBox Automation"
         "ARPHELPTELEPHONE" = "8:"
         "ARPHELPLINK" = "8:http://ask.soapboxsnap.com/"
