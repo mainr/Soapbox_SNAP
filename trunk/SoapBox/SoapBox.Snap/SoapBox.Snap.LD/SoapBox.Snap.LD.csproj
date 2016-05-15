@@ -111,6 +111,7 @@
     <Compile Include="Runtime\InstructionExecutors\Comparison\LessThan\InstructionLDLessThan.cs" />
     <Compile Include="Runtime\InstructionExecutors\Comparison\NotEqual\InstructionLDNotEqual.cs" />
     <Compile Include="Runtime\InstructionExecutors\Counters\InstructionLDCntDN.cs" />
+    <Compile Include="Runtime\InstructionExecutors\Counters\InstructionLDCntUD.cs" />
     <Compile Include="Runtime\InstructionExecutors\Counters\InstructionLDCntUP.cs" />
     <Compile Include="Runtime\InstructionExecutors\Edge\InstructionLDFallingEdge.cs" />
     <Compile Include="Runtime\InstructionExecutors\Edge\InstructionLDRisingEdge.cs" />
@@ -137,6 +138,11 @@
     <Compile Include="Workbench\Documents\PageEditor\Instructions\Comparison\NotEqual\InstructionLDNotEqual.cs" />
     <Compile Include="Workbench\Documents\PageEditor\Instructions\ContextMenu\Delete.cs" />
     <Compile Include="Workbench\Documents\PageEditor\Instructions\Counters\CntDN\InstructionLDCntDN.cs" />
+    <Compile Include="Workbench\Documents\PageEditor\Instructions\Counters\CntUD\InstructionLDCntUD.cs" />
+    <Compile Include="Workbench\Documents\PageEditor\Instructions\Counters\CntUD\InstructionLDCntUDView.xaml.cs">
+      <DependentUpon>InstructionLDCntUDView.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Workbench\Documents\PageEditor\Instructions\Counters\CntUP\InstructionLDCntUP.cs" />
     <Compile Include="Workbench\Documents\PageEditor\Instructions\Counters\InstructionLDAbstractCounter.cs" />
     <Compile Include="Workbench\Documents\PageEditor\Instructions\Counters\InstructionLDAbstractCounterView.xaml.cs">
@@ -295,6 +301,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="Workbench\Documents\PageEditor\Instructions\Counters\CntUD\InstructionLDCntUDView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Workbench\Documents\PageEditor\Instructions\Counters\InstructionLDAbstractCounterView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -435,6 +445,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\SprLessThanOrEqual.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SprCntUD.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

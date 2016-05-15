@@ -30,12 +30,16 @@ Comparison:
 <=				11100	2 NUMERIC (0x1C)
 !=				11101	2 NUMERIC (0x1D)
 
-Math:
+Math:			(Math instructions look like 0x1E or 0x1F when loaded as 5 bits)
 +				1111000	IN0: nOperand1, IN1: nOperand2, OUT0: nResult (0x78)
 -				1111001	Same (0x79)
 *				1111010	Same (0x7A)
 /				1111011	Same (0x7B)
 Choose#			1111100	Same (0x7C)
+
+CntUD			1111101	IN0: bCountDown, IN1: bReset... OUT0: bZero, OUT1: nCount, OUT2: bCountUpState, OUT3: bCountDownState (0x7D)
+
+Reserve			11111110x (0x7F as 7 bits, 0xFE as 8 bits) - reserve for other instructions
 
 ProgramEnd		11111111 (0xFF)
 

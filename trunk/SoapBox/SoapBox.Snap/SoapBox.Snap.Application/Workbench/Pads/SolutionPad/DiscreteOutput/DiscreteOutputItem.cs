@@ -145,8 +145,21 @@ namespace SoapBox.Snap.Application
             setIcons(false);
             if(DiscreteOutput.SignalIn.SignalId != null)
             {
-                var signal = runtimeService.FindSignal(this, DiscreteOutput.SignalIn.SignalId).Item2;
-                runtimeService.RegisterValueWatcher(this, signal);
+                var result = runtimeService.FindSignal(this, DiscreteOutput.SignalIn.SignalId);
+                if (result != null)
+                {
+                    var signal = result.Item2;
+                    runtimeService.RegisterValueWatcher(this, signal);
+                }
+                else
+                {
+                    // Error: signal no longer exists
+                    // No easy way to fix this, it's due to a bug where a deleted signal
+                    // doesn't propagate over to a linked output.  For now we just don't
+                    // link it - it will show up as blank, and you *can* relink it, but it's
+                    // tough to double-click on the icon.
+                    // At least it doesn't crash the application though.
+                }
             }
         }
 

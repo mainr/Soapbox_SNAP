@@ -69,8 +69,10 @@ namespace SoapBox.Snap.LD.Extensions
                             public const double CntUP_SortOrder = 10;
                             public const string CntDN = "CntDN";
                             public const double CntDN_SortOrder = 11;
+                            public const string CntUD = "CntUD";
+                            public const double CntUD_SortOrder = 12;
                             public const string StringContains = "StringContains";
-                            public const double StringContains_SortOrder = 12;
+                            public const double StringContains_SortOrder = 13;
                         }
 
                         public const string SnapComparison = "SnapComparison"; // library

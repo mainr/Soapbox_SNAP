@@ -165,6 +165,9 @@
   <data name="LD_Snap_CntDN_InstructionName" xml:space="preserve">
     <value>Count Down</value>
   </data>
+  <data name="LD_Snap_CntUD_InstructionName" xml:space="preserve">
+    <value>Count Up/Down</value>
+  </data>
   <data name="LD_Snap_CntUP_InstructionName" xml:space="preserve">
     <value>Count Up</value>
   </data>
@@ -173,6 +176,12 @@
   </data>
   <data name="LD_Snap_Coil_InstructionName" xml:space="preserve">
     <value>Coil</value>
+  </data>
+  <data name="LD_Snap_Ctr_CountDownLabel" xml:space="preserve">
+    <value>Count Down:</value>
+  </data>
+  <data name="LD_Snap_Ctr_CountDownStateName" xml:space="preserve">
+    <value>Count Down State</value>
   </data>
   <data name="LD_Snap_Ctr_CountLabel" xml:space="preserve">
     <value>Count:</value>
@@ -345,6 +354,9 @@
   <data name="ToolTipCntDN" xml:space="preserve">
     <value>Count Down Counter</value>
   </data>
+  <data name="ToolTipCntUD" xml:space="preserve">
+    <value>Count Up/Down Counter</value>
+  </data>
   <data name="ToolTipCntUP" xml:space="preserve">
     <value>Count Up Counter</value>
   </data>
@@ -419,6 +431,9 @@
   </data>
   <data name="Undo_Action_EditContactSignal" xml:space="preserve">
     <value>Edited contact signal</value>
+  </data>
+  <data name="Undo_Action_EditCountDownSignal" xml:space="preserve">
+    <value>Edited counter count-down signal</value>
   </data>
   <data name="Undo_Action_EditCtrDescription" xml:space="preserve">
     <value>Edited counter description</value>

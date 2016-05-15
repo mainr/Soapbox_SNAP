@@ -76,6 +76,10 @@ namespace SoapBox.Snap.LD.ExtensionPoints
         {
             public const string ContextMenu = "SoapBox.Snap.LD.ExtensionPoints.Instructions.CntDN.ContextMenu";
         }
+        public static class CntUD
+        {
+            public const string ContextMenu = "SoapBox.Snap.LD.ExtensionPoints.Instructions.CntUD.ContextMenu";
+        }
         public static class SetReset
         {
             public const string ContextMenu = "SoapBox.Snap.LD.ExtensionPoints.Instructions.SetReset.ContextMenu";
