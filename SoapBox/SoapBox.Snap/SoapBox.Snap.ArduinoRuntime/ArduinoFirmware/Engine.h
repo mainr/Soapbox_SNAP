@@ -74,6 +74,7 @@ class Engine {
     void cntUp();
     void cntDn();
     void cnt(boolean up);
+    void cntUD();
     
     void compare(comparison c);
     

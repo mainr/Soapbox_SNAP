@@ -17,6 +17,12 @@ Engine engine = Engine(DEVICE_CONFIG_EEPROM_BYTES, &program, &memory);
 SerialPort serialPort = SerialPort(&io, &memory, &deviceConfig, &program, &engine);
 StatusLED statusLED = StatusLED(STATUS_LED_PIN, &engine);
 
+// There is a bug in the Arduino compiler (as of 1.6.9) where it doesn't auto-create a prototype for timerISR
+// That means timerISR has to appear *before* we call Timer1.attachInterrupt in setup().
+void timerISR() {
+  statusLED.timerISR(); // called 490 times per second by Timer1 (default PWM frequency)
+}
+
 void setup() {        
   deviceConfig.readFromEeprom(); 
   if(program.readFromEeprom()) {
@@ -27,10 +33,6 @@ void setup() {
   statusLED.init();
   serialPort.setupSerialPort();
   Timer1.attachInterrupt(timerISR);
-}
-
-void timerISR() {
-  statusLED.timerISR(); // called 490 times per second by Timer1 (default PWM frequency)
 }
 
 void loop() {  

@@ -431,6 +431,9 @@ namespace SoapBox.Snap.ArduinoRuntime.Protocol.Compiler
                 case SoapBox.Snap.LD.Extensions.Workbench.Documents.PageEditor_.InstructionItems.LD_.SnapMath_.ChooseNumber:
                     result.Add(compileChooseNumber(instruction, signalTable));
                     break;
+                case SoapBox.Snap.LD.Extensions.Workbench.Documents.PageEditor_.InstructionItems.LD_.Snap_.CntUD:
+                    result.Add(compileCntUD(instruction, signalTable));
+                    break;
                 default:
                     throw new NotSupportedException("Instruction not supported: " + instruction.InstructionType.Code.ToString());
             }
@@ -575,6 +578,29 @@ namespace SoapBox.Snap.ArduinoRuntime.Protocol.Compiler
                 6,
                 compiledSetpointSignal, compiledResetSignal,
                 compiledDoneSignal, compiledCountSignal, compiledStateSignal);
+        }
+
+        private CompiledInstruction compileCntUD(NodeInstruction instruction, SignalTable signalTable)
+        {
+            var countDownSignalIn = instruction.NodeSignalInChildren[0];
+            var compiledCountDownSignal = booleanSignal(countDownSignalIn, signalTable);
+            var resetSignalIn = instruction.NodeSignalInChildren[1];
+            var compiledResetSignal = booleanSignal(resetSignalIn, signalTable);
+
+            var zeroSignal = instruction.NodeSignalChildren[0];
+            var compiledZeroSignal = booleanSignal(zeroSignal, signalTable);
+            var countSignal = instruction.NodeSignalChildren[1];
+            var compiledCountSignal = numericSignal(countSignal, signalTable);
+            var countUpStateSignal = instruction.NodeSignalChildren[2];
+            var compiledCountUpStateSignal = booleanSignal(countUpStateSignal, signalTable);
+            var countDownStateSignal = instruction.NodeSignalChildren[3];
+            var compiledCountDownStateSignal = booleanSignal(countDownStateSignal, signalTable);
+
+            return new CompiledInstruction(
+                0x7D,
+                7,
+                compiledCountDownSignal, compiledResetSignal,
+                compiledZeroSignal, compiledCountSignal, compiledCountUpStateSignal, compiledCountDownStateSignal);
         }
 
         private CompiledInstruction compileEqual(NodeInstruction instruction, SignalTable signalTable)

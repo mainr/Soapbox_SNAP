@@ -1,4 +1,4 @@
-#region "SoapBox.Snap License"
+﻿#region "SoapBox.Snap License"
 /// <header module="SoapBox.Snap"> 
 /// Copyright (C) 2009-2016 SoapBox Automation, All Rights Reserved.
 /// Contact: SoapBox Automation Licencing (license@soapboxautomation.com)
@@ -19,39 +19,57 @@
 /// with SoapBox Snap. If not, see <http://www.gnu.org/licenses/>.
 /// </header>
 #endregion
-        
+
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.ComponentModel.Composition;
 using SoapBox.Protocol.Automation;
+using SoapBox.Protocol.Base;
 using SoapBox.Core;
 using System.ComponentModel;
 using SoapBox.Utilities;
 using System.Windows;
-using SoapBox.Protocol.Base;
 
 namespace SoapBox.Snap.LD
 {
-    public abstract class InstructionLDAbstractCounter : AbstractLDInstructionItem
+    [Export(Snap.ExtensionPoints.Workbench.Documents.PageEditor.InstructionItems,
+           typeof(IInstructionItem))]
+    [InstructionItem(
+        Language = Extensions.Workbench.Documents.PageEditor_.InstructionItems.LD,
+        Library = Extensions.Workbench.Documents.PageEditor_.InstructionItems.LD_.Snap,
+        Code = Extensions.Workbench.Documents.PageEditor_.InstructionItems.LD_.Snap_.CntUD,
+        SortOrder = Extensions.Workbench.Documents.PageEditor_.InstructionItems.LD_.Snap_.CntUD_SortOrder,
+        SpriteType = typeof(Resources.Images), SpriteKey = "SprCntUD",
+        ToolTipType = typeof(Resources.Strings), ToolTipKey = "ToolTipCntUD")]
+    public class InstructionLDCntUD : AbstractLDInstructionItem
     {
         public const double RUNG_IN_OFFSET = 10;
         public const double MAX_WIDTH = 150;
         public const double MAX_DESCRIPTION_HEIGHT = 70;
         public const string SEPARATOR = ".";
 
-        protected InstructionLDAbstractCounter(FieldInstructionType instructionType)
-            : base(null, instructionType)
+        internal static readonly FieldInstructionType m_InstructionType = new FieldInstructionType(
+                    new FieldIdentifier(Extensions.Workbench.Documents.PageEditor_.InstructionItems.LD),
+                    new FieldIdentifier(Extensions.Workbench.Documents.PageEditor_.InstructionItems.LD_.Snap),
+                    new FieldIdentifier(Extensions.Workbench.Documents.PageEditor_.InstructionItems.LD_.Snap_.CntUD));
+
+        /// <summary>
+        /// Just here for MEF to call, to do the imports
+        /// </summary>
+        internal InstructionLDCntUD()
+            : base(null, m_InstructionType)
         {
         }
 
-        protected InstructionLDAbstractCounter(IEditorItem parent, NodeInstruction instruction, FieldInstructionType instructionType)
-            : base(parent, instructionType)
+        private InstructionLDCntUD(IEditorItem parent, NodeInstruction instruction)
+            : base(parent, m_InstructionType)
         {
             if (instruction == null)
             {
                 var newInstruction = NodeInstruction.BuildWith(InstructionType);
-                // Output signal: Named boolean - the counter done signal
+                // Output signal: Named boolean - the counter equals-zero signal
                 newInstruction = newInstruction.NodeSignalChildren.Append(
                     NodeSignal.BuildWith(
                         new FieldSignalName(Resources.Strings.LD_Snap_Ctr_DefaultName),
@@ -66,18 +84,25 @@ namespace SoapBox.Snap.LD
                         new FieldBool(false), // not forced
                         FieldConstant.Constants.NUMBER.ZERO)
                     );
-                newInstruction = newInstruction.NodeSignalChildren.Append( // previous rung-in condition
+                newInstruction = newInstruction.NodeSignalChildren.Append( // saves previous rung-in (count-up) state
                     NodeSignal.BuildWith(
                         new FieldSignalName(Resources.Strings.LD_Snap_Ctr_DefaultName + SEPARATOR + Resources.Strings.LD_Snap_Ctr_OneshotStateName),
                         new FieldDataType(FieldDataType.DataTypeEnum.BOOL),
                         new FieldBool(false), // not forced
                         FieldConstant.Constants.BOOL.LOW)
                     );
-                // Input signal: setpoint
+                newInstruction = newInstruction.NodeSignalChildren.Append( // saves previous count-down state
+                    NodeSignal.BuildWith(
+                        new FieldSignalName(Resources.Strings.LD_Snap_Ctr_DefaultName + SEPARATOR + Resources.Strings.LD_Snap_Ctr_CountDownStateName),
+                        new FieldDataType(FieldDataType.DataTypeEnum.BOOL),
+                        new FieldBool(false), // not forced
+                        FieldConstant.Constants.BOOL.LOW)
+                    );
+                // Input signal: count-down
                 newInstruction = newInstruction.NodeSignalInChildren.Append(
                     NodeSignalIn.BuildWith(
-                        new FieldDataType(FieldDataType.DataTypeEnum.NUMBER),
-                        new FieldConstant(FieldDataType.DataTypeEnum.NUMBER, 0)));
+                        new FieldDataType(FieldDataType.DataTypeEnum.BOOL),
+                        new FieldConstant(FieldDataType.DataTypeEnum.BOOL, false)));
                 // Input signal: reset
                 newInstruction = newInstruction.NodeSignalInChildren.Append(
                     NodeSignalIn.BuildWith(
@@ -102,12 +127,68 @@ namespace SoapBox.Snap.LD
             }
         }
 
+        public string InstructionName
+        {
+            get 
+            {
+                return Resources.Strings.LD_Snap_CntUD_InstructionName;
+            }
+        }
+
         private static IMenuItem m_staticMenuItemSeparator = new ConcreteMenuItemSeparator();
 
-        protected abstract IExtensionService extensionService { get; set; }
-        protected abstract IEnumerable<IMenuItem> ldInstructionContextMenu { get; set; }
-        protected abstract IEnumerable<IMenuItem> contextMenu { get; set; }
-        public abstract string InstructionName { get; }
+        #region "extensionServiceSingleton"
+        [Import(SoapBox.Core.Services.Host.ExtensionService)]
+        protected IExtensionService extensionService
+        {
+            get
+            {
+                return extensionServiceSingleton;
+            }
+            set
+            {
+                extensionServiceSingleton = value;
+            }
+        }
+        private static IExtensionService extensionServiceSingleton = null;
+        #endregion
+
+        #region "ldInstructionContextMenuSingleton"
+        [ImportMany(ExtensionPoints.Instructions.ContextMenu, typeof(IMenuItem))]
+        protected IEnumerable<IMenuItem> ldInstructionContextMenu
+        {
+            get
+            {
+                return ldInstructionContextMenuSingleton;
+            }
+            set
+            {
+                ldInstructionContextMenuSingleton = value;
+            }
+        }
+        private static IEnumerable<IMenuItem> ldInstructionContextMenuSingleton = null;
+        #endregion
+
+        #region "contextMenuSingleton"
+        [ImportMany(ExtensionPoints.Instructions.CntUD.ContextMenu, typeof(IMenuItem))]
+        protected IEnumerable<IMenuItem> contextMenu
+        {
+            get
+            {
+                return contextMenuSingleton;
+            }
+            set
+            {
+                contextMenuSingleton = value;
+            }
+        }
+        private static IEnumerable<IMenuItem> contextMenuSingleton = null;
+        #endregion
+
+        public override IInstructionItem Create(IEditorItem parent, NodeInstruction instruction)
+        {
+            return new InstructionLDCntUD(parent, instruction);
+        }
 
         #region " IsRight "
         public override bool IsRight
@@ -137,7 +218,7 @@ namespace SoapBox.Snap.LD
             }
         }
         protected static readonly PropertyChangedEventArgs m_CtrNameArgs =
-            NotifyPropertyChangedHelper.CreateArgs<InstructionLDAbstractCounter>(o => o.CtrName);
+            NotifyPropertyChangedHelper.CreateArgs<InstructionLDCntUD>(o => o.CtrName);
 
         public string CtrDescription
         {
@@ -147,7 +228,7 @@ namespace SoapBox.Snap.LD
             }
         }
         protected static readonly PropertyChangedEventArgs m_CtrDescriptionArgs =
-            NotifyPropertyChangedHelper.CreateArgs<InstructionLDAbstractCounter>(o => o.CtrDescription);
+            NotifyPropertyChangedHelper.CreateArgs<InstructionLDCntUD>(o => o.CtrDescription);
 
         protected override void setItems()
         {
@@ -159,18 +240,18 @@ namespace SoapBox.Snap.LD
             NotifyPropertyChanged(m_CtrDescriptionArgs);
         }
 
-        #region " SetpointSignalIn "
-        public NodeSignalIn SetpointSignalIn
+        #region " CountDownSignalIn "
+        public NodeSignalIn CountDownSignalIn
         {
             get
             {
                 return Instruction.NodeSignalInChildren[0];
             }
         }
-        private static readonly PropertyChangedEventArgs m_SetpointSignalInArgs =
-            NotifyPropertyChangedHelper.CreateArgs<InstructionLDAbstractCounter>(o => o.SetpointSignalIn);
-        private static string m_SetpointSignalInName =
-            NotifyPropertyChangedHelper.GetPropertyName<InstructionLDAbstractCounter>(o => o.SetpointSignalIn);
+        private static readonly PropertyChangedEventArgs m_CountDownSignalInArgs =
+            NotifyPropertyChangedHelper.CreateArgs<InstructionLDCntUD>(o => o.CountDownSignalIn);
+        private static string m_CountDownSignalInName =
+            NotifyPropertyChangedHelper.GetPropertyName<InstructionLDCntUD>(o => o.CountDownSignalIn);
         #endregion
 
         #region " ResetSignalIn "
@@ -182,37 +263,10 @@ namespace SoapBox.Snap.LD
             }
         }
         private static readonly PropertyChangedEventArgs m_ResetSignalInArgs =
-            NotifyPropertyChangedHelper.CreateArgs<InstructionLDAbstractCounter>(o => o.ResetSignalIn);
+            NotifyPropertyChangedHelper.CreateArgs<InstructionLDCntUD>(o => o.ResetSignalIn);
         private static string m_ResetSignalInName =
-            NotifyPropertyChangedHelper.GetPropertyName<InstructionLDAbstractCounter>(o => o.ResetSignalIn);
+            NotifyPropertyChangedHelper.GetPropertyName<InstructionLDCntUD>(o => o.ResetSignalIn);
         #endregion
-
-        double m_VerticalRungOffset = -1;
-        public override double VerticalRungOffset
-        {
-            get
-            {
-                if (m_VerticalRungOffset < 0)
-                {
-                    calculateVerticalRungOffset();
-                }
-                return m_VerticalRungOffset;
-            }
-            set
-            {
-            }
-        }
-        private static readonly PropertyChangedEventArgs m_VerticalRungOffsetArgs =
-            NotifyPropertyChangedHelper.CreateArgs<InstructionLDAbstractCounter>(o => o.VerticalRungOffset);
-
-        private void calculateVerticalRungOffset()
-        {
-            // It's the size of the description, plus the Ctr name, plus half the Ctr size
-            m_VerticalRungOffset = RUNG_IN_OFFSET;
-            m_VerticalRungOffset += CtrDescriptionEditor.ActualHeight;
-            m_VerticalRungOffset += CtrNameEditor.ActualHeight;
-            NotifyPropertyChanged(m_VerticalRungOffsetArgs);
-        }
 
         #region " CtrNameEditor "
         public SignalNameEditor CtrNameEditor
@@ -297,32 +351,59 @@ namespace SoapBox.Snap.LD
             NotifyPropertyChangedHelper.GetPropertyName<SignalDescriptionEditor>(o => o.Text);
         #endregion
 
-        #region " SetpointSignalChooser "
-        public SignalChooser SetpointSignalChooser
+        double m_VerticalRungOffset = -1;
+        public override double VerticalRungOffset
         {
             get
             {
-                if (m_SetpointSignalChooser == null)
+                if (m_VerticalRungOffset < 0)
                 {
-                    m_SetpointSignalChooser = new SignalChooser(this, SetpointSignalIn, MAX_WIDTH, TextAlignment.Center);
-                    m_SetpointSignalChooser.PropertyChanged += new PropertyChangedEventHandler(m_SetpointSignalChooser_PropertyChanged);
+                    calculateVerticalRungOffset();
                 }
-                return m_SetpointSignalChooser;
+                return m_VerticalRungOffset;
+            }
+            set
+            {
             }
         }
-        private SignalChooser m_SetpointSignalChooser = null;
+        private static readonly PropertyChangedEventArgs m_VerticalRungOffsetArgs =
+            NotifyPropertyChangedHelper.CreateArgs<InstructionLDCntUD>(o => o.VerticalRungOffset);
 
-        void m_SetpointSignalChooser_PropertyChanged(object sender, PropertyChangedEventArgs e)
+        private void calculateVerticalRungOffset()
         {
-            if (e.PropertyName == m_SetpointSignalChooser_SignalIdName)
+            // It's the size of the description, plus the Ctr name, plus half the Ctr size
+            m_VerticalRungOffset = RUNG_IN_OFFSET;
+            m_VerticalRungOffset += CtrDescriptionEditor.ActualHeight;
+            m_VerticalRungOffset += CtrNameEditor.ActualHeight;
+            NotifyPropertyChanged(m_VerticalRungOffsetArgs);
+        }
+
+        #region " CountDownSignalChooser "
+        public SignalChooser CountDownSignalChooser
+        {
+            get
+            {
+                if (m_CountDownSignalChooser == null)
+                {
+                    m_CountDownSignalChooser = new SignalChooser(this, CountDownSignalIn, MAX_WIDTH, TextAlignment.Center);
+                    m_CountDownSignalChooser.PropertyChanged += new PropertyChangedEventHandler(m_CountDownSignalChooser_PropertyChanged);
+                }
+                return m_CountDownSignalChooser;
+            }
+        }
+        private SignalChooser m_CountDownSignalChooser = null;
+
+        void m_CountDownSignalChooser_PropertyChanged(object sender, PropertyChangedEventArgs e)
+        {
+            if (e.PropertyName == m_CountDownSignalChooser_SignalIdName)
             {
                 var oldSignalIn = Instruction.NodeSignalInChildren.Items[0];
-                var newSignalIn = SetpointSignalChooser.SignalIn;
+                var newSignalIn = CountDownSignalChooser.SignalIn;
                 var newInstruction = Instruction = Instruction.NodeSignalInChildren.Replace(oldSignalIn, newSignalIn);
-                SimpleUndoableInstructionEdit(newInstruction, Resources.Strings.Undo_Action_EditCtrSetpointSignal);
+                SimpleUndoableInstructionEdit(newInstruction, Resources.Strings.Undo_Action_EditCountDownSignal);
             }
         }
-        static readonly string m_SetpointSignalChooser_SignalIdName =
+        static readonly string m_CountDownSignalChooser_SignalIdName =
             NotifyPropertyChangedHelper.GetPropertyName<SignalChooser>(o => o.SignalIn);
         #endregion
 
@@ -370,6 +451,5 @@ namespace SoapBox.Snap.LD
         private SignalValue m_CountSignalValue = null;
 
         #endregion
-
     }
 }

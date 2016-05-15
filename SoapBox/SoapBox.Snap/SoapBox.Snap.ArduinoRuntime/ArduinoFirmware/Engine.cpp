@@ -172,6 +172,10 @@ byte Engine::processNextInstruction() { // returns instruction
     case 0x7C: // Math Choose #
       mathChooseNumber();
       return instruction;
+      
+    case 0x7D: // CntUD
+      cntUD();
+      return instruction;
   }
   
   // if we get this far, then the only valid possibility left is an end-of-program instruction
@@ -404,6 +408,40 @@ void Engine::cnt(boolean up) {
   _memory->writeBoolean(oneshotStateAddress, _rungCondition); 
   _rungCondition = newRungOutCondition;
   _memory->writeBoolean(doneAddress, newRungOutCondition); 
+  _memory->writeNumeric(countAddress, countValue);
+}
+
+void Engine::cntUD() {
+  boolean countUp = _rungCondition;
+  boolean countDown = getBooleanValue();
+  boolean reset = getBooleanValue();
+  int zeroAddress = getBooleanAddress();
+  byte countAddress = getNumericAddress();
+  int countUpStateAddress = getBooleanAddress();
+  int countDownStateAddress = getBooleanAddress();
+  //boolean zero = _memory->readBoolean(zeroAddress);
+  NumericMemoryValue countValue = _memory->readNumeric(countAddress);
+  boolean countUpState = _memory->readBoolean(countUpStateAddress);
+  boolean countDownState = _memory->readBoolean(countDownStateAddress);
+  
+  countValue.isFloat = false;
+  if(reset) {
+    countValue.value.longValue = 0;
+  }
+  else {
+    if(countUp && !countUpState) {
+      countValue.value.longValue = countValue.value.longValue + 1;
+    }
+    if(countDown && !countDownState) {
+      countValue.value.longValue = countValue.value.longValue - 1;
+    }
+  }
+  boolean newRungOutCondition = countValue.value.longValue == 0;
+
+  _memory->writeBoolean(countUpStateAddress, countUp);
+  _memory->writeBoolean(countDownStateAddress, countDown); 
+  _rungCondition = newRungOutCondition;
+  _memory->writeBoolean(zeroAddress, newRungOutCondition); 
   _memory->writeNumeric(countAddress, countValue);
 }
 
